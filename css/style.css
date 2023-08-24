@@ -71,17 +71,22 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #F85A16;
+
+  background: #01226D;
+
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #F85A16;
+
+  background: #01226D;
+
 }
 
 ::selection {
   color: #fff;
-  background: #F85A16;
+  background: #01226D;
+
 }
 
 .gtco-container {
@@ -115,7 +120,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav a {
   padding: 5px 10px;
-  color: #fff;
+
+  color: #01226D;
+
 }
 @media screen and (max-width: 768px) {
   .gtco-nav .menu-1, .gtco-nav .menu-2 {
