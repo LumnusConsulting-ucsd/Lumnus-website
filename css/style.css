@@ -47,13 +47,13 @@ body {
 }
 
 a {
-  color: #F85A16;
+  color: #01226D;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #F85A16;
+  color: #01226D;
   outline: none;
   text-decoration: none;
 }
@@ -211,7 +211,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 .gtco-nav ul li.btn-cta a {
-  color: #F85A16;
+  color: #01226D;
 }
 .gtco-nav ul li.btn-cta a span {
   background: #fff;
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #F85A16;
+  color: #01226D;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -471,7 +471,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .gtco-contact-info ul li:before {
-  color: #cccccc;
+  color: ##01226D;
   position: absolute;
   left: 0;
   top: .05em;
@@ -642,7 +642,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #F85A16;
+  color: #01226D;
 }
 .feature-center p, .feature-center h3 {
   margin-bottom: 30px;
@@ -677,7 +677,7 @@ form label {
   display: table-cell;
   vertical-align: middle;
   font-size: 30px;
-  color: #F85A16;
+  color: #01226D;
 }
 .feature-left .feature-copy {
   float: left;
@@ -803,14 +803,14 @@ form label {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  color: #b3b3b3;
+  color: #01226D;
 }
 .gtco-tabs .gtco-tab-nav li a:hover {
-  color: #4d4d4d;
+  color: #01226D;
 }
 .gtco-tabs .gtco-tab-nav li.active a {
   background: #fff;
-  color: #F85A16;
+  color: #01226D;
 }
 .gtco-tabs .gtco-tab-content-wrap {
   clear: both;
@@ -845,7 +845,7 @@ form label {
   }
 }
 .gtco-tabs .icon-xlg i {
-  color: #F85A16;
+  color: #01226D;
 }
 
 #gtco-subscribe {
@@ -885,7 +885,7 @@ form label {
 #gtco-subscribe .btn {
   height: 54px;
   border: none !important;
-  background: #F85A16;
+  background: #01226D;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -958,7 +958,7 @@ form label {
 }
 .owl-carousel .owl-controls .owl-dot.active span {
   background: transparent;
-  border: 2px solid #F85A16;
+  border: 2px solid #01226D;
 }
 
 #gtco-offcanvas {
@@ -1211,9 +1211,9 @@ form label {
 }
 
 .btn-primary {
-  background: #F85A16;
+  background: #01226D;
   color: #fff;
-  border: 2px solid #F85A16 !important;
+  border: 2px solid #01226D !important;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #f96c2f !important;
@@ -1221,11 +1221,11 @@ form label {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #F85A16;
-  border: 2px solid #F85A16;
+  color: #01226D;
+  border: 2px solid #01226D;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #F85A16;
+  background: #01226D;
   color: #fff;
 }
 
@@ -1375,7 +1375,7 @@ form label {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #F85A16;
+  border-color: #01226D;
 }
 
 .row-pb-md {
