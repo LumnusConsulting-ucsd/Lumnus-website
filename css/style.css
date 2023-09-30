@@ -404,10 +404,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-staff {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .gtco-staff img {
-  width: 100px;
+  width: 200px;
   margin-bottom: 20px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -422,6 +422,32 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
 }
 .gtco-staff .role {
+  color: #bfbfbf;
+  margin-bottom: 30px;
+  font-weight: normal;
+  display: block;
+}
+
+.gtco-consultant {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.gtco-consultant img {
+  width: 150px;
+  margin-bottom: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 100%;
+}
+.gtco-consultant h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.gtco-consultant p {
+  margin-bottom: 30px;
+}
+.gtco-consultant .role {
   color: #bfbfbf;
   margin-bottom: 30px;
   font-weight: normal;
