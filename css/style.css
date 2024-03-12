@@ -1426,4 +1426,25 @@ form label {
   opacity: 0;
 }
 
+
+.pop {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 20px;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hoverme:hover .pop {
+    display: block;
+}
+
 /*# sourceMappingURL=style.css.map */
