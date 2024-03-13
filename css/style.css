@@ -1438,7 +1438,7 @@ form label {
     text-align: center;
     padding: 20px;
     z-index: 999;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
