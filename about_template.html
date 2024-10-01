@@ -60,6 +60,17 @@
                 clear: both;
             }
         }
+        .circular-image {
+            width: 200px; /* Adjust the size as needed */
+            height: 200px; /* Keep height equal to width to ensure a perfect circle */
+            border-radius: 50%;
+            object-fit: cover; /* Ensures the image fills the circular area */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden; /* Ensures any overflow is clipped */
+            border: 2px solid #ffffff; /* Optional: add border for better presentation */
+        }
     </style>
 </head>
 <body>

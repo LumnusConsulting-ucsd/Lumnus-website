@@ -12,6 +12,13 @@
             "hobbies": "Street Photography, Calligraphy"
         },
         {
+            "name": "Parnika Gupta",
+            "role": "VP Operations",
+            "linkedin": "https://www.linkedin.com/in/parnika-gupta-30018a251/",
+            "joined": "Fall 2023",
+            "image": "parnika_gupta.jpg"
+        },
+        {
             "name": "Zachary Schuler",
             "role": "VP Finance",
             "linkedin": "https://www.linkedin.com/in/zachary--schuler/",
@@ -20,27 +27,27 @@
             "major": "Business Economics",
             "minor": "Finance",
             "career_interest": "IB, VC, Financial Services",
-            "hobbies": "Soccer, rugby, lifting, beach, camping, hanging with homies"
+            "hobbies": "Soccer, rugby, lifting, beach, camping"
         },
         {
             "name": "Amy Hu",
             "role": "VP Sales",
             "linkedin": "https://www.linkedin.com/in/-amy-hu/",
-            "joined": "N/A",
+            "joined": "Fall 2023",
             "image": "amy_hu.JPG"
         },
         {
             "name": "Varnika Seth",
             "role": "VP Marketing",
             "linkedin": "https://www.linkedin.com/in/varnika-seth-754522215/",
-            "joined": "N/A",
+            "joined": "Fall 2023",
             "image": "varnika.jpg"
         },
         {
             "name": "Bhaavana Anna",
             "role": "VP HR",
-            "linkedin": "",
-            "joined": "N/A",
+            "linkedin": "https://www.linkedin.com/in/srisaibhaavanaanna/",
+            "joined": "Fall 2023",
             "image": "bhaavana.jpg"
         },
         {
@@ -63,7 +70,7 @@
             "major": "Business Psychology",
             "minor": "Finance",
             "career_interest": "Marketing",
-            "hobbies": "Read, sing, and do nails"
+            "hobbies": "Read, sing and nail art"
         },
         {
             "name": "Ojasvi Tewari",
@@ -77,9 +84,9 @@
         },
         {
             "name": "Karthik Vaidyanathan",
-            "role": "VP Alumni Relations",
+            "role": "Director of Alumni Relations",
             "linkedin": "https://www.linkedin.com/in/karthikvaid/",
-            "joined": "N/A",
+            "joined": "Spring 2023",
             "image": "Karthik.jpg"
         },
         {
@@ -93,18 +100,12 @@
             "career_interest": "Consulting/Business Analytics",
             "hobbies": "Yoga, running, & thrifting!"
         },
-        {
-            "name": "Parnika Gupta",
-            "role": "VP Operations",
-            "linkedin": "https://www.linkedin.com/in/parnika-gupta-30018a251/",
-            "joined": "N/A",
-            "image": "parnika_gupta.jpg"
-        },
+        
         {
             "name": "Sakshi Vaghani",
             "role": "VP External Relations",
             "linkedin": "https://www.linkedin.com/in/sakshivaghani/",
-            "joined": "N/A",
+            "joined": "Spring 2023",
             "image": "sakshi_vaghani.jpg"
         }
     ],
