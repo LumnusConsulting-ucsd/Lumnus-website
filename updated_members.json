@@ -100,7 +100,6 @@
             "career_interest": "Consulting/Business Analytics",
             "hobbies": "Yoga, running, & thrifting!"
         },
-        
         {
             "name": "Sakshi Vaghani",
             "role": "VP External Relations",
@@ -317,6 +316,195 @@
             "name": "Tyler Woo",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/tywoo/",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Krish Agarwal",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Pratibha Arun",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Treesha Chhabria",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Nirali Desai",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Katherine Hsieh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Jesse Huang",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Vivaan Laungani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Oliver Luong",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Anusha Malla",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sruti Mani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sophie Mandal",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sarah Pence",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Anirudh Rajesh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Rahul Raman",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Suhani Ranjan",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sheida Sadeghi",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Jiarui Song",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Chloe Suwingno",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Gauri Swarup",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Veda Thota",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Mirabelle Trunk",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Irina Vardapetyan",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Michael Sagar Vasandani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Paris Wei",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Kailey Wen",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Gavin Whitney",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Luke Zheng",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
             "joined": "N/A",
             "image": "person_2.jpg"
         }

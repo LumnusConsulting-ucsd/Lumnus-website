@@ -39,7 +39,7 @@ def generate_team_html(team_members):
                 executives_html += "</div>"  # Close previous row if it's not the first row
             executives_html += '<div class="row row-pb-md justify-content-center">\n'
 
-        image_path = f"images/membersTest/{executive.get('image', 'default.jpg')}"
+        image_path = f"images/members/{executive.get('image', 'default.jpg')}"
         executives_html += f"""
         <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeIn">
             <div class="hoverme">
@@ -67,7 +67,7 @@ def generate_team_html(team_members):
                 consultants_html += "</div>"  # Close previous row if it's not the first row
             consultants_html += '<div class="row row-pb-md justify-content-center">\n'
 
-        image_path = f"images/membersTest/{consultant.get('image', 'default.jpg')}"
+        image_path = f"images/members/{consultant.get('image', 'default.jpg')}"
         consultants_html += f"""
         <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeIn">
             <div class="hoverme">
@@ -91,7 +91,7 @@ def generate_team_html(team_members):
     return executives_html, consultants_html
 
 # Read the JSON data from the file
-with open('membersTest.json', 'r') as json_file:
+with open('updated_members.json', 'r') as json_file:
     team_members = json.load(json_file)
 
 # Generate team HTML sections
