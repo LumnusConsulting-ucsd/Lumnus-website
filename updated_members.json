@@ -1,0 +1,512 @@
+{
+    "executives": [
+        {
+            "name": "Sweta Musini",
+            "role": "President",
+            "linkedin": "https://www.linkedin.com/in/sweta-musini/",
+            "joined": "Fall 2022",
+            "image": "Sweta.jpg",
+            "major": "Math-Econ",
+            "minor": "Finance",
+            "career_interest": "Strategy Consulting",
+            "hobbies": "Street Photography, Calligraphy"
+        },
+        {
+            "name": "Parnika Gupta",
+            "role": "VP Operations",
+            "linkedin": "https://www.linkedin.com/in/parnika-gupta-30018a251/",
+            "joined": "Fall 2023",
+            "image": "parnika_gupta.jpg"
+        },
+        {
+            "name": "Zachary Schuler",
+            "role": "VP Finance",
+            "linkedin": "https://www.linkedin.com/in/zachary--schuler/",
+            "joined": "Fall 2023",
+            "image": "zachary_schuler.JPG",
+            "major": "Business Economics",
+            "minor": "Finance",
+            "career_interest": "IB, VC, Financial Services",
+            "hobbies": "Soccer, rugby, lifting, beach, camping"
+        },
+        {
+            "name": "Amy Hu",
+            "role": "VP Sales",
+            "linkedin": "https://www.linkedin.com/in/-amy-hu/",
+            "joined": "Fall 2023",
+            "image": "amy_hu.JPG"
+        },
+        {
+            "name": "Varnika Seth",
+            "role": "VP Marketing",
+            "linkedin": "https://www.linkedin.com/in/varnika-seth-754522215/",
+            "joined": "Fall 2023",
+            "image": "varnika.jpg"
+        },
+        {
+            "name": "Srisaibhaavana Anna",
+            "role": "VP HR",
+            "linkedin": "https://www.linkedin.com/in/srisaibhaavanaanna/",
+            "joined": "Fall 2023",
+            "image": "bhaavana.jpg"
+        },
+        {
+            "name": "Elizabeth Chang",
+            "role": "JE Ambassador",
+            "linkedin": "https://www.linkedin.com/in/elizabeth-changg/",
+            "joined": "Fall 2023",
+            "image": "Elizabeth.JPG",
+            "major": "International Business",
+            "minor": "Real Estate and Development",
+            "career_interest": "Commercial Real Estate",
+            "hobbies": "Finding new foods, exploring San Diego, being with family"
+        },
+        {
+            "name": "Heera Narayanan",
+            "role": "Director of Internal Operations",
+            "linkedin": "https://www.linkedin.com/in/heera-narayanan-83245824b/",
+            "joined": "Spring 2023",
+            "image": "Heera.jpeg",
+            "major": "Business Psychology",
+            "minor": "Finance",
+            "career_interest": "Marketing",
+            "hobbies": "Read, sing and nail art"
+        },
+        {
+            "name": "Ojasvi Tewari",
+            "role": "VP Data Analytics",
+            "linkedin": "https://www.linkedin.com/in/ojasvi-tewari-a7b916192/",
+            "joined": "Spring 2023",
+            "image": "Ojasvi.jpg",
+            "major": "Computer Science",
+            "career_interest": "Software engineering, Data Science",
+            "hobbies": "Gaming, Origami, Art, Programming"
+        },
+        {
+            "name": "Karthik Vaidyanathan",
+            "role": "Director of Alumni Relations",
+            "linkedin": "https://www.linkedin.com/in/karthikvaid/",
+            "joined": "Spring 2023",
+            "image": "Karthik.jpg"
+        },
+        {
+            "name": "Nicole Ziola",
+            "role": "Director of Program Management",
+            "linkedin": "https://www.linkedin.com/in/nicoleziola/",
+            "joined": "Fall 2023",
+            "image": "nicole.jpg",
+            "major": "Business Economics",
+            "minor": "Computational Social",
+            "career_interest": "Consulting/Business Analytics",
+            "hobbies": "Yoga, running, & thrifting!"
+        },
+        {
+            "name": "Sakshi Vaghani",
+            "role": "VP External Relations",
+            "linkedin": "https://www.linkedin.com/in/sakshivaghani/",
+            "joined": "Spring 2023",
+            "image": "sakshi_vaghani.jpg"
+        }
+    ],
+    "consultants": [
+        {
+            "name": "Jacob Yang",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/jacobyang1/",
+            "joined": "Spring 2021",
+            "image": "Jacob.jpg",
+            "major": "Business Economics",
+            "minor": "Supply Chain",
+            "career_interest": "Business Analysis/Consulting",
+            "hobbies": "Watching TV shows, soccer, poker"
+        },
+        {
+            "name": "George Petkov",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/george-petkov/",
+            "joined": "N/A",
+            "image": "George.jpg"
+        },
+        {
+            "name": "Matthew Risley",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/matthewrisley/",
+            "joined": "Fall 2022",
+            "image": "Matthew.JPG",
+            "major": "Economics and Political Science",
+            "career_interest": "Law",
+            "hobbies": "Watching movies, reading, writing"
+        },
+        {
+            "name": "Aditya Arun",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/aditya-arun1/",
+            "joined": "Spring 2023",
+            "image": "Aditya.jpg",
+            "major": "Data Science",
+            "minor": "Entrepreneurship & Innovation",
+            "career_interest": "Data Scientist, Business Analyst, Financial Consultant",
+            "hobbies": "Cricket, volunteering"
+        },
+        {
+            "name": "Eva Zhao",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/evazhao22/",
+            "joined": "Spring 2023",
+            "image": "Eva.jpg",
+            "major": "Math-applied science/Economics",
+            "minor": "Finance",
+            "career_interest": "Consulting, banking",
+            "hobbies": "Tennis, karaoke, hiking"
+        },
+        {
+            "name": "Gita Anand",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/gita-anand/",
+            "joined": "Spring 2023",
+            "image": "Gita.jpg",
+            "major": "Data Science",
+            "minor": "Mathematics",
+            "career_interest": "Quantitative Statistics, Data Analytics",
+            "hobbies": "Badminton, cooking/baking"
+        },
+        {
+            "name": "Jacqueline Ng",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/jacqueline-ng-a30819252/",
+            "joined": "Spring 2023",
+            "image": "Jacqueline.jpg",
+            "major": "Mathematics",
+            "hobbies": "Cooking, drawing, badminton"
+        },
+        {
+            "name": "Jax Liescheidt",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/jax-liescheidt-904b2b239/",
+            "joined": "Spring 2023",
+            "image": "Jax.jpg",
+            "major": "Business Psychology",
+            "minor": "Finance",
+            "career_interest": "Wealth Management, consulting, strategic finance",
+            "hobbies": "Reading, working out, playing sports, finance"
+        },
+        {
+            "name": "Kenneth Duong",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/kennethduong3204/",
+            "joined": "Spring 2023",
+            "image": "Kenneth.jpg",
+            "major": "Business Psychology",
+            "minor": "Accounting",
+            "career_interest": "Wealth Management, Accounting",
+            "hobbies": "Football, Basketball, TV Shows"
+        },
+        {
+            "name": "Marcos Vedoya",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/marcos-vedoya-757574230/",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Nadya Keeney",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/nadyakeeney/",
+            "joined": "Spring 2023",
+            "image": "Nadya.jpg",
+            "major": "Economics",
+            "minor": "Finance",
+            "career_interest": "Strategy Consulting, Wealth Management",
+            "hobbies": "Gym, exploring new restaurants, reading, playing the violin"
+        },
+        {
+            "name": "Norah Kerendian",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/norahkerendian/",
+            "joined": "Spring 2023",
+            "image": "Norah.jpeg",
+            "major": "Data Science",
+            "minor": "Mathematics and Economics",
+            "career_interest": "Data Science"
+        },
+        {
+            "name": "Rahul Jones",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/rahul-jones-0838081a6/",
+            "joined": "Spring 2023",
+            "image": "Rahul.jpg",
+            "major": "Computer Science",
+            "career_interest": "Software engineering",
+            "hobbies": "Working out, hiking"
+        },
+        {
+            "name": "Sophia Fang",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/sophifang/",
+            "joined": "Spring 2023",
+            "image": "Sophia.jpg",
+            "major": "Data Science",
+            "minor": "Design",
+            "hobbies": "Baking, jigsaw puzzles"
+        },
+        {
+            "name": "Niha Ghosh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/niharika-ghosh-519b1b1a5/",
+            "joined": "Spring 2023",
+            "image": "Niha.jpg",
+            "major": "Cognitive Behavioral Neuroscience",
+            "minor": "Data Science",
+            "career_interest": "Neurotech, Data Analytics",
+            "hobbies": "Singing, Writing, Reading, Art"
+        },
+        {
+            "name": "Viv Tiwari",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/viv-tiwari/",
+            "joined": "N/A",
+            "image": "Viv.jpg"
+        },
+        {
+            "name": "Gabriel Bortoni",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/gabriel-bortoni/",
+            "joined": "Fall 2023",
+            "image": "person_2.jpg",
+            "major": "Electrical Engineering",
+            "career_interest": "Automation",
+            "hobbies": "Soccer and fantasy football"
+        },
+        {
+            "name": "Ganesh Kumarappan",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/ganeshkumar123/",
+            "joined": "Fall 2023",
+            "image": "Ganesh.jpg",
+            "major": "Data Science",
+            "career_interest": "Startups, data science, software engineering",
+            "hobbies": "Spikeball, Running, Pickup Sports"
+        },
+        {
+            "name": "Pranati Denduluri",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/pranati-denduluri/",
+            "joined": "N/A",
+            "image": "pranati.jpg"
+        },
+        {
+            "name": "Pranav Singh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/pranav-singh-usa/",
+            "joined": "N/A",
+            "image": "pranav.jpg"
+        },
+        {
+            "name": "David Lin",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/david-lin-792931291/",
+            "joined": "Fall 2023",
+            "image": "david.jpg",
+            "major": "Economics",
+            "minor": "Data Science",
+            "career_interest": "Finance, Consulting, Business Strategy",
+            "hobbies": "Golf, Basketball, Working Out, Rock Climbing"
+        },
+        {
+            "name": "Tyler Woo",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/tywoo/",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Krish Agarwal",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Pratibha Arun",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Treesha Chhabria",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Nirali Desai",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Katherine Hsieh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Jesse Huang",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Vivaan Laungani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Oliver Luong",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Anusha Malla",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sruti Mani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sophie Mandal",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sarah Pence",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Anirudh Rajesh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Rahul Raman",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Suhani Ranjan",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Sheida Sadeghi",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Jiarui Song",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Chloe Suwingno",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Gauri Swarup",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Veda Thota",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Mirabelle Trunk",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Irina Vardapetyan",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Michael Sagar Vasandani",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Paris Wei",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Kailey Wen",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Gavin Whitney",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        },
+        {
+            "name": "Luke Zheng",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/<placeholder>",
+            "joined": "N/A",
+            "image": "person_2.jpg"
+        }
+    ]
+}
