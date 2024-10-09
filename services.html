@@ -44,7 +44,7 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<link rel = "icon" href = "images/LumnusLogo_LC.png" type="image/x-icon"/>
+	<link rel = "icon" href = "images/LumnusLogo_LC_w_Background.png" type="image/x-icon"/>
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -73,6 +73,41 @@
 			max-height: 100px; /* Ensure consistent height with other brand images */
 			object-fit: contain; /* Make sure the image doesn't stretch or overflow */
 		}
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 	</style>
 	</head>
 	<body>
@@ -272,63 +307,48 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/AiMaster.png" alt="Free HTML5 Templates by freehtml5.co">
-						<h3>Ai-Master</h3>
-						<p>Conducted research to understand market size and target audience.</p>
-						
+					<div class="feature-center project-item" data-project="ai-master">
+						<img src="images/AiMaster.png" alt="Ai-Master">
+						<p></p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/Enstin.png" alt="Free HTML5 Templates by freehtml5.co">
-						<h3>Estin & Co.</h3>
-						<p>Collaborated with other Junior Enterprises across the United States to complete a comprehensive market research project.</p>
-						
+					<div class="feature-center project-item" data-project="estin">
+						<img src="images/Enstin.png" alt="Estin & Co.">
+						<p></p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/Dermala.gif" alt="Free HTML5 Templates by freehtml5.co">
-						</span>
-						<h3>Dermala</h3>
-						<p>Created and implemented client's marketing strategy, and launched a brand ambassador program at UCSD.</p>
-						
+					<div class="feature-center project-item" data-project="dermala">
+						<img src="images/Dermala.gif" alt="Dermala">
+						<p></p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
+					<div class="feature-center project-item" data-project="relyfe">
 						<img class="relyfe-image" src="images/ReLyfe.jpeg" alt="ReLyfe Logo">
-						<h3>ReLyfe</h3>
-						<p>Conducted market research to identify how mental health companies reach their target markets and to analyze college students' preferences on social media.</p>
-						
+						<p></p>
 					</div>
 				</div>
 				
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/MedCrypt.jpeg" alt="Free HTML5 Templates by freehtml5.co">
-						<h3>MedCrypt</h3>
-						<p>Produced several deliverables that aided the client's whitepaper development. These include reports on Implementation, Legal, Maintenance, and Risk.</p>
-						
+					<div class="feature-center project-item" data-project="medcrypt">
+						<img src="images/MedCrypt.jpeg" alt="MedCrypt">
+						<p></p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/Higi.jpeg" alt="Free HTML5 Templates by freehtml5.co">
-						<h3>HiGi</h3>
-						<p>Conducted US industry research and developed marketing and implementation strategies.</p>
-						
+					<div class="feature-center project-item" data-project="higi">
+						<img src="images/Higi.jpeg" alt="HiGi">
+						<p></p>
 					</div>
 				</div>
 				<!-- Placeholder for layout balance -->
 				<div class="col-md-4 col-sm-4"></div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="feature-center">
-						<img src="images/UCSDITS.jpeg" alt="Free HTML5 Templates by freehtml5.co">
-						<h3>UCSD ITS</h3>
-						<p>Conducted an analysis of onboarding strategies to increase clients' student-employee converstion rate.</p>
-						
+					<div class="feature-center project-item" data-project="ucsd-its">
+						<img src="images/UCSDITS.jpeg" alt="UCSD ITS">
+						<p></p>
 					</div>
 				</div>
 				<!-- Placeholder for layout balance -->
@@ -336,132 +356,35 @@
 				<div class="col-md-4 col-sm-4"></div>
 
 			</div>
-
-
 		</div>
 	</div>
 
-	<!-- <div id="gtco-subscribe">
-		<div class="gtco-container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Subscribe</h2>
-					<p>Be the first to know about the new templates.</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-12">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Your email">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="text" class="form-control" id="name" placeholder="Your name">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">Subscribe</button>
-						</div>
-					</form>
-				</div>
-			</div>
+	<!-- Modal -->
+	<div id="projectModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2 id="modalTitle"></h2>
+			<p id="modalDescription"></p>
 		</div>
-	</div> -->
+	</div>
 
-	<!-- <footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container">
-			<div class="row row-pb-md">
-				<div class="col-md-2 col-sm-4 col-xs-6 ">
-					<ul class="gtco-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6">
-					<ul class="gtco-footer-links">
-						<li><a href="#">Creative Design</a></li>
-						<li><a href="#">Branding</a></li>
-						<li><a href="#">Illustration</a></li>
-						<li><a href="#">Subscribe</a></li>
-						<li><a href="#">Monthly Event</a></li>
-					</ul>
-				</div>
-				
-				<div class="clearfix visible-xs-block"></div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6">
-					<ul class="gtco-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
-
-				<div class="clearfix visible-sm-block"></div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6">
-					<ul class="gtco-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
-					</ul>
-				</div>
-
-				<div class="clearfix visible-xs-block"></div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6">
-					<ul class="gtco-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Deelopers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6">
-					<ul class="gtco-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
-				
-			</div>
- -->
-			<div class="row copyright">
-				<div class="col-md-12">
-					<p class="pull-left">
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://FreeHTML5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p class="pull-right">
-						<ul class="gtco-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
+	<div class="row copyright">
+		<div class="col-md-12">
+			<p class="pull-left">
+				<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+				<small class="block">Designed by <a href="http://FreeHTML5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+			</p>
+			<p class="pull-right">
+				<ul class="gtco-social-icons pull-right">
+					<li><a href="#"><i class="icon-twitter"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="#"><i class="icon-linkedin"></i></a></li>
+					<li><a href="#"><i class="icon-dribbble"></i></a></li>
+				</ul>
+			</p>
 		</div>
-	</footer>
+	</div>
+
 	</div>
 
 	<div class="gototop js-top">
@@ -486,6 +409,70 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	<!-- Add this script before the closing body tag -->
+	<script>
+		// Project details
+		const projectDetails = {
+			'ai-master': {
+				title: 'Ai-Master',
+				description: 'Conducted research to understand market size and target audience.'
+			},
+			'estin': {
+				title: 'Estin & Co.',
+				description: 'Collaborated with other Junior Enterprises across the United States to complete a comprehensive market research project.'
+			},
+			'dermala': {
+				title: 'Dermala',
+				description: 'Created and implemented client\'s marketing strategy, and launched a brand ambassador program at UCSD.'
+			},
+			'relyfe': {
+				title: 'ReLyfe',
+				description: 'Conducted market research to identify how mental health companies reach their target markets and to analyze college students\' preferences on social media.'
+			},
+			'medcrypt': {
+				title: 'MedCrypt',
+				description: 'Produced several deliverables that aided the client\'s whitepaper development. These include reports on Implementation, Legal, Maintenance, and Risk.'
+			},
+			'higi': {
+				title: 'HiGi',
+				description: 'Conducted US industry research and developed marketing and implementation strategies.'
+			},
+			'ucsd-its': {
+				title: 'UCSD ITS',
+				description: 'Conducted an analysis of onboarding strategies to increase clients\' student-employee conversion rate.'
+			}
+		};
+
+		// Get modal elements
+		const modal = document.getElementById('projectModal');
+		const modalTitle = document.getElementById('modalTitle');
+		const modalDescription = document.getElementById('modalDescription');
+		const closeBtn = document.getElementsByClassName('close')[0];
+
+		// Add click event to project items
+		document.querySelectorAll('.project-item').forEach(item => {
+			item.addEventListener('click', function() {
+				const project = this.getAttribute('data-project');
+				const details = projectDetails[project];
+				
+				modalTitle.textContent = details.title;
+				modalDescription.textContent = details.description;
+				modal.style.display = 'block';
+			});
+		});
+
+		// Close modal when clicking the close button
+		closeBtn.onclick = function() {
+			modal.style.display = 'none';
+		}
+
+		// Close modal when clicking outside of it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
+	</script>
+
 	</body>
 </html>
-
