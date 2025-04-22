@@ -243,12 +243,21 @@
             "linkedin": "https://www.linkedin.com/in/rickyvannguyen/",
             "image": "ricky.jpg"
         },
+
         {
             "name": "Anirudh Rajesh",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/anirudhrajesh23/",
             "image": "ani.jpg"
         },
+
+        {
+            "name": "Giulio Rambelli",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/giuliorambelli/",
+            "image": "giulio.jpg"
+        },
+        
         {
             "name": "Pranav Rapthadu",
             "role": "Consultant",
@@ -264,7 +273,7 @@
         {
             "name": "Niharika Sapre",
             "role": "Consultant",
-            "linkedin": "",
+            "linkedin": "https://www.linkedin.com/in/niharikasapre/",
             "image": "niharika.JPG"
         },
         {
@@ -280,7 +289,7 @@
             "image": "pranav.jpg"
         },
         {
-            "name": "Chloe Suwingno",
+            "name": "Chloe Suwignjo",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/chloesuwignjo/",
             "image": "chloe.jpg"

@@ -51,9 +51,6 @@ def generate_team_html(team_members):
                         <li><a href="{executive['linkedin']}"><i class="icon-linkedin"></i></a></li>
                     </ul>
                 </div>
-                <div class="pop">
-                    {optional_fields(executive)}
-                </div>
             </div>
         </div>
         """
@@ -78,9 +75,6 @@ def generate_team_html(team_members):
                     <ul class="gtco-social-icons">
                         <li><a href="{consultant['linkedin']}"><i class="icon-linkedin"></i></a></li>
                     </ul>
-                </div>
-                <div class="pop">
-                    {optional_fields(consultant)}
                 </div>
             </div>
         </div>
