@@ -20,7 +20,7 @@
         },
         {
             "name": "Dari Gansukh",
-            "role": "VP Finance",
+            "role": "Co-VP Finance",
             "linkedin": "https://www.linkedin.com/in/darigansukh/",
             "joined": "",
             "image": "dari.jpg",
@@ -29,6 +29,13 @@
             "career_interest": "",
             "hobbies": ""
         },
+        {
+            "name": "Giulio Rambelli",
+            "role": "Co-VP Finance",
+            "linkedin": "https://www.linkedin.com/in/giuliorambelli/",
+            "image": "giulio.jpg"
+        },
+
         {
             "name": "Krish Agarwal",
             "role": "VP Sales",
@@ -62,15 +69,10 @@
             "hobbies": ""
         },
         {
-            "name": "Elizabeth Chang",
+            "name": "Anya Garg",
             "role": "Director of Internal Operations",
-            "linkedin": "https://www.linkedin.com/in/elizabeth-changg/",
-            "joined": "",
-            "image": "Elizabeth.JPG",
-            "major": "",
-            "minor": "",
-            "career_interest": "",
-            "hobbies": ""
+            "linkedin": "https://www.linkedin.com/in/anya-garg-011a90290/",
+            "image": "anya_garg.jpg"
         },
         {
             "name": "Irina Vardapetyan",
@@ -106,12 +108,6 @@
     ],
     "consultants": [
         {
-            "name": "Lewis Aguilar",
-            "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/lewis-aguilar-058a0b320/",
-            "image": "lewis.jpg"
-        },
-        {
             "name": "Srisaibhaavana Anna",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/srisaibhaavanaanna/",
@@ -124,16 +120,46 @@
             "image": "pratibha.jpg"
         },
         {
+            "name": "Amelia Badamjav",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/amelia-badamjav-a11617314/",
+            "image": "amelia_badamjav.JPG"
+        },
+        {
             "name": "Rishit Bhandari",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/rishit-bhandari-41a83647/",
             "image": "rishit.jpg"
         },
         {
-            "name": "Treesha Chhabria",
+            "name": "Elizabeth Chang",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/elizabeth-changg/",
+            "image": "Elizabeth.JPG"
+        },
+        {
+            "name": "Angela Chen",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/angela-chen-jiaqi1352/",
+            "image": "angela_chen.JPG"
+        },
+        {
+            "name": "Ethan Cheng",
             "role": "Consultant",
             "linkedin": "",
+            "image": "ethan_cheng.JPG"
+        },
+        {
+            "name": "Treesha Chhabria",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/treesha-chhabria-1b2642362/",
             "image": ""
+        },
+        {
+            "name": "Abhinav Chinnam",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/abhinav-chinnam/",
+            "image": "abhinav_chinnam.JPG"
         },
         {
             "name": "Isaiah De La Rosa",
@@ -148,22 +174,16 @@
             "image": "nirali_desai.jpg"
         },
         {
-            "name": "Kenneth Duong",
-            "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/kennethduong3204/",
-            "image": "Kenneth.jpg"
-        },
-        {
             "name": "Mina Garcia",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/mina-garcia-07a762242/",
             "image": "mina_garcia.jpg"
         },
         {
-            "name": "Anya Garg",
+            "name": "Ishaan Garg",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/anya-garg-011a90290/",
-            "image": "anya_garg.jpg"
+            "linkedin": "https://www.linkedin.com/in/ishaangarg06/",
+            "image": "ishaan_garg.JPG"
         },
         {
             "name": "Dayus Gohel",
@@ -178,10 +198,22 @@
             "image": "stacy_gubar.jpg"
         },
         {
-            "name": "Andrew Ha",
+            "name": "Eshwari Gundi",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/andrew-ha-127ba7291/",
-            "image": "andrew_ha.jpg"
+            "linkedin": "https://www.linkedin.com/in/eshwari-gundi-a61480229/",
+            "image": "eshwari_gundi.JPG"
+        },
+        {
+            "name": "Amey Gupta",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/amey-gupta/",
+            "image": "amey_gupta.JPG"
+        },
+        {
+            "name": "Jack Hassel",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/jack-hassel-407986291/",
+            "image": "jack_hassel.JPG"
         },
         {
             "name": "Katherine Hsieh",
@@ -196,10 +228,10 @@
             "image": "jesse_huang.jpg"
         },
         {
-            "name": "Jax Liescheidt",
+            "name": "Nikita Jain",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/jax-liescheidt-904b2b239/",
-            "image": "Jax.jpg"
+            "linkedin": "https://www.linkedin.com/in/nikita-jain-3a59522b5/",
+            "image": "nikita_jain.JPG"
         },
         {
             "name": "Yuchen Liu",
@@ -214,6 +246,12 @@
             "image": "sruti_mani.jpg"
         },
         {
+            "name": "Molly Marchese",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/mollymarchese/",
+            "image": "molly_marchese.JPG"
+        },
+        {
             "name": "Manu Matharasi",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/manasvin-matharasi/",
@@ -226,16 +264,16 @@
             "image": "parth.jpg"
         },
         {
-            "name": "Sweta Musini",
+            "name": "Emily Naka",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/sweta-musini/",
-            "image": "Sweta.jpg"
+            "linkedin": "https://www.linkedin.com/in/emilynaka/",
+            "image": "emily_naka.JPG"
         },
         {
-            "name": "Heera Narayanan",
+            "name": "Dylan Nelson",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/heera-narayanan/",
-            "image": "Heera.jpeg"
+            "linkedin": "https://www.linkedin.com/in/dylan-nelson-3501471b2/",
+            "image": "dylan_nelson.JPG"
         },
         {
             "name": "Ricky Nguyen",
@@ -243,21 +281,24 @@
             "linkedin": "https://www.linkedin.com/in/rickyvannguyen/",
             "image": "ricky.jpg"
         },
-
+        {
+            "name": "Tanay Parikh",
+            "role": "Consultant",
+            "linkedin": "https://www.linkedin.com/in/tanayjparikh/",
+            "image": "tanay_parikh.JPG"
+        },
         {
             "name": "Anirudh Rajesh",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/anirudhrajesh23/",
             "image": "ani.jpg"
         },
-
         {
-            "name": "Giulio Rambelli",
+            "name": "Nidhi Rajesh",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/giuliorambelli/",
-            "image": "giulio.jpg"
+            "linkedin": "https://www.linkedin.com/in/nidhi-rajesh-300645295/",
+            "image": "nidhi_rajesh.JPG"
         },
-        
         {
             "name": "Pranav Rapthadu",
             "role": "Consultant",
@@ -265,10 +306,10 @@
             "image": "pranav_rapthadu.jpg"
         },
         {
-            "name": "Sheida Sadeghi",
+            "name": "Varsha Reddy",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/sheida-sadeghi-751075284/",
-            "image": "sheida.jpg"
+            "linkedin": "https://www.linkedin.com/in/varshagreddy/",
+            "image": "varsha_reddy.JPG"
         },
         {
             "name": "Niharika Sapre",
@@ -277,28 +318,16 @@
             "image": "niharika.JPG"
         },
         {
-            "name": "Zachary Schuler",
+            "name": "Vihan Shah",
             "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/zachary--schuler/",
-            "image": "zachary_schuler.JPG"
-        },
-        {
-            "name": "Pranav Singh",
-            "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/pranav-singh-usa/",
-            "image": "pranav.jpg"
+            "linkedin": "https://www.linkedin.com/in/vihanshah/",
+            "image": "vihan_shah.JPG"
         },
         {
             "name": "Chloe Suwignjo",
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/chloesuwignjo/",
             "image": "chloe.jpg"
-        },
-        {
-            "name": "Ojasvi Tewari",
-            "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/ojasvi-tewari-a7b916192/",
-            "image": "Ojasvi.jpg"
         },
         {
             "name": "Veda Thota",
@@ -317,12 +346,6 @@
             "role": "Consultant",
             "linkedin": "https://www.linkedin.com/in/sumukhitunuguntla/",
             "image": "sumukhi.jpg"
-        },
-        {
-            "name": "Jacob Yang",
-            "role": "Consultant",
-            "linkedin": "https://www.linkedin.com/in/jacobyang1/",
-            "image": "Jacob.jpg"
         }
     ]
 }
