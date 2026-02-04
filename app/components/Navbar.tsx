@@ -15,22 +15,23 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-6 py-4 md:py-6">
+    <nav className="absolute top-0 left-0 right-0 z-50 px-6 md:px-8 py-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
-          href="/"
-          className="flex items-center gap-3 -ml-10 hover:opacity-80 transition-opacity"
-        >
-          <Image
-            src="/LumnusConsulting-logo.png"   
-            alt="Lumnus Consulting"
-            width={140}
-            height={44}
-            className="h-10 md:h-11 w-auto"
-            priority
-          />
-        </Link>
+  href="/"
+  className="flex items-center gap-3 -ml-2 -mt-0 hover:opacity-80 transition-opacity"
+>
+  <Image
+    src="/LumnusConsulting-logo.png"
+    alt="Lumnus Consulting"
+    width={220}
+    height={48}
+    className="w-auto h-11 md:h-12"
+    priority
+  />
+</Link>
+
 
         {/* Nav links */}
         <div className="flex items-center gap-8 text-white text-sm md:text-base font-medium tracking-wide">
