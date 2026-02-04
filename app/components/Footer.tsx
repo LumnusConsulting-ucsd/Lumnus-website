@@ -19,13 +19,13 @@ export default function Footer() {
         <div className="flex items-center gap-3">
         <div className="flex items-center gap-3 -ml-2 -mt-4">
         <Image
-          src="/LumnusConsulting-logo.png"
-          alt="Lumnus Consulting"
-          width={220}
-          height={48}
-          className="w-auto h-11 md:h-12"
-          priority
-        />
+        src="/LumnusConsulting-logo.png"
+        alt="Lumnus Consulting"
+        width={200}
+        height={44}
+        className="w-auto h-9 md:h-10"
+        priority
+      />
       </div>
         </div>
 
