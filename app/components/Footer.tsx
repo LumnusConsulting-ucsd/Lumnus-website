@@ -5,36 +5,41 @@ import { Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="relative pt-8 pb-24 px-8"
+      className="relative pt-12 pb-28 px-6 md:px-8"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/footer-hero.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: "105% auto",
+        backgroundPosition: "90% 68%"
+,
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         {/* Left Side - Logo */}
         <div className="flex items-center gap-3">
-          <Image
-            src="/LumnusConsulting-logo.png"
-            alt="Lumnus Consulting"
-            width={220}
-            height={48}
-          />
+        <div className="flex items-center gap-3 -ml-2 -mt-4">
+        <Image
+          src="/LumnusConsulting-logo.png"
+          alt="Lumnus Consulting"
+          width={220}
+          height={48}
+          className="w-auto h-11 md:h-12"
+          priority
+        />
+      </div>
         </div>
 
         {/* Right Side - Links and Social */}
-        <div className="flex flex-col md:flex-row items-start md:items-start gap-12">
+        <div className="flex flex-col md:flex-row items-start md:items-start gap-12 -mt-3">
           {/* Students Column */}
           <div>
-            <h3 className="text-white italic mb-3">
+            <h3 className="text-white italic mb-4 text-base md:text-lg">
               <strong>Students</strong>
             </h3>
             <div className="flex flex-col gap-2">
               <Link
                 href="/recruitment"
-                className="text-white underline hover:opacity-80 transition-opacity text-sm"
+                className="text-white underline hover:opacity-80 transition-opacity text-sm md:text-base"
               >
                 Apply
               </Link>
@@ -43,19 +48,19 @@ export default function Footer() {
 
           {/* Companies Column */}
           <div>
-            <h3 className="text-white italic mb-3">
+            <h3 className="text-white italic mb-4 text-base md:text-lg">
               <strong>Companies</strong>
             </h3>
             <div className="flex flex-col gap-2">
               <Link
                 href="/services"
-                className="text-white underline hover:opacity-80 transition-opacity text-sm"
+                className="text-white underline hover:opacity-80 transition-opacity text-sm md:text-base"
               >
                 Services
               </Link>
               <Link
                 href="/contact"
-                className="text-white underline hover:opacity-80 transition-opacity text-sm"
+                className="text-white underline hover:opacity-80 transition-opacity text-sm md:text-base"
               >
                 Contact Us
               </Link>
@@ -65,16 +70,16 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-4 mt-6 md:mt-0">
             <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Email">
-              <Mail size={20} />
+              <Mail size={24} />
             </a>
             <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Facebook">
-              <Facebook size={20} />
+              <Facebook size={24} />
             </a>
             <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram">
-              <Instagram size={20} />
+              <Instagram size={24} />
             </a>
             <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-              <Linkedin size={20} />
+              <Linkedin size={24} />
             </a>
           </div>
         </div>
