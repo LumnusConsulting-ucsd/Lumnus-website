@@ -16,7 +16,7 @@ export function WhatWeDoSection() {
         <Link href="/services">
         <button
         className="
-            bg-blue-950 hover:bg-blue-900 text-white
+            bg-blue-900 hover:bg-blue-950 text-white
             text-sm md:text-lg
             px-10 py-4
             rounded-full
