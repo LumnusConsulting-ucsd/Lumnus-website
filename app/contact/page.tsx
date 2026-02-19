@@ -1,123 +1,190 @@
-import { Mail, MapPin, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
-import heroImage from 'figma:asset/ae2d3b317876edf3dafcf49c4c5264ed7bf9896c.png';
+"use client";
 
-export function Contact() {
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { Input } from "@/app/components/ui/input";
+import { Textarea } from "@/app/components/ui/textarea";
+import { Label } from "@/app/components/ui/label";
+import { toast } from "sonner";
+
+const heroImage = "/IMG_9269.JPG";
+
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    console.log("Form submitted:", formData);
+
+    toast.success("Message sent successfully!", {
+      description: "We'll get back to you as soon as possible.",
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <>
       {/* Hero Section */}
-      <section 
-        className="relative h-[60vh] flex items-center justify-center"
+      <section
+        className="relative h-[40vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${heroImage}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 35%',
-          backgroundAttachment: 'fixed',
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 35%",
+          backgroundAttachment: "fixed",
         }}
       >
-        <h1 className="text-white text-5xl md:text-6xl tracking-wider">
-          GET IN TOUCH
-        </h1>
+        <h1 className="text-white text-5xl md:text-6xl font-medium tracking-tight uppercase">
+        WORK WITH US
+      </h1>
       </section>
 
-      {/* Contact Information and Stay Updated Section */}
-      <section className="py-24 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-32">
-            {/* Contact Information */}
-            <div className="flex justify-center md:justify-end md:pr-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl mb-8 tracking-wider text-center">
-                  Contact Information
-                </h2>
-
-                <div className="flex justify-center">
-                  <div className="flex flex-col gap-4">
-                    {/* Email */}
-                    <div className="flex items-center gap-3">
-                      <Mail className="text-blue-900 flex-shrink-0" size={20} />
-                      <a 
-                        href="mailto:contact@lumnusconsulting.net" 
-                        className="text-blue-900 hover:underline"
-                      >
-                        contact@lumnusconsulting.net
-                      </a>
-                    </div>
-
-                    {/* Website */}
-                    <div className="flex items-center gap-3">
-                      <Globe className="text-blue-900 flex-shrink-0" size={20} />
-                      <a 
-                        href="https://lumnusconsulting.net" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-900 hover:underline"
-                      >
-                        lumnusconsulting.net
-                      </a>
-                    </div>
-
-                    {/* Address */}
-                    <div className="flex items-start gap-3">
-                      <MapPin className="text-blue-900 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-gray-700">9500 Gilman Dr.</p>
-                        <p className="text-gray-700">La Jolla, CA 92093</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      {/* Contact Form Section */}
+      <ScrollFade>
+        <section className="py-20 px-8 bg-white">
+          <div className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
+                />
               </div>
-            </div>
 
-            {/* Stay Updated */}
-            <div className="flex justify-center md:justify-start">
-              <div>
-                <h2 className="text-2xl md:text-3xl mb-8 tracking-wider text-center">
-                  Stay Updated with Lumnus
-                </h2>
-
-                <div className="flex justify-center gap-8">
-                  <a
-                    href="https://www.facebook.com/lumnusconsulting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
-                  >
-                    <div className="w-16 h-16 bg-blue-900 hover:bg-blue-950 rounded-full flex items-center justify-center transition-colors">
-                      <Facebook className="text-white" size={32} />
-                    </div>
-                    <span className="text-gray-700">Facebook</span>
-                  </a>
-
-                  <a
-                    href="https://www.instagram.com/lumnusconsulting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
-                  >
-                    <div className="w-16 h-16 bg-blue-900 hover:bg-blue-950 rounded-full flex items-center justify-center transition-colors">
-                      <Instagram className="text-white" size={32} />
-                    </div>
-                    <span className="text-gray-700">Instagram</span>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/company/lumnus-consulting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
-                  >
-                    <div className="w-16 h-16 bg-blue-900 hover:bg-blue-950 rounded-full flex items-center justify-center transition-colors">
-                      <Linkedin className="text-white" size={32} />
-                    </div>
-                    <span className="text-gray-700">LinkedIn</span>
-                  </a>
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your.email@example.com"
+                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
+                />
               </div>
-            </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject</Label>
+                <Input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="What is this regarding?"
+                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your message..."
+                  rows={6}
+                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full max-w-md mx-auto block bg-blue-950 hover:bg-blue-900 text-white text-sm px-8 py-3 rounded-full font-medium transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
+        </section>
+      </ScrollFade>
+
+      {/* Stay Updated Section */}
+      <ScrollFade>
+        <section className="py-24 px-8 bg-gray-50">
+  <div className="max-w-2xl mx-auto">
+    <h2 className="text-3xl md:text-4xl tracking-wider text-center text-black mb-12">
+  Stay Updated with Lumnus
+</h2>
+
+    <div className="flex justify-center gap-14 mb-14">
+      <a
+        href="https://www.facebook.com/lumnusconsulting"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
+      >
+        <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+          <Facebook className="text-white" size={36} />
         </div>
-      </section>
+        <span className="text-gray-700 text-lg">Facebook</span>
+      </a>
+
+      <a
+        href="https://www.instagram.com/lumnusconsulting"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
+      >
+        <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+          <Instagram className="text-white" size={36} />
+        </div>
+        <span className="text-gray-700 text-lg">Instagram</span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/company/lumnus-consulting"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
+      >
+        <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+          <Linkedin className="text-white" size={36} />
+        </div>
+        <span className="text-gray-700 text-lg">LinkedIn</span>
+      </a>
+    </div>
+
+    <p className="text-center text-blue-950 text-2xl md:text-3xl font-medium">
+      contact@lumnusconsulting.net
+    </p>
+  </div>
+</section>
+      </ScrollFade>
     </>
   );
 }
