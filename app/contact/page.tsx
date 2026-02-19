@@ -1,5 +1,8 @@
 "use client";
 
+import { FadeInOnScroll } from "../components/fade-scroll";
+
+
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { Input } from "@/app/components/ui/input";
@@ -62,7 +65,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form Section */}
-      <ScrollFade>
+      <FadeInOnScroll delayMs={100}>
         <section className="py-20 px-8 bg-white">
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -131,10 +134,10 @@ export default function Contact() {
             </form>
           </div>
         </section>
-      </ScrollFade>
+        </FadeInOnScroll>
 
       {/* Stay Updated Section */}
-      <ScrollFade>
+      <FadeInOnScroll delayMs={100}>
         <section className="py-24 px-8 bg-gray-50">
   <div className="max-w-2xl mx-auto">
     <h2 className="text-3xl md:text-4xl tracking-wider text-center text-black mb-12">
@@ -179,12 +182,12 @@ export default function Contact() {
       </a>
     </div>
 
-    <p className="text-center text-blue-950 text-2xl md:text-3xl font-medium">
+    <p className="text-center text-blue-950 text-2xl md:text-2xl font-medium">
       contact@lumnusconsulting.net
     </p>
   </div>
 </section>
-      </ScrollFade>
+  </FadeInOnScroll>
     </>
   );
 }
