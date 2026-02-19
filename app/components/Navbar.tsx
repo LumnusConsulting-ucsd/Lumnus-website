@@ -39,6 +39,7 @@ export default function Navbar() {
             ["/about", "ABOUT"],
             ["/services", "SERVICES"],
             ["/projects", "PROJECTS"],
+            ["/insights", "INSIGHTS"],
             ["/recruitment", "RECRUITMENT"],
             ["/donation", "SPONSOR"],
             ["/contact", "CONTACT"],

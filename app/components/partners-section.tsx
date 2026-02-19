@@ -8,7 +8,7 @@ export function PartnersSection() {
       <section className="relative py-24 px-8 bg-white z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* TITLE */}
-          <h2 className="text-3xl md:text-5xl mb-12">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-12">
             Our Partners
           </h2>
 
