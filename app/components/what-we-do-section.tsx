@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { FadeInOnScroll } from "./fade-scroll";
 
 export function WhatWeDoSection() {
   return (
+    <FadeInOnScroll delayMs={100}>
     <section id="services" className="relative py-24 px-8 bg-white z-10">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl mb-8">What We Do</h2>
@@ -29,5 +33,6 @@ export function WhatWeDoSection() {
         </Link>
       </div>
     </section>
+    </FadeInOnScroll>
   );
 }

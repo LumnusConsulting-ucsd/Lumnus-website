@@ -1,4 +1,5 @@
 "use client";
+import { FadeInOnScroll } from "./fade-scroll";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -53,12 +54,13 @@ export function StatsSection() {
   }, [hasAnimated]);
 
   return (
+    <FadeInOnScroll delayMs={100}>
     <section
       ref={sectionRef}
       className="relative py-32 px-8"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('/images/stats-bg.png')",
+          "linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('/IMG_7045.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -81,5 +83,6 @@ export function StatsSection() {
         </div>
       </div>
     </section>
+    </FadeInOnScroll>
   );
 }

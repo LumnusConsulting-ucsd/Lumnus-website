@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { FadeInOnScroll } from "./fade-scroll";
 import {
   Carousel,
   CarouselContent,
@@ -48,6 +49,7 @@ export function TestimonialsSection() {
   }, [api]);
 
   return (
+    <FadeInOnScroll delayMs={100}>
     <section className="py-20 px-8 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-center text-3xl md:text-4xl mb-12">
@@ -125,5 +127,6 @@ export function TestimonialsSection() {
         </div>
       </div>
     </section>
+    </FadeInOnScroll>
   );
 }

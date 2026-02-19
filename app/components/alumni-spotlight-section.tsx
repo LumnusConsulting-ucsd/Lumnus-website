@@ -1,4 +1,5 @@
 "use client";
+import { FadeInOnScroll } from "./fade-scroll";
 
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
@@ -51,7 +52,7 @@ export function AlumniSpotlightSection() {
       className="relative py-20 px-8"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/alumni-bg.png')",
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/IMG_7327.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",

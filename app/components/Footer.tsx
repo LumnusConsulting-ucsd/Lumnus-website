@@ -68,20 +68,47 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4 mt-6 md:mt-0">
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Email">
-              <Mail size={24} />
-            </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Facebook">
-              <Facebook size={24} />
-            </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram">
-              <Instagram size={24} />
-            </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-              <Linkedin size={24} />
-            </a>
-          </div>
+          {/* Social Icons */}
+<div className="flex items-center gap-4 mt-6 md:mt-0">
+  <Link
+    href="/contact"
+    className="text-white hover:opacity-80 transition-opacity"
+    aria-label="Contact"
+  >
+    <Mail size={24} />
+  </Link>
+
+  <a
+    href="https://www.linkedin.com/company/lumnus/posts/?feedView=all"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:opacity-80 transition-opacity"
+    aria-label="LinkedIn"
+  >
+    <Linkedin size={24} />
+  </a>
+
+  <a
+    href="https://www.instagram.com/lumnusconsulting/?hl=en"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:opacity-80 transition-opacity"
+    aria-label="Instagram"
+  >
+    <Instagram size={24} />
+  </a>
+
+  <a
+    href="https://www.facebook.com/LumnusConsulting/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:opacity-80 transition-opacity"
+    aria-label="Facebook"
+  >
+    <Facebook size={24} />
+  </a>
+</div>
+
         </div>
       </div>
     </footer>
