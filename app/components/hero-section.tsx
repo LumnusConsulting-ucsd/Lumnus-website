@@ -1,5 +1,6 @@
 "use client";
 
+import { HeroFadeText } from "./hero-fade-text";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
@@ -24,7 +25,8 @@ export function HeroSection() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="text-center text-white px-8">
+      {/* 🔥 Text Fade + Pop Animation */}
+      <HeroFadeText className="text-center text-white px-8">
         <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
 
         <h1 className="text-5xl md:text-7xl tracking-wider mb-6">
@@ -52,8 +54,9 @@ export function HeroSection() {
             Learn More
           </button>
         </Link>
-      </div>
+      </HeroFadeText>
 
+      {/* Scroll Arrow */}
       <button
         onClick={scrollToWhatWeDo}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:opacity-80 transition-opacity"
