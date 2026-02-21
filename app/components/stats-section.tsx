@@ -62,7 +62,7 @@ export function StatsSection() {
         backgroundImage:
           "linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('/IMG_7045.png')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center 32%",
         backgroundAttachment: "fixed",
       }}
     >
