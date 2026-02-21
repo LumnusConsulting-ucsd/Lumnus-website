@@ -41,7 +41,7 @@ export default function Navbar() {
             ["/projects", "PROJECTS"],
             ["/insights", "INSIGHTS"],
             ["/recruitment", "RECRUITMENT"],
-            ["/donation", "SPONSOR"],
+            ["/sponsor", "SPONSOR"],
             ["/contact", "CONTACT"],
           ].map(([href, label]) => (
             <Link
