@@ -7,6 +7,7 @@ const heroImage = '/hero-services.jpg';
 const workWithUsImage = '/work-with-us.jpg';
 import { TestimonialsSection } from '../components/testimonials-section';
 
+
 export default function Services() {
   const [expandedServices, setExpandedServices] = useState<Set<number>>(new Set());
 
@@ -21,6 +22,25 @@ export default function Services() {
       return newSet;
     });
   };
+  const pastClients = [
+    'ASL FLurry',
+    'Automind',
+    'BRG Energies',
+    'Describe',
+    'Digital Pool',
+    'Estin & Co',
+    'Elit Group',
+    'Marnova',
+    'MedCrypt',
+    'MyGrow',
+    'NanoMood',
+    'Nara Financial Literacy',
+    'Papillon Theraputics',
+    "Skill Tree",
+    "Wild Genomics",
+    "ZeroN"
+  ];
+
   const services = [
     {
       icon: Eye,
@@ -83,10 +103,12 @@ export default function Services() {
       <section 
         className="relative h-[50vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${heroImage}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "125% auto",
+          backgroundPosition: "0% 55%",
+          backgroundAttachment: "fixed",
         }}
       >
         <h1 className="text-white text-5xl md:text-6xl tracking-wider">
@@ -250,7 +272,7 @@ export default function Services() {
       <section 
         className="relative py-32 px-8"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${workWithUsImage}')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Services-image2.JPG')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -324,43 +346,14 @@ export default function Services() {
             Past Clients
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-            {/* Company Logos */}
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Lorem Inc</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Ipsum Corp</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Dolor Ltd</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Sit Amet</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Consectetur</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Adipiscing</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Elit Group</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Sed Partners</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Tempus Co</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Magna LLC</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Aliqua Inc</div>
-            </div>
-            <div className="flex items-center justify-center py-8">
-              <div className="text-2xl font-bold text-gray-400">Enim Ltd</div>
-            </div>
+            {pastClients.map((client) => (
+              <div
+                key={client}
+                className="flex items-center justify-center py-8"
+              >
+                <div className="text-2xl font-bold text-gray-400">{client}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
