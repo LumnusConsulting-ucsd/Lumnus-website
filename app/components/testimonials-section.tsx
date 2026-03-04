@@ -15,26 +15,20 @@ const testimonials = [
     id: 1,
     quote: "I'm very happy with the work Lumnus has done and the initiative from the project team. I get instant responses and work done within the same day. Very high-quality work and great results.",
     name: "Kishan Pansuria",
-    title: "Co-Founder of Describe and Lumnus Alum",
-    logo: describeLogo,
+    title: "Co-Founder of Describe",
+    // logo: describeLogo,
   },
   {
     id: 2,
-    quote: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
-    name: "Person 1",
-    title: "Founder of Company",
+    quote: "Working with Lumnus Consulting was a real pleasure! Their consultants are eager to learn and explore, and were always responsive to my requests and suggestions. We walked away with a better understanding of our customers, which is likely to have a real impact on how we deliver our precision biomonitoring services. We would be thrilled to work with Lumnus Consulting again.",
+    name: "Representative",
+    title: "Wild Genomics",
   },
   {
     id: 3,
     quote: "Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.",
     name: "Person 2",
     title: "CEO of Company",
-  },
-  {
-    id: 4,
-    quote: "Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.",
-    name: "Person 3",
-    title: "Director of Company",
   },
 ];
 
