@@ -5,10 +5,7 @@ import {
   Users,
   TrendingUp,
   Briefcase,
-  Handshake,
   ArrowRight,
-  Check,
-  Mail,
 } from "lucide-react";
 import { FadeInOnScroll } from "../components/fade-scroll";
 
@@ -29,7 +26,7 @@ export default function SponsorPage() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!contactName || !email) {
@@ -37,7 +34,44 @@ export default function SponsorPage() {
       return;
     }
 
-    alert("Sponsorship inquiry submitted!");
+    const amount =
+      customAmount !== ""
+        ? Number(customAmount)
+        : selectedAmount !== null
+        ? selectedAmount
+        : null;
+
+    if (!amount) {
+      alert("Please select or enter an amount.");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount,
+          isOngoing,
+          orgName,
+          contactName,
+          email,
+          message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Checkout failed.");
+      }
+
+      window.location.href = data.url;
+    } catch (err: any) {
+      alert(err.message);
+    }
   };
 
   return (
@@ -99,121 +133,135 @@ export default function SponsorPage() {
 
       {/* Sponsor Form */}
       <section id="sponsor-form" className="py-24 px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl mb-4">Become a Sponsor</h2>
-            <p className="text-gray-600 text-lg">
-              Choose an amount below or enter a custom amount to support Lumnus Consulting.
+        <form onSubmit={handleSubmit}>
+          <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-8 md:p-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl mb-4">Become a Sponsor</h2>
+              <p className="text-gray-600 text-lg">
+                Choose an amount below or enter a custom amount to support Lumnus Consulting.
+              </p>
+            </div>
+
+            {/* Toggle */}
+            <div className="mb-8 flex justify-center">
+              <div className="inline-flex bg-gray-100 rounded-lg p-1">
+                <button
+                  type="button"
+                  onClick={() => setIsOngoing(false)}
+                  className={`px-8 py-3 rounded-lg transition ${
+                    !isOngoing
+                      ? "bg-blue-950 text-white shadow-md"
+                      : "text-gray-700"
+                  }`}
+                >
+                  One-Time
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsOngoing(true)}
+                  className={`px-8 py-3 rounded-lg transition ${
+                    isOngoing
+                      ? "bg-blue-950 text-white shadow-md"
+                      : "text-gray-700"
+                  }`}
+                >
+                  Monthly
+                </button>
+              </div>
+            </div>
+
+            {/* Suggested Amounts */}
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              {suggestedAmounts.map((amount) => (
+                <button
+                  type="button"
+                  key={amount}
+                  onClick={() => {
+                    setSelectedAmount(amount);
+                    setCustomAmount("");
+                  }}
+                  className={`py-4 px-6 border-2 rounded-lg transition ${
+                    selectedAmount === amount && !customAmount
+                      ? "border-blue-950 bg-blue-950 text-white"
+                      : "border-gray-300 bg-white hover:border-blue-950"
+                  }`}
+                >
+                  <div className="font-medium">
+                    ${amount}
+                    {isOngoing ? "/mo" : ""}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Custom */}
+            <div className="mb-8">
+              <label className="block mb-2"> Or Enter Custom Amount</label>
+              <input
+                placeholder="$"
+                type="number"
+                value={customAmount}
+                onChange={(e) => {
+                  setCustomAmount(e.target.value);
+                  setSelectedAmount(null);
+                }}
+                className="w-full px-4 py-3 border rounded-lg"
+              />
+            </div>
+
+            <div className="w-full h-[1px] bg-gray-600 mb-6" />
+
+            {/* Info */}
+            <div className="space-y-6 mb-8">
+              <label className="block mb-2"> Organization</label>
+              <input
+                type="text"
+                value={orgName}
+                onChange={(e) => setOrgName(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg"
+              />
+
+              <label className="block mb-2">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg"
+              />
+
+              <label className="block mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg"
+              />
+
+              <label className="block mb-2"> Message (Optional)</label>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={4}
+                className="w-full px-4 py-3 border rounded-lg resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-950 hover:bg-blue-900 text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2"
+            >
+              Continue to Payment
+            </button>
+
+            <p className="text-center text-md text-gray-500 mt-5">
+              Your donation will be processed securely. Tax receipt will be sent to your email.
             </p>
           </div>
-
-          {/* Toggle */}
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex bg-gray-100 rounded-lg p-1">
-              <button
-                onClick={() => setIsOngoing(false)}
-                className={`px-8 py-3 rounded-lg transition ${
-                  !isOngoing
-                    ? "bg-blue-950 text-white shadow-md"
-                    : "text-gray-700"
-                }`}
-              >
-                One-Time
-              </button>
-              <button
-                onClick={() => setIsOngoing(true)}
-                className={`px-8 py-3 rounded-lg transition ${
-                  isOngoing
-                    ? "bg-blue-950 text-white shadow-md"
-                    : "text-gray-700"
-                }`}
-              >
-                Monthly
-              </button>
-            </div>
-          </div>
-
-          {/* Suggested Amounts */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            {suggestedAmounts.map((amount) => (
-              <button
-                key={amount}
-                onClick={() => {
-                  setSelectedAmount(amount);
-                  setCustomAmount("");
-                }}
-                className={`py-4 px-6 border-2 rounded-lg transition ${
-                  selectedAmount === amount && !customAmount
-                    ? "border-blue-950 bg-blue-950 text-white"
-                    : "border-gray-300 bg-white hover:border-blue-950"
-                }`}
-              >
-                <div className="font-medium">
-                  ${amount}
-                  {isOngoing ? "/mo" : ""}
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Custom */}
-          <div className="mb-8">
-            <label className="block mb-2"> Or Enter Custom Amount</label>
-            <input
-              placeholder="$"
-              type="number"
-              value={customAmount}
-              onChange={(e) => {
-                setCustomAmount(e.target.value);
-                setSelectedAmount(null);
-              }}
-              className="w-full px-4 py-3 border rounded-lg"
-            />
-          </div>
-          <div className="w-full h-[1px] bg-gray-600 mb-6" />
-          {/* Info */}
-          <div className="space-y-6 mb-8">
-          <label className="block mb-2"> Organization</label>
-            <input
-              type="text"
-              value={orgName}
-              onChange={(e) => setOrgName(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg"
-            />
-            <label className="block mb-2"> Full Name <span className="text-red-500">*</span></label>
-            <input
-              type="text"
-              value={contactName}
-              onChange={(e) => setContactName(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg"
-            />
-            <label className="block mb-2"> Email Address <span className="text-red-500">*</span></label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg"
-            />
-            <label className="block mb-2"> Message (Optional)</label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              rows={4}
-              className="w-full px-4 py-3 border rounded-lg resize-none"
-            />
-          </div>
-
-          <button
-            onClick={handleSubmit}
-            className="w-full bg-blue-950 hover:bg-blue-900 text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2"
-          >
-            Continue to Payment
-          </button>
-
-          <p className="text-center text-md text-gray-500 mt-5">
-  Your donation will be processed securely. Tax receipt will be sent to your email.
-</p>
-        </div>
+        </form>
       </section>
     </>
   );

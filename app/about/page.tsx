@@ -220,7 +220,7 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center justify-center text-center">
                 <h2 className="text-3xl md:text-4xl mb-6 font-medium">Mission Statement</h2>
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                <p className="text-gray-600 leading-relaxed text-xl mb-6">
                   To empower students with real-world business experience while
                   delivering high-quality professional services to our clients.
                 </p>
@@ -232,7 +232,7 @@ export default function About() {
                 <img
                   src={missionImage}
                   alt="Mission"
-                  className="w-full h-[400px] rounded-lg shadow-lg object-cover"
+                  className="w-full h-[420px] rounded-lg shadow-lg object-cover object-[50%_77%]"
                 />
               </div>
             </div>
@@ -305,7 +305,7 @@ export default function About() {
 
       {/* Where Alumni Work Section */}
       <FadeInOnScroll>
-        <section className="relative pb-20 px-8 bg-white z-10">
+        <section className="relative pt-10 pb-20 px-8 bg-white z-10">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium">
               Where Our Consultants Have Been
