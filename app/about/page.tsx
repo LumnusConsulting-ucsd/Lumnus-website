@@ -171,12 +171,11 @@ function MemberCard({
       <h4 className="mb-1 font-medium text-gray-800 truncate px-1" title={name}>
         {name}
       </h4>
-      <p className="text-gray-500 text-sm mb-2">{committee}</p>
       <a
+        className="mt-2 inline-flex items-center justify-center text-blue-950 hover:text-blue-900 transition-colors"
         href={linkedin || "#"}
         target={linkedin ? "_blank" : undefined}
         rel={linkedin ? "noopener noreferrer" : undefined}
-        className="inline-flex items-center justify-center text-blue-950 hover:text-blue-900 transition-colors"
         aria-label={`${name} LinkedIn`}
       >
         <Linkedin size={18} />
