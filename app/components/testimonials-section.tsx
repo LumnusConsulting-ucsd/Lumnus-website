@@ -25,12 +25,6 @@ const testimonials = [
     name: "Representative",
     title: "Wild Genomics",
   },
-  {
-    id: 3,
-    quote: "Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.",
-    name: "Person 2",
-    title: "CEO of Company",
-  },
 ];
 
 export function TestimonialsSection() {

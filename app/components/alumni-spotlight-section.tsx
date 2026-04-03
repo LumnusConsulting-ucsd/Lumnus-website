@@ -101,7 +101,7 @@ export function AlumniSpotlightSection() {
   {person.title} at <span className="font-semibold">{person.company}</span>
 </p>
                         
-                          <p className="text-gray-700 leading-relaxed">
+                          <p className="text-gray-700 leading-relaxed italic">
                             "{person.quote}"
                           </p>
                         </div>
