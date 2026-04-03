@@ -73,17 +73,19 @@ export function AlumniSpotlightSection() {
                   <div className="px-4">
                     <div className="bg-white rounded-3xl shadow-md overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2">
-                      <div className="relative h-[420px] md:h-[520px] overflow-hidden">
+                      <div className="relative h-[360px] md:h-[440px] overflow-hidden">
                           {person.photo ? (
                             <img
-                              src={person.photo}
-                              alt={person.name}
-                              className="block w-full h-full object-cover object-[50%_90%]"
-                              style={{
-                                filter:
-                                  "drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))",
-                              }}
-                            />
+                            src={person.photo}
+                            alt={person.name}
+                            className="block w-full h-full object-cover"
+                            style={{
+                              objectPosition:
+                                person.name === "Cariappa Kodira" ? "50% 30%" : "50% 90%",
+                              filter: "drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))",
+                            }}
+                          />
+                              
                           ) : (
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                               <User className="w-24 h-24 text-gray-400" />
@@ -92,16 +94,14 @@ export function AlumniSpotlightSection() {
                         </div>
 
                         <div className="p-6 md:pl-4 md:pr-6 flex flex-col justify-center">
-                          <h3 className="text-2xl md:text-3xl font-semibold">
+                        <h3 className="text-xl md:text-2xl font-semibold">
                             {person.name}
                           </h3>
-                          <p className="text-gray-600 mb-2 text-lg">
-                            {person.title}
-                          </p>
-                          <p className="text-blue-900 mb-6 text-lg">
-                            {person.company}
-                          </p>
-                          <p className="text-gray-700 leading-relaxed italic">
+                          <p className="text-gray-600 mb-6 text-lg">
+  {person.title} at <span className="font-semibold">{person.company}</span>
+</p>
+                        
+                          <p className="text-gray-700 leading-relaxed">
                             "{person.quote}"
                           </p>
                         </div>

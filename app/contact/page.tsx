@@ -76,12 +76,12 @@ export default function Contact() {
         className="relative h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
-          backgroundSize: "80%",
-          backgroundPosition: "center 60%",
+          backgroundSize: "70%",
+          backgroundPosition: "center 65%",
           backgroundAttachment: "fixed",
         }}
       >
-        <h1 className="text-white text-5xl md:text-6xl font-medium tracking-tight uppercase">
+        <h1 className="text-white text-4xl md:text-5xl font-medium tracking-tight uppercase">
           WORK WITH US
         </h1>
       </section>
@@ -164,7 +164,7 @@ export default function Contact() {
         <section className="py-24 px-8 bg-gray-50">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl tracking-wider text-center text-black mb-12">
-              Stay Updated with Lumnus
+              Stay Updated With Lumnus
             </h2>
 
             <div className="flex justify-center gap-14 mb-14">

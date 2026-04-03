@@ -101,7 +101,7 @@ export default function Services() {
     <>
       {/* Hero Section */}
       <section 
-        className="relative h-[50vh] flex items-center justify-center"
+        className="relative h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
@@ -111,7 +111,7 @@ export default function Services() {
           backgroundAttachment: "fixed",
         }}
       >
-        <h1 className="text-white text-5xl md:text-6xl tracking-wider">
+        <h1 className="text-white text-4xl md:text-5xl tracking-wider">
           OUR SERVICES
         </h1>
       </section>

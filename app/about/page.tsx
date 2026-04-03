@@ -193,7 +193,7 @@ export default function About() {
     <div className="w-full font-medium text-sm antialiased transition-all">
       {/* About Hero Section */}
       <section
-        className="relative h-[55vh] flex items-center justify-center"
+        className="relative h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${heroImage}')`,
           backgroundSize: "cover",

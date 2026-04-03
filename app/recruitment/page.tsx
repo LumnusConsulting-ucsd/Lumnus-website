@@ -10,11 +10,11 @@ export default function Recruitment() {
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/recruitment.JPEG')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 80%',
+          backgroundPosition: 'center 120%',
           backgroundAttachment: 'fixed',
         }}
       >
-        <h1 className="text-white text-5xl md:text-6xl tracking-wider text-center px-4">
+        <h1 className="text-white text-4xl md:text-5xl tracking-wider text-center px-4">
           SPRING 2026 RECRUITMENT
         </h1>
       </section>
@@ -30,12 +30,12 @@ export default function Recruitment() {
             We're looking for passionate students to join Lumnus Consulting. Fill out our interest form for <span className="underline">Spring 2026 Recruitment</span> to learn more about opportunities and start your application.
           </p>
           <a
-            href="https://forms.gle/your-google-form-link"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdvqo5TfS14-LYCSvGX5HmuVMUBd70zS2a95IoFNtysw8MnzA/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-colors"
           >
-            INTEREST FORM
+            Interest Form
           </a>
         </div>
       </section>

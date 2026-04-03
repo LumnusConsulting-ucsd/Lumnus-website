@@ -78,26 +78,26 @@ export default function SponsorPage() {
     <>
       {/* Hero Section */}
       <section
-        className="md:h-[50vh] flex items-center justify-center"
+        className="md:h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
-          backgroundSize: "130%",
-          backgroundPosition: "center 75%",
+          backgroundSize: "115%",
+          backgroundPosition: "center 100%",
           backgroundAttachment: "fixed",
         }}
       >
         <div className="text-center text-white px-8 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl tracking-wider mb-6">
-            SUPPORT LUMNUS
+  <h1 className="text-4xl md:text-5xl tracking-wider mb-6">
+    SUPPORT LUMNUS
           </h1>
           <button
-            onClick={scrollToForm}
-            className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-colors inline-flex items-center gap-2"
-          >
-            Become a Sponsor
-            <ArrowRight size={20} />
-          </button>
+  onClick={scrollToForm}
+  className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-base px-8 py-3 rounded-full font-medium transition-colors inline-flex items-center gap-2"
+>
+  Become a Sponsor
+  <ArrowRight size={18} />
+</button>
         </div>
       </section>
 
@@ -136,7 +136,7 @@ export default function SponsorPage() {
         <form onSubmit={handleSubmit}>
           <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-8 md:p-12">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl mb-4">Become a Sponsor</h2>
+              <h2 className="text-3xl md:text-4xl mb-4">Become a Sponsor</h2>
               <p className="text-gray-600 text-lg">
                 Choose an amount below or enter a custom amount to support Lumnus Consulting.
               </p>
