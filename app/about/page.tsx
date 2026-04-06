@@ -210,7 +210,7 @@ export default function About() {
     <div className="w-full font-medium text-sm antialiased transition-all">
       {/* About Hero Section */}
       <section
-        className="relative h-[55vh] flex items-center justify-center"
+        className="relative h-[50vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${heroImage}')`,
           backgroundSize: "cover",
@@ -231,7 +231,7 @@ export default function About() {
 
       {/* Mission Statement Section */}
       <FadeInOnScroll>
-        <section className="relative py-24 px-8 bg-white z-10 w-full">
+        <section className="relative py-16 px-8 bg-white z-10 w-full">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center justify-center text-center">
@@ -240,15 +240,20 @@ export default function About() {
                   To empower students with real-world business experience while
                   delivering high-quality professional services to our clients.
                 </p>
-                <Button asChild size="lg" className="rounded-full px-10 py-4 text-sm md:text-base bg-blue-950 hover:bg-blue-900">
-                  <Link href="/recruitment">Join Us</Link>
-                </Button>
+                <Button
+  asChild
+  size="lg"
+  className="!rounded-full px-8 py-3 text-sm md:text-base bg-blue-950 hover:bg-blue-900 font-medium"
+>
+  <Link href="/recruitment">Join Us</Link>
+</Button>
               </div>
               <div>
                 <img
                   src={missionImage}
                   alt="Mission"
-                  className="w-full h-[400px] rounded-lg shadow-lg object-cover"
+                  className="w-[80%] h-[340px] mx-auto rounded-lg shadow-lg object-cover"
+                  style={{ objectPosition: 'center 75%' }}
                 />
               </div>
             </div>

@@ -4,7 +4,7 @@ import { ArrowRight, Download, X } from 'lucide-react';
 import { useState } from 'react';
 import { FadeInOnScroll } from '../components/fade-scroll';
 
-const heroImage = "/insights.JPG";
+const heroImage = "/recruitment.JPEG";
 
 const insights = [
   {
@@ -64,9 +64,12 @@ export default function Insights() {
   return (
     <div className="min-h-screen">
       <section
-        className="relative h-[40vh] px-8 overflow-hidden flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+  className="relative h-[40vh] px-8 overflow-hidden flex items-center justify-center bg-cover"
+  style={{ 
+    backgroundImage: `url(${heroImage})`,
+    backgroundPosition: 'center 34%'
+  }}
+>
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h2 className="text-white text-4xl md:text-5xl tracking-wider">
@@ -76,7 +79,7 @@ export default function Insights() {
       </section>
 
       <FadeInOnScroll>
-        <section className="bg-white py-16 px-8 pb-8">
+        <section className="bg-white pt-24 px-8 pb-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((insight) => {
@@ -85,7 +88,7 @@ export default function Insights() {
                 return (
                   <div
                     key={insight.id}
-                    className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow cursor-pointer group aspect-square"
+                    className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow cursor-pointer group min-h-[260px]"
                     onClick={(e) => {
                       if (isExpanded) {
                         toggleInsight(insight.id, e);
@@ -104,10 +107,10 @@ export default function Insights() {
                       )}
 
                       {!isExpanded && !insight.logo && (
-                        <div className="mb-4 flex flex-col items-center justify-center w-full">
+                        <div className="mt-2 mb-4 flex flex-col items-center justify-center w-full">
                           <h3 className="text-gray-800 text-xl mb-3">{insight.name}</h3>
                           {insight.description && (
-                            <p className="text-gray-600 text-sm text-center line-clamp-3">
+                            <p className="text-gray-600 text-[15px] text-center line-clamp-4 mt-1">
                               {insight.description}
                             </p>
                           )}

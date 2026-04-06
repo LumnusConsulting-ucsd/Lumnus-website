@@ -6,11 +6,11 @@ export default function Recruitment() {
     <>
       {/* Hero Section */}
       <section
-        className="relative h-[40vh] flex items-center justify-center"
+        className="relative h-[50vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/recruitment.JPEG')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 120%',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusGroup.JPG')`,
+          backgroundSize: '100%',
+          backgroundPosition: 'center 140%',
           backgroundAttachment: 'fixed',
         }}
       >
