@@ -7,9 +7,6 @@ import { Toaster } from "sonner";
 export const metadata: Metadata = {
   title: "Lumnus Consulting",
   description: "Student-led consulting organization at UC San Diego",
-  icons: {
-    icon: "/icon.png",
-  },
 };
 
 export default function RootLayout({
@@ -30,3 +27,4 @@ export default function RootLayout({
     </html>
   );
 }
+
