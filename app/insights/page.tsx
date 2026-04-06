@@ -4,7 +4,7 @@ import { ArrowRight, Download, X } from 'lucide-react';
 import { useState } from 'react';
 import { FadeInOnScroll } from '../components/fade-scroll';
 
-const heroImage = "/IMG_2247.JPEG";
+const heroImage = "/insights.JPG";
 
 const insights = [
   {
