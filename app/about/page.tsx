@@ -7,7 +7,7 @@ import { FadeInOnScroll } from "../components/fade-scroll";
 import { Button } from "../components/ui/button";
 
 // Images: hero/mission in public/; logos in public/logos/ (all .jpg)
-const heroImage = "/hero.jpg";
+const heroImage = "/master.jpg";
 const missionImage = "/mission.jpg";
 const googleLogo = "/logos/google.jpg";
 const microsoftLogo = "/logos/microsoft.jpg";
@@ -24,18 +24,30 @@ const eyLogo = "/logos/ey.jpg";
 
 // Committee names and members — add linkedin URL for each when you have it
 const COMMITTEES = [
+  "Executive Board",
   "Sales",
   "External",
   "Marketing",
   "Finance",
-  "HR",
+  "Human Resources",
   "Operations",
-  "DA",
+  "Technology",
 ] as const;
 
-type Member = { name: string; linkedin?: string };
+type Member = { name: string; linkedin?: string; title?: string; photo?: string };
 
 const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
+  "Executive Board": [
+    { name: "Irina Vardapetyan", linkedin: "https://linkedin.com/in/irinavard", title: "Co-President" },
+    { name: "Mint Ruangritchai", linkedin: "https://linkedin.com/in/mintruangritchai", title: "Co-President" },
+    { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq", title: "VP of HR" },
+    { name: "Andrew Kim", title: "VP of Finance" },
+    { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06", title: "VP of Technology" },
+    { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229", title: "VP of Sales" },
+    { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy", title: "VP of External" },
+    { name: "Emily Naka", linkedin: "https://linkedin.com/in/emilynaka", title: "VP of Marketing" },
+    { name: "Pratibha Arun", linkedin: "https://linkedin.com/in/pratibha-arun", title: "VP of Operations" },
+  ],
   Sales: [
     { name: "Aashima Keswani", linkedin: "https://linkedin.com/in/aashima-keswani" },
     { name: "Amelia Badamjav", linkedin: "https://linkedin.com/in/amelia-badamjav-a11617314" },
@@ -58,7 +70,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Esha Warrier", linkedin: "https://linkedin.com/in/eshawarrier" },
     { name: "Filicia Wu", linkedin: "https://linkedin.com/in/filicia-wu" },
     { name: "Nidhi Rajesh", linkedin: "https://linkedin.com/in/nidhi-rajesh-300645295" },
-    { name: "Treesha Chhabria", linkedin: "https://linkedin.com/in/treesha-chhabria-1b2642362" },
+    { name: "Treesha Chhabria", linkedin: "https://linkedin.com/in/treesha-chhabria-1b2642362", photo: "treesha-chhabria" },
     { name: "Varnika Seth", linkedin: "https://linkedin.com/in/varnikaseth" },
     { name: "Vihan Shah", linkedin: "https://linkedin.com/in/vihanshah" },
   ],
@@ -71,7 +83,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Rishit Bhandari", linkedin: "https://linkedin.com/in/rishit-bhandari-41a83647" },
     { name: "Tanner Wan", linkedin: "https://linkedin.com/in/tannerwan" },
   ],
-  HR: [
+  "Human Resources": [
     { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq" },
     { name: "Anirudh Rajesh", linkedin: "https://linkedin.com/in/anirudhrajesh23" },
     { name: "Dayus Gohel", linkedin: "https://linkedin.com/in/dayus-gohel" },
@@ -88,7 +100,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Ridhi Raman", linkedin: "https://linkedin.com/in/ridhi-batchu-raman" },
     { name: "Parnika Gupta" },
   ],
-  DA: [
+  Technology: [
     { name: "Abhinav Chinnam", linkedin: "https://linkedin.com/in/abhinav-chinnam" },
     { name: "Irina Vardapetyan", linkedin: "https://linkedin.com/in/irinavard" },
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06" },
@@ -122,14 +134,18 @@ function MemberCard({
   name,
   committee,
   linkedin,
+  title,
+  photo,
 }: {
   name: string;
   committee: string;
   linkedin?: string;
+  title?: string;
+  photo?: string;
 }) {
   const [imgError, setImgError] = useState(false);
   const [srcIndex, setSrcIndex] = useState(0);
-  const slug = nameToSlug(name);
+  const slug = photo ?? nameToSlug(name);
   const photoSrc = `${MEMBERS_IMAGE_BASE}/${slug}${PHOTO_EXTENSIONS[srcIndex]}`;
   const tryNextExtension = (e: React.SyntheticEvent<HTMLImageElement>) => {
     // Only handle error for the src we're currently trying (avoids stale onError from a previous attempt)
@@ -171,11 +187,12 @@ function MemberCard({
       <h4 className="mb-1 font-medium text-gray-800 truncate px-1" title={name}>
         {name}
       </h4>
+      <p className="text-gray-500 text-sm mb-2">{title || committee}</p>
       <a
-        className="mt-2 inline-flex items-center justify-center text-blue-950 hover:text-blue-900 transition-colors"
         href={linkedin || "#"}
         target={linkedin ? "_blank" : undefined}
         rel={linkedin ? "noopener noreferrer" : undefined}
+        className="inline-flex items-center justify-center text-blue-950 hover:text-blue-900 transition-colors"
         aria-label={`${name} LinkedIn`}
       >
         <Linkedin size={18} />
@@ -187,13 +204,13 @@ function MemberCard({
 type CommitteeKey = (typeof COMMITTEES)[number];
 
 export default function About() {
-  const [activeCommittee, setActiveCommittee] = useState<CommitteeKey>("Sales");
+  const [activeCommittee, setActiveCommittee] = useState<CommitteeKey>("Executive Board");
 
   return (
     <div className="w-full font-medium text-sm antialiased transition-all">
       {/* About Hero Section */}
       <section
-        className="relative h-[40vh] flex items-center justify-center"
+        className="relative h-[55vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${heroImage}')`,
           backgroundSize: "cover",
@@ -218,8 +235,8 @@ export default function About() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="text-3xl md:text-4xl mb-6 font-medium">Mission Statement</h2>
-                <p className="text-gray-600 leading-relaxed text-xl mb-6">
+                <h2 className="text-3xl md:text-4xl mb-6 font-medium text-black">Mission Statement</h2>
+                <p className="text-gray-600 leading-relaxed text-lg mb-6">
                   To empower students with real-world business experience while
                   delivering high-quality professional services to our clients.
                 </p>
@@ -231,7 +248,7 @@ export default function About() {
                 <img
                   src={missionImage}
                   alt="Mission"
-                  className="w-full h-[420px] rounded-lg shadow-lg object-cover object-[50%_77%]"
+                  className="w-full h-[400px] rounded-lg shadow-lg object-cover"
                 />
               </div>
             </div>
@@ -266,7 +283,7 @@ export default function About() {
       <FadeInOnScroll>
         <section className="relative py-24 px-8 bg-white z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium">
+            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-black">
               Our Members
             </h2>
 
@@ -295,6 +312,8 @@ export default function About() {
                   name={member.name}
                   committee={activeCommittee}
                   linkedin={member.linkedin}
+                  title={member.title}
+                  photo={member.photo}
                 />
               ))}
             </div>
@@ -304,9 +323,9 @@ export default function About() {
 
       {/* Where Alumni Work Section */}
       <FadeInOnScroll>
-        <section className="relative pt-10 pb-20 px-8 bg-white z-10">
+        <section className="relative pb-20 px-8 bg-white z-10">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium">
+            <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium text-black">
               Where Our Consultants Have Been
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
@@ -401,3 +420,5 @@ export default function About() {
     </div>
   );
 }
+
+       
