@@ -40,9 +40,9 @@ export function TestimonialsSection() {
     <FadeInOnScroll delayMs={100}>
       <section className="py-20 px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl mb-12">
-            Client Testimonials
-          </h2>
+        <h2 className="text-center text-3xl md:text-4xl mb-12 text-gray-900">
+  Client Testimonials
+</h2>
 
           <div className="relative">
             <Carousel

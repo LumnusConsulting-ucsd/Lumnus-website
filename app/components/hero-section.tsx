@@ -15,17 +15,15 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center md:bg-fixed"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusConsulting-hero.png')",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "125% auto",
-        backgroundPosition: "0% 55%",
-        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      {/* 🔥 Text Fade + Pop Animation */}
       <HeroFadeText className="text-center text-white px-8">
         <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
 
@@ -56,7 +54,6 @@ export function HeroSection() {
         </Link>
       </HeroFadeText>
 
-      {/* Scroll Arrow */}
       <button
         onClick={scrollToWhatWeDo}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:opacity-80 transition-opacity"

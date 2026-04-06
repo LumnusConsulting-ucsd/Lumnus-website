@@ -181,10 +181,10 @@ export default function SponsorPage() {
                   className={`py-4 px-6 border-2 rounded-lg transition ${
                     selectedAmount === amount && !customAmount
                       ? "border-blue-950 bg-blue-950 text-white"
-                      : "border-gray-300 bg-white hover:border-blue-950"
+                      : ":border-gray-300 bg-white text-gray-900 hover:border-blue-950"
                   }`}
                 >
-                  <div className="font-medium">
+                  <div className="font-medium text-gray-900">
                     ${amount}
                     {isOngoing ? "/mo" : ""}
                   </div>
@@ -202,7 +202,7 @@ export default function SponsorPage() {
                   setCustomAmount(e.target.value);
                   setSelectedAmount(null);
                 }}
-                className="w-full px-4 py-3 border rounded-lg"
+                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
               />
             </div>
 
@@ -214,7 +214,7 @@ export default function SponsorPage() {
                 type="text"
                 value={orgName}
                 onChange={(e) => setOrgName(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg"
+                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
               />
 
               <label className="block mb-2 text-gray-900">
@@ -224,7 +224,7 @@ export default function SponsorPage() {
                 type="text"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg"
+                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
               />
 
               <label className="block mb-2 text-gray-900">
@@ -234,7 +234,7 @@ export default function SponsorPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg"
+                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
               />
 
               <label className="block mb-2 text-gray-900">Message (Optional)</label>

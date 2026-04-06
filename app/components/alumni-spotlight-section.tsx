@@ -26,15 +26,6 @@ const alumni = [
       "I was most surprised by the opportunity to take complete ownership of a client deliverable from start to finish. I first approached Lumnus like how I would a class or lecture, with limited opportunity to meaningfully apply what I had learned. But I really enjoyed being able to engage with clients, understand the product and their goals, and translate what I learned into tangible outcomes/progress for clients.",
     photo: "/Cariappa.png",
   },
-  // {
-  //   id: 3,
-  //   name: "Alumni 3",
-  //   title: "Software Engineer",
-  //   company: "Coinbase",
-  //   quote:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-  //   photo: "/images/alumni/parth.png",
-  // },
 ];
 
 export function AlumniSpotlightSection() {
@@ -73,19 +64,21 @@ export function AlumniSpotlightSection() {
                   <div className="px-4">
                     <div className="bg-white rounded-3xl shadow-md overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2">
-                      <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+                        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
                           {person.photo ? (
                             <img
-                            src={person.photo}
-                            alt={person.name}
-                            className="block w-full h-full object-cover"
-                            style={{
-                              objectPosition:
-                                person.name === "Cariappa Kodira" ? "50% 30%" : "50% 90%",
-                              filter: "drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))",
-                            }}
-                          />
-                              
+                              src={person.photo}
+                              alt={person.name}
+                              className="block w-full h-full object-cover"
+                              style={{
+                                objectPosition:
+                                  person.name === "Cariappa Kodira"
+                                    ? "50% 30%"
+                                    : "50% 90%",
+                                filter:
+                                  "drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))",
+                              }}
+                            />
                           ) : (
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                               <User className="w-24 h-24 text-gray-400" />
@@ -93,14 +86,18 @@ export function AlumniSpotlightSection() {
                           )}
                         </div>
 
-                        <div className="p-6 md:pl-4 md:pr-6 flex flex-col justify-center">
-                        <h3 className="text-xl md:text-2xl font-semibold">
+                        <div className="p-6 md:pl-4 md:pr-6 flex flex-col justify-center text-gray-900">
+                          <h3 className="text-xl md:text-2xl font-semibold">
                             {person.name}
                           </h3>
+
                           <p className="text-gray-600 mb-6 text-lg">
-  {person.title} at <span className="font-semibold">{person.company}</span>
-</p>
-                        
+                            {person.title} at{" "}
+                            <span className="font-semibold">
+                              {person.company}
+                            </span>
+                          </p>
+
                           <p className="text-gray-700 leading-relaxed italic">
                             "{person.quote}"
                           </p>
@@ -119,6 +116,7 @@ export function AlumniSpotlightSection() {
             >
               <ChevronLeft className="w-6 h-6 text-blue-900" />
             </button>
+
             <button
               onClick={() => api?.scrollNext()}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
