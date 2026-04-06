@@ -7,7 +7,7 @@ export function JuniorEnterpriseSection() {
     <FadeInOnScroll delayMs={100}>
       <section className="relative py-24 px-8 bg-gray-100 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl mb-8">
+        <h2 className="text-gray-900 text-4xl md:text-5xl mb-8">
             The Junior Enterprise Movement
           </h2>
 

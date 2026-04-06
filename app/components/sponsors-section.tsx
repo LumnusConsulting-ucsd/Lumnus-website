@@ -9,9 +9,9 @@ export function SponsorsSection() {
       <div className="max-w-5xl mx-auto text-center">
         
         {/* MATCHED TITLE */}
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-12">
-          Thank You to Our Sponsors
-        </h2>
+        <h2 className="text-gray-900 text-3xl md:text-4xl font-medium tracking-tight mb-12">
+            Thank You to Our Sponsors
+          </h2>
 
         <div className="flex justify-between items-center max-w-4xl mx-auto">
           

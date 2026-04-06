@@ -2,11 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Eye, BarChart3, Globe, ShoppingBag, Power, Phone, MessageSquare, Clock, ChevronDown } from 'lucide-react';
-// Placeholder images - replace with actual image paths
-const heroImage = '/hero-services.jpg';
-const workWithUsImage = '/work-with-us.jpg';
 import { TestimonialsSection } from '../components/testimonials-section';
-
 
 export default function Services() {
   const [expandedServices, setExpandedServices] = useState<Set<number>>(new Set());
@@ -22,6 +18,7 @@ export default function Services() {
       return newSet;
     });
   };
+
   const pastClients = [
     'ASL FLurry',
     'Automind',
@@ -125,24 +122,21 @@ export default function Services() {
               const isExpanded = expandedServices.has(index);
               return (
                 <div key={index} className="flex flex-col items-center text-center">
-                  {/* Icon Circle */}
                   <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
                     <Icon size={40} className="text-blue-950" strokeWidth={1.5} />
                   </div>
                   
-                  {/* Title with Dropdown Toggle */}
                   <button
                     onClick={() => toggleService(index)}
-                    className="flex items-center gap-2 mb-6 tracking-wide text-gray-800 hover:text-blue-900 transition-colors cursor-pointer"
+                    className="flex items-center gap-2 mb-6 tracking-wide text-gray-900 hover:text-blue-900 transition-colors cursor-pointer"
                   >
-                    <h3>{service.title}</h3>
+                    <h3 className="text-gray-900">{service.title}</h3>
                     <ChevronDown 
                       size={20} 
                       className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
                     />
                   </button>
                   
-                  {/* Service Items - Expandable */}
                   <div 
                     className={`overflow-hidden transition-all duration-300 ${
                       isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -161,7 +155,6 @@ export default function Services() {
             })}
           </div>
           
-          {/* Last 2 services - centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16 max-w-4xl mx-auto">
             {services.slice(3).map((service, index) => {
               const actualIndex = index + 3;
@@ -169,24 +162,21 @@ export default function Services() {
               const isExpanded = expandedServices.has(actualIndex);
               return (
                 <div key={actualIndex} className="flex flex-col items-center text-center">
-                  {/* Icon Circle */}
                   <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
                     <Icon size={40} className="text-blue-950" strokeWidth={1.5} />
                   </div>
                   
-                  {/* Title with Dropdown Toggle */}
                   <button
                     onClick={() => toggleService(actualIndex)}
-                    className="flex items-center gap-2 mb-6 tracking-wide text-gray-800 hover:text-blue-900 transition-colors cursor-pointer"
+                    className="flex items-center gap-2 mb-6 tracking-wide text-gray-900 hover:text-blue-900 transition-colors cursor-pointer"
                   >
-                    <h3>{service.title}</h3>
+                    <h3 className="text-gray-900">{service.title}</h3>
                     <ChevronDown 
                       size={20} 
                       className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
                     />
                   </button>
                   
-                  {/* Service Items - Expandable */}
                   <div 
                     className={`overflow-hidden transition-all duration-300 ${
                       isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -210,55 +200,49 @@ export default function Services() {
       {/* Project Timeline Section */}
       <section className="py-16 px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl mb-12 tracking-wider">
+          <h2 className="text-gray-900 text-center text-3xl md:text-4xl mb-12 tracking-wider">
             PROJECT TIMELINE
           </h2>
           
           <div className="relative">
-            {/* Horizontal Timeline Line */}
             <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-blue-950" />
             
-            {/* Timeline Items */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Discovery & Planning */}
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-blue-950 flex items-center justify-center text-white z-10 mb-4">
                   1
                 </div>
-                <h3 className="mb-2">Discovery & Planning</h3>
+                <h3 className="text-gray-900 mb-2">Discovery & Planning</h3>
                 <p className="text-gray-600 text-sm">
                   Initial consultation and project scope definition
                 </p>
               </div>
 
-              {/* Research & Analysis */}
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-blue-950 flex items-center justify-center text-white z-10 mb-4">
                   2
                 </div>
-                <h3 className="mb-2">Research & Analysis</h3>
+                <h3 className="text-gray-900 mb-2">Research & Analysis</h3>
                 <p className="text-gray-600 text-sm">
                   Market research and data collection
                 </p>
               </div>
 
-              {/* Strategy Development */}
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-blue-950 flex items-center justify-center text-white z-10 mb-4">
                   3
                 </div>
-                <h3 className="mb-2">Strategy Development</h3>
+                <h3 className="text-gray-900 mb-2">Strategy Development</h3>
                 <p className="text-gray-600 text-sm">
                   Create actionable strategies and deliverables
                 </p>
               </div>
 
-              {/* Implementation Support */}
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-blue-950 flex items-center justify-center text-white z-10 mb-4">
                   4
                 </div>
-                <h3 className="mb-2">Implementation Support</h3>
+                <h3 className="text-gray-900 mb-2">Implementation Support</h3>
                 <p className="text-gray-600 text-sm">
                   Final delivery and implementation guidance
                 </p>
@@ -294,7 +278,6 @@ export default function Services() {
           
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 w-full">
-              {/* Step 1 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 flex items-center justify-center mb-6">
                   <Phone size={48} className="text-blue-950" strokeWidth={1.5} />
@@ -304,7 +287,6 @@ export default function Services() {
                 </p>
               </div>
               
-              {/* Step 2 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 flex items-center justify-center mb-6">
                   <MessageSquare size={48} className="text-blue-950" strokeWidth={1.5} />
@@ -314,7 +296,6 @@ export default function Services() {
                 </p>
               </div>
               
-              {/* Step 3 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 flex items-center justify-center mb-6">
                   <Clock size={48} className="text-blue-950" strokeWidth={1.5} />
@@ -325,7 +306,6 @@ export default function Services() {
               </div>
             </div>
             
-            {/* Contact Button */}
             <Link 
               href="/contact"
               className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-colors inline-block"
@@ -336,13 +316,12 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Client Testimonials Section */}
       <TestimonialsSection />
 
       {/* Past Clients Section */}
       <section className="py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl mb-16">
+          <h2 className="text-gray-900 text-center text-3xl md:text-4xl mb-16">
             Past Clients
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">

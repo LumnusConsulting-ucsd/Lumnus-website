@@ -23,9 +23,9 @@ export default function Recruitment() {
       <ScrollFade>
       <section className="py-24 px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl mb-8 tracking-wider">
-            Join Our Team
-          </h2>
+        <h2 className="text-gray-900 text-3xl md:text-4xl mb-8 tracking-wider">
+  Join Our Team
+</h2>
           <p className="text-gray-700 mb-12 max-w-2xl mx-auto">
             We're looking for passionate students to join Lumnus Consulting. Fill out our interest form for <span className="underline">Spring 2026 Recruitment</span> to learn more about opportunities and start your application.
           </p>
@@ -47,9 +47,9 @@ export default function Recruitment() {
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center">
             <div>
-              <h2 className="text-2xl md:text-3xl mb-8 tracking-wider text-center">
-                Stay Updated with Lumnus
-              </h2>
+            <h2 className="text-gray-900 text-2xl md:text-3xl mb-8 tracking-wider text-center">
+  Stay Updated with Lumnus
+</h2>
 
               <div className="flex justify-center gap-8">
                 <a
