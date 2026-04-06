@@ -26,15 +26,15 @@ const alumni = [
       "I was most surprised by the opportunity to take complete ownership of a client deliverable from start to finish. I first approached Lumnus like how I would a class or lecture, with limited opportunity to meaningfully apply what I had learned. But I really enjoyed being able to engage with clients, understand the product and their goals, and translate what I learned into tangible outcomes/progress for clients.",
     photo: "/Cariappa.png",
   },
-  {
-    id: 3,
-    name: "Alumni 3",
-    title: "Software Engineer",
-    company: "Coinbase",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-    photo: "/images/alumni/parth.png",
-  },
+  // {
+  //   id: 3,
+  //   name: "Alumni 3",
+  //   title: "Software Engineer",
+  //   company: "Coinbase",
+  //   quote:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+  //   photo: "/images/alumni/parth.png",
+  // },
 ];
 
 export function AlumniSpotlightSection() {
