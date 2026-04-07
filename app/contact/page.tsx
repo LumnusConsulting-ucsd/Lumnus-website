@@ -73,11 +73,12 @@ export default function Contact() {
     <>
       {/* Hero Section */}
       <section
-        className="relative h-[40vh] flex items-center justify-center"
+        className="relative h-[40vh] flex items-center justify-center object-contain"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "center 65%",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl font-medium tracking-tight uppercase">

@@ -104,8 +104,8 @@ export default function SponsorPage() {
       <FadeInOnScroll>
         <section className="py-16 md:py-24 px-6 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16">
-            <h2 className="text-gray-900 text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
-            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+            <h2 className="text-black text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
+            <p className="text-black text-lg md:text-xl max-w-3xl mx-auto">
               Your contribution helps shape the future generations of Lumnus.
             </p>
           </div>
@@ -135,8 +135,8 @@ export default function SponsorPage() {
         <form onSubmit={handleSubmit}>
           <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-6 md:p-12 rounded-lg shadow-sm">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-gray-900 text-2xl md:text-4xl mb-3 md:mb-4">Become a Sponsor</h2>
-              <p className="text-gray-600 text-sm md:text-lg">
+              <h2 className="text-black text-2xl md:text-4xl mb-3 md:mb-4">Become a Sponsor</h2>
+              <p className="text-black text-sm md:text-lg">
                 Choose an amount below or enter a custom amount to support Lumnus Consulting.
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function SponsorPage() {
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     !isOngoing
                       ? "bg-blue-950 text-white shadow-md"
-                      : "text-gray-700"
+                      : "text-black"
                   }`}
                 >
                   One-Time
@@ -160,7 +160,7 @@ export default function SponsorPage() {
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     isOngoing
                       ? "bg-blue-950 text-white shadow-md"
-                      : "text-gray-700"
+                      : "text-black"
                   }`}
                 >
                   Monthly
@@ -180,10 +180,10 @@ export default function SponsorPage() {
                   className={`py-3 md:py-4 px-3 md:px-6 border-2 rounded-lg transition ${
                     selectedAmount === amount && !customAmount
                       ? "border-blue-950 bg-blue-950 text-white"
-                      : "border-gray-300 bg-white text-gray-900 hover:border-blue-950"
+                      : "border-gray-300 bg-white text-black hover:border-blue-950"
                   }`}
                 >
-                  <div className="font-medium text-sm md:text-base text-gray-900">
+                  <div className="font-medium text-sm md:text-base text-black">
                     ${amount}
                     {isOngoing ? "/mo" : ""}
                   </div>
@@ -192,7 +192,7 @@ export default function SponsorPage() {
             </div>
 
             <div className="mb-6">
-              <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Or Enter Custom Amount</label>
+              <label className="block mb-1.5 text-black text-sm md:text-base">Or Enter Custom Amount</label>
               <input
                 placeholder="$"
                 type="number"
@@ -201,7 +201,7 @@ export default function SponsorPage() {
                   setCustomAmount(e.target.value);
                   setSelectedAmount(null);
                 }}
-                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                className="w-full px-4 py-3 border rounded-lg text-black placeholder-gray-500 text-sm md:text-base"
               />
             </div>
 
@@ -209,41 +209,41 @@ export default function SponsorPage() {
 
             <div className="space-y-4 mb-8">
               <div>
-                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Organization</label>
+                <label className="block mb-1.5 text-black text-sm md:text-base">Organization</label>
                 <input
                   type="text"
                   value={orgName}
                   onChange={(e) => setOrgName(e.target.value)}
-                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                  className="w-full px-4 py-3 border rounded-lg text-black placeholder-gray-500 text-sm md:text-base"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">
+                <label className="block mb-1.5 text-black text-sm md:text-base">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                  className="w-full px-4 py-3 border rounded-lg text-black placeholder-gray-500 text-sm md:text-base"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">
+                <label className="block mb-1.5 text-black text-sm md:text-base">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                  className="w-full px-4 py-3 border rounded-lg text-black placeholder-gray-500 text-sm md:text-base"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Message (Optional)</label>
+                <label className="block mb-1.5 text-black text-sm md:text-base">Message (Optional)</label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -260,7 +260,7 @@ export default function SponsorPage() {
               Continue to Payment
             </button>
 
-            <p className="text-center text-xs md:text-sm text-gray-500 mt-5">
+            <p className="text-center text-xs md:text-sm text-black mt-5">
               Your donation will be processed securely. Tax receipt will be sent to your email.
             </p>
           </div>
@@ -284,8 +284,8 @@ function ImpactCard({
       <div className="flex items-start gap-4 mb-4">
         <div className="bg-blue-950 p-3 md:p-4 shrink-0">{icon}</div>
         <div>
-          <h3 className="text-gray-900 text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
-          <p className="text-gray-600 text-sm md:text-base">{text}</p>
+          <h3 className="text-black text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
+          <p className="text-black text-sm md:text-base">{text}</p>
         </div>
       </div>
     </div>

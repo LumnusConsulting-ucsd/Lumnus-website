@@ -13,7 +13,7 @@ export function PartnersSection() {
           </h2>
 
           {/* LOGO GRID */}
-          <div className="grid grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-16 items-center">
             {/* PARTNER 1 */}
             <Link href="https://www.boozallen.com/" target="_blank">
               <Image

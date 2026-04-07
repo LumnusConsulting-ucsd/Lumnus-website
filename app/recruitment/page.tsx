@@ -10,7 +10,7 @@ export default function Recruitment() {
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusGroup.JPG')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 70%',
+          backgroundPosition: 'center 40%',
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl tracking-wider text-center px-4">
