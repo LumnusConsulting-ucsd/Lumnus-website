@@ -78,7 +78,7 @@ export default function SponsorPage() {
     <>
       {/* Hero Section */}
       <section
-        className="md:h-[40vh] flex items-center justify-center"
+        className="min-h-[40vh] flex items-center justify-center py-20"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
@@ -86,13 +86,13 @@ export default function SponsorPage() {
           backgroundPosition: "center",
         }}
       >
-        <div className="text-center text-white px-8 max-w-4xl mx-auto">
+        <div className="text-center text-white px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl tracking-wider mb-6">
             SUPPORT LUMNUS
           </h1>
           <button
             onClick={scrollToForm}
-            className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-base px-8 py-3 rounded-full font-medium transition-colors inline-flex items-center gap-2"
+            className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-colors inline-flex items-center gap-2"
           >
             Become a Sponsor
             <ArrowRight size={18} />
@@ -102,15 +102,15 @@ export default function SponsorPage() {
 
       {/* Sponsor Impact */}
       <FadeInOnScroll>
-        <section className="py-24 px-8 bg-white">
-          <div className="max-w-7xl mx-auto text-center mb-16">
-            <h2 className="text-gray-900 text-4xl md:text-5xl mb-6">Your Impact</h2>
-            <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+        <section className="py-16 md:py-24 px-6 md:px-8 bg-white">
+          <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16">
+            <h2 className="text-gray-900 text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
               Your contribution helps shape the future generations of Lumnus.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-7xl mx-auto">
             <ImpactCard
               icon={<Users className="text-white" size={32} />}
               title="Associate Development"
@@ -131,9 +131,9 @@ export default function SponsorPage() {
       </FadeInOnScroll>
 
       {/* Sponsor Form */}
-      <section id="sponsor-form" className="py-24 px-8 bg-gray-50">
+      <section id="sponsor-form" className="py-12 md:py-24 px-4 md:px-8 bg-gray-50">
         <form onSubmit={handleSubmit}>
-          <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-6 md:p-12 rounded-lg shadow-sm">
             <div className="text-center mb-12">
               <h2 className="text-gray-900 text-3xl md:text-4xl mb-4">Become a Sponsor</h2>
               <p className="text-gray-600 text-lg">
@@ -142,11 +142,11 @@ export default function SponsorPage() {
             </div>
 
             <div className="mb-8 flex justify-center">
-              <div className="inline-flex bg-gray-100 rounded-lg p-1">
+              <div className="inline-flex bg-gray-100 rounded-lg p-1 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={() => setIsOngoing(false)}
-                  className={`px-8 py-3 rounded-lg transition ${
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     !isOngoing
                       ? "bg-blue-950 text-white shadow-md"
                       : "text-gray-700"
@@ -157,7 +157,7 @@ export default function SponsorPage() {
                 <button
                   type="button"
                   onClick={() => setIsOngoing(true)}
-                  className={`px-8 py-3 rounded-lg transition ${
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     isOngoing
                       ? "bg-blue-950 text-white shadow-md"
                       : "text-gray-700"
@@ -168,7 +168,7 @@ export default function SponsorPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-3 gap-3 md:gap-4 mb-6">
               {suggestedAmounts.map((amount) => (
                 <button
                   type="button"
@@ -177,13 +177,13 @@ export default function SponsorPage() {
                     setSelectedAmount(amount);
                     setCustomAmount("");
                   }}
-                  className={`py-4 px-6 border-2 rounded-lg transition ${
+                  className={`py-3 md:py-4 px-3 md:px-6 border-2 rounded-lg transition ${
                     selectedAmount === amount && !customAmount
                       ? "border-blue-950 bg-blue-950 text-white"
-                      : ":border-gray-300 bg-white text-gray-900 hover:border-blue-950"
+                      : "border-gray-300 bg-white text-gray-900 hover:border-blue-950"
                   }`}
                 >
-                  <div className="font-medium text-gray-900">
+                  <div className="font-medium text-sm md:text-base text-gray-900">
                     ${amount}
                     {isOngoing ? "/mo" : ""}
                   </div>
@@ -272,12 +272,12 @@ function ImpactCard({
   text: string;
 }) {
   return (
-    <div className="border-t-4 border-blue-950 p-8 bg-gray-50">
-      <div className="flex items-start gap-4 mb-6">
-        <div className="bg-blue-950 p-4">{icon}</div>
+    <div className="border-t-4 border-blue-950 p-6 md:p-8 bg-gray-50">
+      <div className="flex items-start gap-4 mb-4">
+        <div className="bg-blue-950 p-3 md:p-4 shrink-0">{icon}</div>
         <div>
-          <h3 className="text-gray-900 text-2xl mb-3 whitespace-nowrap">{title}</h3>
-          <p className="text-gray-600">{text}</p>
+          <h3 className="text-gray-900 text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
+          <p className="text-gray-600 text-sm md:text-base">{text}</p>
         </div>
       </div>
     </div>

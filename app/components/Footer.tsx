@@ -9,24 +9,22 @@ export default function Footer() {
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/footer-hero.png')",
-        backgroundSize: "105% auto",
-        backgroundPosition: "90% 68%"
-,
+        backgroundSize: "cover",
+        backgroundPosition: "90% 68%",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         {/* Left Side - Logo */}
-        <div className="flex items-center gap-3">
-        <div className="flex items-center gap-3 -ml-2 -mt-4">
-        <Image
-        src="/LumnusConsulting-logo.png"
-        alt="Lumnus Consulting"
-        width={200}
-        height={44}
-        className="w-auto h-9 md:h-10"
-        priority
-      />
-      </div>
+        <div className="flex items-center -ml-2">
+          <Image
+            src="/LumnusConsulting-logo.png"
+            alt="Lumnus Consulting"
+            width={200}
+            height={44}
+            className="w-auto h-9 md:h-10"
+            priority
+          />
         </div>
 
         {/* Right Side - Links and Social */}
