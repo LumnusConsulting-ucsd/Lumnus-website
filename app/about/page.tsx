@@ -215,7 +215,6 @@ export default function About() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${heroImage}')`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
-          backgroundAttachment: "fixed",
         }}
       >
         <div className="text-center text-white px-8 max-w-4xl mx-auto">

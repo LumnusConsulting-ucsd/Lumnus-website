@@ -76,9 +76,8 @@ export default function Contact() {
         className="relative h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
-          backgroundSize: "70%",
+          backgroundSize: "cover",
           backgroundPosition: "center 65%",
-          backgroundAttachment: "fixed",
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl font-medium tracking-tight uppercase">

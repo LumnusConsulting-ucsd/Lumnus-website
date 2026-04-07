@@ -9,9 +9,8 @@ export default function Recruitment() {
         className="relative h-[50vh] flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusGroup.JPG')`,
-          backgroundSize: '100%',
-          backgroundPosition: 'center 140%',
-          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 70%',
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl tracking-wider text-center px-4">

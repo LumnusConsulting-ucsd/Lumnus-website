@@ -24,16 +24,20 @@ export function HeroSection() {
         backgroundPosition: "center",
       }}
     >
-      <HeroFadeText className="text-center text-white px-8">
-        <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        <HeroFadeText className="text-center text-white px-8">
+          <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
 
-        <h1 className="text-5xl md:text-7xl tracking-wider mb-6">
-          LUMNUS CONSULTING
-        </h1>
+          <h1 className="text-5xl md:text-7xl tracking-wider mb-6">
+            LUMNUS CONSULTING
+          </h1>
 
-        <p className="text-base md:text-xl lg:text-2xl tracking-wide font-medium -mt-3">
-          STUDENT-RUN, PROFESSIONALLY DRIVEN
-        </p>
+          <p className="text-base md:text-xl lg:text-2xl tracking-wide font-medium -mt-3">
+            STUDENT-RUN, PROFESSIONALLY DRIVEN
+          </p>
+        </HeroFadeText>
+
+        <div className="flex-1" />
 
         <Link href="/about">
           <button
@@ -44,7 +48,7 @@ export function HeroSection() {
               rounded-full
               font-medium
               transition-all
-              mt-6
+              mb-32
               hover:scale-[1.03]
               hover:shadow-lg
             "
@@ -52,7 +56,7 @@ export function HeroSection() {
             Learn More
           </button>
         </Link>
-      </HeroFadeText>
+      </div>
 
       <button
         onClick={scrollToWhatWeDo}

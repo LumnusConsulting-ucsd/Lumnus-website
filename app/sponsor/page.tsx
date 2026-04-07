@@ -82,9 +82,8 @@ export default function SponsorPage() {
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
-          backgroundSize: "115%",
-          backgroundPosition: "center 100%",
-          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="text-center text-white px-8 max-w-4xl mx-auto">

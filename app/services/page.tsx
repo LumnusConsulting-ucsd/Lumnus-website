@@ -103,9 +103,8 @@ export default function Services() {
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "125% auto",
-          backgroundPosition: "0% 55%",
-          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center 55%",
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl tracking-wider">
@@ -259,7 +258,6 @@ export default function Services() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Services-image2.JPG')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
         }}
       >
         <div className="max-w-7xl mx-auto text-center">
