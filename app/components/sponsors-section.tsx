@@ -13,7 +13,7 @@ export function SponsorsSection() {
             Thank You to Our Sponsors
           </h2>
 
-        <div className="flex justify-between items-center max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 gap-16 items-center max-w-4xl mx-auto">
           
           {/* SPONSOR 1 */}
           <Link href="https://rady.ucsd.edu/" target="_blank">
@@ -22,7 +22,7 @@ export function SponsorsSection() {
               alt="Sponsor 1"
               width={320}
               height={160}
-              className="object-contain hover:opacity-80 transition"
+              className="mx-auto object-contain hover:opacity-80 transition"
             />
           </Link>
 
@@ -33,7 +33,7 @@ export function SponsorsSection() {
               alt="Sponsor 2"
               width={320}
               height={160}
-              className="object-contain hover:opacity-80 transition"
+              className="mx-auto object-contain hover:opacity-80 transition"
             />
           </Link>
 

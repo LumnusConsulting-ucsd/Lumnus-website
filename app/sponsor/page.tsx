@@ -78,7 +78,7 @@ export default function SponsorPage() {
     <>
       {/* Hero Section */}
       <section
-        className="min-h-[40vh] flex items-center justify-center py-20"
+        className="relative h-[50vh] flex items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
@@ -134,9 +134,9 @@ export default function SponsorPage() {
       <section id="sponsor-form" className="py-12 md:py-24 px-4 md:px-8 bg-gray-50">
         <form onSubmit={handleSubmit}>
           <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-6 md:p-12 rounded-lg shadow-sm">
-            <div className="text-center mb-12">
-              <h2 className="text-gray-900 text-3xl md:text-4xl mb-4">Become a Sponsor</h2>
-              <p className="text-gray-600 text-lg">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-gray-900 text-2xl md:text-4xl mb-3 md:mb-4">Become a Sponsor</h2>
+              <p className="text-gray-600 text-sm md:text-lg">
                 Choose an amount below or enter a custom amount to support Lumnus Consulting.
               </p>
             </div>
@@ -191,8 +191,8 @@ export default function SponsorPage() {
               ))}
             </div>
 
-            <div className="mb-8">
-              <label className="block mb-2 text-gray-900">Or Enter Custom Amount</label>
+            <div className="mb-6">
+              <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Or Enter Custom Amount</label>
               <input
                 placeholder="$"
                 type="number"
@@ -201,48 +201,56 @@ export default function SponsorPage() {
                   setCustomAmount(e.target.value);
                   setSelectedAmount(null);
                 }}
-                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
+                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
               />
             </div>
 
             <div className="w-full h-[1px] bg-gray-600 mb-6" />
 
-            <div className="space-y-6 mb-8">
-              <label className="block mb-2 text-gray-900">Organization</label>
-              <input
-                type="text"
-                value={orgName}
-                onChange={(e) => setOrgName(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
-              />
+            <div className="space-y-4 mb-8">
+              <div>
+                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Organization</label>
+                <input
+                  type="text"
+                  value={orgName}
+                  onChange={(e) => setOrgName(e.target.value)}
+                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                />
+              </div>
 
-              <label className="block mb-2 text-gray-900">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
-              />
+              <div>
+                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">
+                  Full Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={contactName}
+                  onChange={(e) => setContactName(e.target.value)}
+                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                />
+              </div>
 
-              <label className="block mb-2 text-gray-900">
-                Email Address <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500"
-              />
+              <div>
+                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">
+                  Email Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 border rounded-lg text-gray-900 placeholder-gray-500 text-sm md:text-base"
+                />
+              </div>
 
-              <label className="block mb-2 text-gray-900">Message (Optional)</label>
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                rows={4}
-                className="w-full px-4 py-3 border rounded-lg resize-none"
-              />
+              <div>
+                <label className="block mb-1.5 text-gray-900 text-sm md:text-base">Message (Optional)</label>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  rows={4}
+                  className="w-full px-4 py-3 border rounded-lg resize-none text-sm md:text-base"
+                />
+              </div>
             </div>
 
             <button
@@ -252,7 +260,7 @@ export default function SponsorPage() {
               Continue to Payment
             </button>
 
-            <p className="text-center text-md text-gray-500 mt-5">
+            <p className="text-center text-xs md:text-sm text-gray-500 mt-5">
               Your donation will be processed securely. Tax receipt will be sent to your email.
             </p>
           </div>
