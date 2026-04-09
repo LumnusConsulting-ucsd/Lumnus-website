@@ -41,7 +41,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Irina Vardapetyan", linkedin: "https://linkedin.com/in/irinavard", title: "Co-President" },
     { name: "Mint Ruangritchai", linkedin: "https://linkedin.com/in/mintruangritchai", title: "Co-President" },
     { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq", title: "VP of HR" },
-    { name: "Andrew Kim", title: "VP of Finance" },
+    { name: "Andrew Kim", linkedin: "https://www.linkedin.com/in/andrewgykim/", title: "VP of Finance" },
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06", title: "VP of Technology" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229", title: "VP of Sales" },
     { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy", title: "VP of External" },

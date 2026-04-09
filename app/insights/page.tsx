@@ -13,7 +13,7 @@ const insights = [
     description:
       "An in-depth look at how AI is transforming education through Professor Burt De Mill's innovative teaching methods at UC San Diego's Rady School of Business.",
     logo: undefined,
-    pdfUrl: '/MollyAi.pdf',
+    pdfUrl: '/AIEducationWP.pdf',
     hasFullContent: true,
   },
   {

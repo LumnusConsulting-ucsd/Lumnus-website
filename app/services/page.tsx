@@ -104,7 +104,7 @@ export default function Services() {
             "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "center 55%",
+          backgroundPosition: "center 70%",
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl tracking-wider">

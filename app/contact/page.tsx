@@ -76,8 +76,8 @@ export default function Contact() {
         className="relative h-[40vh] flex items-center justify-center object-contain"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundSize: "100%",
+          backgroundPosition: "center 34%",
           backgroundRepeat: "no-repeat",
         }}
       >
