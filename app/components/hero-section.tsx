@@ -15,39 +15,40 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center md:bg-[length:125%] md:bg-[position:left_70%] md:bg-fixed"
+      className="relative min-h-screen overflow-hidden bg-cover bg-center md:bg-[length:125%] md:bg-[position:left_70%] md:bg-fixed"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusConsulting-hero.png')",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <HeroFadeText className="text-center text-white px-8 -translate-y-40 md:-translate-y-[4.5rem]">
-          <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <HeroFadeText className="text-center text-white px-6 -translate-y-24 md:px-8 md:-translate-y-[4.5rem]">
+          <div className="w-48 md:w-64 h-0.5 bg-white mx-auto mb-5 md:mb-6" />
 
-          <h1 className="text-5xl md:text-7xl tracking-wider mb-6">
+          <h1 className="text-4xl md:text-7xl tracking-wider mb-4 md:mb-6">
             LUMNUS CONSULTING
           </h1>
 
-          <p className="text-base md:text-xl lg:text-2xl tracking-wide font-medium -mt-3">
+          <p className="text-sm md:text-xl lg:text-2xl tracking-wide font-medium">
             STUDENT-RUN, PROFESSIONALLY DRIVEN
           </p>
         </HeroFadeText>
       </div>
 
-      <div className="absolute bottom-[18.75rem] left-1/2 -translate-x-1/2">
+      <div className="absolute left-1/2 bottom-32 -translate-x-1/2 md:bottom-[18.75rem]">
         <Link href="/about">
           <button
             className="
               bg-blue-950 hover:bg-blue-900 text-white
               text-sm md:text-lg
-              px-10 py-4
+              px-8 md:px-10 py-3 md:py-4
               rounded-full
               font-medium
               transition-all
               hover:scale-[1.03]
               hover:shadow-lg
+              whitespace-nowrap
             "
           >
             Learn More
