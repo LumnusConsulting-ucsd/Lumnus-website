@@ -8,7 +8,7 @@ import { Textarea } from "@/app/components/ui/textarea";
 import { Label } from "@/app/components/ui/label";
 import { toast } from "sonner";
 
-const heroImage = "/IMG_9269.JPG";
+const heroImage = "/IMG_7327.png";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,7 +77,7 @@ export default function Contact() {
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
           backgroundSize: "100%",
-          backgroundPosition: "center 34%",
+          backgroundPosition: "center 55%",
           backgroundRepeat: "no-repeat",
         }}
       >

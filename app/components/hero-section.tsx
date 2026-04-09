@@ -20,12 +20,12 @@ export function HeroSection() {
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusConsulting-hero.png')",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: window.innerWidth >= 768 ? "125%" : "cover",
+        backgroundPosition: window.innerWidth >= 768 ? "left 70%" : "center",
       }}
     >
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <HeroFadeText className="text-center text-white px-8">
+      <div className="flex flex-col items-center justify-center w-full h-full pt-94 md:pt-0">
+      <HeroFadeText className="text-center text-white px-8 -translate-y-40 md:-translate-y-18">
           <div className="w-56 md:w-64 h-0.5 bg-white mx-auto mb-6" />
 
           <h1 className="text-5xl md:text-7xl tracking-wider mb-6">
@@ -36,9 +36,9 @@ export function HeroSection() {
             STUDENT-RUN, PROFESSIONALLY DRIVEN
           </p>
         </HeroFadeText>
+      </div>
 
-        <div className="flex-1" />
-
+      <div className="absolute bottom-75 left-1/2 -translate-x-1/2">
         <Link href="/about">
           <button
             className="
@@ -48,7 +48,6 @@ export function HeroSection() {
               rounded-full
               font-medium
               transition-all
-              mb-32
               hover:scale-[1.03]
               hover:shadow-lg
             "
