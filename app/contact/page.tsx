@@ -19,6 +19,7 @@ export default function Contact() {
   });
 
   const [isSending, setIsSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,6 +43,8 @@ export default function Contact() {
       toast.success("Message sent successfully!", {
         description: "We'll get back to you as soon as possible.",
       });
+
+      setIsSuccess(true); 
 
       setFormData({
         name: "",
@@ -68,6 +71,8 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    setIsSuccess(false); 
   };
 
   return (
@@ -148,10 +153,14 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={isSending}
+                disabled={isSending || isSuccess}
                 className="w-full max-w-md mx-auto block bg-blue-950 hover:bg-blue-900 text-white text-sm px-8 py-3 rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSending ? "Sending..." : "Send Message"}
+                {isSending
+                  ? "Sending..."
+                  : isSuccess
+                  ? "Email Sent Successfully!"
+                  : "Send Message"}
               </button>
             </form>
           </div>
