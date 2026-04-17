@@ -74,7 +74,7 @@ export function AlumniSpotlightSection() {
                   <div className="px-4">
                     <div className="bg-white rounded-3xl shadow-md overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2">
-                      <div className="relative h-[360px] md:h-[440px] overflow-hidden rounded-t-3xl md:rounded-none md:rounded-l-3xl">
+                        <div className="relative h-[360px] md:h-[440px] overflow-hidden rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
                           {person.photo ? (
                             <img
                               src={person.photo}
@@ -85,12 +85,10 @@ export function AlumniSpotlightSection() {
                                   person.name === "Cariappa Kodira"
                                     ? "50% 30%"
                                     : "50% 90%",
-                                filter:
-                                  "drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))",
                               }}
                             />
                           ) : (
-                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
                               <User className="w-24 h-24 text-gray-400" />
                             </div>
                           )}

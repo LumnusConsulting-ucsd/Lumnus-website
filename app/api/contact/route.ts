@@ -52,8 +52,6 @@ export async function POST(req: Request) {
       );
     }
 
-    console.log("Email sent:", data);
-
     return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("Contact route error:", error);
