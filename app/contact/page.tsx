@@ -82,133 +82,125 @@ export default function Contact() {
         </h1>
       </section>
 
+     
+    
+     
+   
       <FadeInOnScroll delayMs={100}>
-        <section className="py-20 px-8 bg-white">
-          <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your name"
-                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
-                />
-              </div>
+  <section className="py-20 px-8 bg-white">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
+      
+      {/* LEFT: STAY UPDATED */}
+      <div className="flex flex-col items-center text-center">
+        <h2 className="text-3xl md:text-4xl tracking-wider text-black mb-10">
+          Stay Updated With Lumnus
+        </h2>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your.email@example.com"
-                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="What is this regarding?"
-                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your message..."
-                  rows={6}
-                  className="bg-gray-100 border border-black/10 focus-visible:ring-0 focus-visible:border-black/20 rounded-lg"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSending || isSuccess}
-                className="w-full max-w-md mx-auto block bg-blue-950 hover:bg-blue-900 text-white text-sm px-8 py-3 rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSending
-                  ? "Sending..."
-                  : isSuccess
-                  ? "Email Sent Successfully!"
-                  : "Send Message"}
-              </button>
-            </form>
-          </div>
-        </section>
-      </FadeInOnScroll>
-
-      <FadeInOnScroll delayMs={100}>
-        <section className="py-24 px-8 bg-gray-50">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl tracking-wider text-center text-black mb-12">
-              Stay Updated With Lumnus
-            </h2>
-
-            <div className="flex justify-center gap-14 mb-14">
-              <a
-                href="https://www.facebook.com/lumnusconsulting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
-              >
-                <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
-                  <Facebook className="text-white" size={36} />
-                </div>
-                <span className="text-gray-700 text-lg">Facebook</span>
-              </a>
-
-              <a
-                href="https://www.instagram.com/lumnusconsulting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
-              >
-                <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
-                  <Instagram className="text-white" size={36} />
-                </div>
-                <span className="text-gray-700 text-lg">Instagram</span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/lumnus/posts/?feedView=all"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"
-              >
-                <div className="w-20 h-20 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
-                  <Linkedin className="text-white" size={36} />
-                </div>
-                <span className="text-gray-700 text-lg">LinkedIn</span>
-              </a>
+        {/* ICONS ROW */}
+        <div className="flex justify-center gap-10 mb-10">
+          <a
+            href="https://www.facebook.com/lumnusconsulting"
+            target="_blank"
+            className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
+          >
+            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+              <Facebook className="text-white" size={28} />
             </div>
+            <span className="text-sm">Facebook</span>
+          </a>
 
-            <p className="text-center text-blue-950 text-2xl md:text-2xl font-medium">
-              contact@lumnusconsulting.net
-            </p>
-          </div>
-        </section>
-      </FadeInOnScroll>
+          <a
+            href="https://www.instagram.com/lumnusconsulting"
+            target="_blank"
+            className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
+          >
+            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+              <Instagram className="text-white" size={28} />
+            </div>
+            <span className="text-sm">Instagram</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/lumnus/posts/?feedView=all"
+            target="_blank"
+            className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
+          >
+            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+              <Linkedin className="text-white" size={28} />
+            </div>
+            <span className="text-sm">LinkedIn</span>
+          </a>
+        </div>
+
+        {/* EMAIL */}
+        <p className="text-blue-950 text-xl font-medium text-center">
+          contact@lumnusconsulting.net
+        </p>
+      </div>
+
+      {/* RIGHT: FORM */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <Label className="mb-2 block text-lg font-medium">Name</Label>
+          <Input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="bg-gray-100 border border-black/10 rounded-lg"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label className="mb-2 block text-lg font-medium">Email</Label>
+          <Input
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="bg-gray-100 border border-black/10 rounded-lg"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label className="mb-2 block text-lg font-medium">Subject</Label>
+          <Input
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+            className="bg-gray-100 border border-black/10 rounded-lg"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label className="mb-2 block text-lg font-medium">Message</Label>
+          <Textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={6}
+            className="bg-gray-100 border border-black/10 rounded-lg"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={isSending || isSuccess}
+          className="w-full bg-blue-950 hover:bg-blue-900 text-white py-3 rounded-full transition-colors"
+        >
+          {isSending
+            ? "Sending..."
+            : isSuccess
+            ? "Email Sent Successfully!"
+            : "Send Message"}
+        </button>
+      </form>
+    </div>
+  </section>
+</FadeInOnScroll>
+               
     </>
   );
 }
