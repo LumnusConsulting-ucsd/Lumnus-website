@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
 import { Label } from "@/app/components/ui/label";
-import { toast } from "sonner";
 
 const heroImage = "/IMG_7327.png";
 
@@ -40,9 +39,6 @@ export default function Contact() {
         throw new Error(data.error || "Failed to send message.");
       }
 
-      toast.success("Message sent successfully!", {
-        description: "We'll get back to you as soon as possible.",
-      });
 
       setIsSuccess(true); 
 
@@ -54,11 +50,6 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
-
-      toast.error("Failed to send message", {
-        description:
-          error instanceof Error ? error.message : "Please try again later.",
-      });
     } finally {
       setIsSending(false);
     }
