@@ -56,7 +56,6 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Amelia Badamjav", linkedin: "https://linkedin.com/in/amelia-badamjav-a11617314" },
     { name: "Arushi Gupta", linkedin: "https://linkedin.com/in/argupta5" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229" },
-    { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy" },
     { name: "Veda Thota", linkedin: "https://linkedin.com/in/veda-thota" },
   ],
   External: [
@@ -65,6 +64,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Mina Garcia", linkedin: "https://linkedin.com/in/mina-garcia-07a762242" },
     { name: "Mirabelle Trunk", linkedin: "https://linkedin.com/in/mirabelle-trunk" },
     { name: "Rahul Raman", linkedin: "https://linkedin.com/in/rahulraman23" },
+    { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy" },
   ],
   Marketing: [
     { name: "Anwesha Mohanty", linkedin: "https://linkedin.com/in/anweshamohantyy" },
