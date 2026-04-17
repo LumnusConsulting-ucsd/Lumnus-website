@@ -39,13 +39,17 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
   "Executive Board": [
     { name: "Irina Vardapetyan", linkedin: "https://linkedin.com/in/irinavard", title: "Co-President" },
     { name: "Mint Ruangritchai", linkedin: "https://linkedin.com/in/mintruangritchai", title: "Co-President" },
-    { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq", title: "VP of HR" },
-    { name: "Andrew Kim", linkedin: "https://www.linkedin.com/in/andrewgykim/", title: "VP of Finance" },
-    { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06", title: "VP of Technology" },
+    { name: "Pratibha Arun", linkedin: "https://linkedin.com/in/pratibha-arun", title: "VP of Operations" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229", title: "VP of Sales" },
     { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy", title: "VP of External" },
     { name: "Emily Naka", linkedin: "https://linkedin.com/in/emilynaka", title: "VP of Marketing" },
-    { name: "Pratibha Arun", linkedin: "https://linkedin.com/in/pratibha-arun", title: "VP of Operations" },
+    { name: "Andrew Kim", linkedin: "https://www.linkedin.com/in/andrewgykim/", title: "VP of Finance" },
+    { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq", title: "VP of HR" },
+    { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06", title: "VP of Technology" },
+    { name: "Aashima Keswani", linkedin: "https://linkedin.com/in/aashima-keswani", title: "Director of Alumni Relations" },
+    { name: "Maximilian Chao", linkedin: "https://linkedin.com/in/maximilian-chao-196a58246" , title: "Junior Enterprise Ambassador"},
+    { name: "Vihan Shah", linkedin: "https://linkedin.com/in/vihanshah", title: "Director of Internal Operations"},
+
   ],
   Sales: [
     { name: "Aashima Keswani", linkedin: "https://linkedin.com/in/aashima-keswani" },
