@@ -74,7 +74,7 @@ export function AlumniSpotlightSection() {
                   <div className="px-4">
                     <div className="bg-white rounded-3xl shadow-md overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+                      <div className="relative h-[360px] md:h-[440px] overflow-hidden rounded-t-3xl md:rounded-none md:rounded-l-3xl">
                           {person.photo ? (
                             <img
                               src={person.photo}

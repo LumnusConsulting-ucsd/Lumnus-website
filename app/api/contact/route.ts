@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     const resend = new Resend(apiKey);
 
     const { data, error } = await resend.emails.send({
-      from: "Lumnus Contact Form <onboarding@resend.dev>",
+      from: "Lumnus Contact Form <contact@lumnusconsulting.net>",
       to: ["contact@lumnusconsulting.net"],
       replyTo: email,
       subject: `Contact Form: ${subject}`,
