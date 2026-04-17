@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { FadeInOnScroll } from "../components/fade-scroll";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
@@ -53,7 +53,8 @@ export default function Contact() {
       console.error("Contact form error:", error);
 
       toast.error("Failed to send message", {
-        description: "Please try again later.",
+        description:
+          error instanceof Error ? error.message : "Please try again later.",
       });
     } finally {
       setIsSending(false);
@@ -71,7 +72,6 @@ export default function Contact() {
 
   return (
     <>
-      {/* Hero Section */}
       <section
         className="relative h-[40vh] flex items-center justify-center object-contain"
         style={{
@@ -86,7 +86,6 @@ export default function Contact() {
         </h1>
       </section>
 
-      {/* Contact Form Section */}
       <FadeInOnScroll delayMs={100}>
         <section className="py-20 px-8 bg-white">
           <div className="max-w-2xl mx-auto">
@@ -159,7 +158,6 @@ export default function Contact() {
         </section>
       </FadeInOnScroll>
 
-      {/* Stay Updated Section */}
       <FadeInOnScroll delayMs={100}>
         <section className="py-24 px-8 bg-gray-50">
           <div className="max-w-2xl mx-auto">
@@ -193,7 +191,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://www.linkedin.com/company/lumnus-consulting"
+                href="https://www.linkedin.com/company/lumnus/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-4 hover:opacity-70 transition-opacity"

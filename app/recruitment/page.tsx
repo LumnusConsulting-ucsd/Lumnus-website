@@ -76,7 +76,7 @@ export default function Recruitment() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/company/lumnus-consulting"
+                  href="https://www.linkedin.com/company/lumnus/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
