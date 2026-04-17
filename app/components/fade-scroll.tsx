@@ -8,11 +8,32 @@ type Props = {
   delayMs?: number;
 };
 
-export function FadeInOnScroll({ children, className = "", delayMs = 0 }: Props) {
+export function FadeInOnScroll({
+  children,
+  className = "",
+  delayMs = 0,
+}: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setVisible(true);
+      return;
+    }
+
     const el = ref.current;
     if (!el) return;
 
@@ -20,7 +41,7 @@ export function FadeInOnScroll({ children, className = "", delayMs = 0 }: Props)
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          obs.disconnect(); // reveal once
+          obs.disconnect();
         }
       },
       { threshold: 0.15 }
@@ -28,14 +49,16 @@ export function FadeInOnScroll({ children, className = "", delayMs = 0 }: Props)
 
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delayMs}ms` }}
+      style={{ transitionDelay: isMobile ? "0ms" : `${delayMs}ms` }}
       className={[
-        "transition-all duration-700 ease-out will-change-transform",
+        isMobile
+          ? ""
+          : "transition-all duration-700 ease-out will-change-transform",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
         className,
       ].join(" ")}

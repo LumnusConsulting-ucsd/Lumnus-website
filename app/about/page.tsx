@@ -30,7 +30,6 @@ const COMMITTEES = [
   "Marketing",
   "Finance",
   "Human Resources",
-  "Operations",
   "Technology",
 ] as const;
 
@@ -53,7 +52,6 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Amelia Badamjav", linkedin: "https://linkedin.com/in/amelia-badamjav-a11617314" },
     { name: "Arushi Gupta", linkedin: "https://linkedin.com/in/argupta5" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229" },
-    { name: "Krish Agarwal", linkedin: "https://linkedin.com/in/krish-agarwal-902891288" },
     { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy" },
     { name: "Veda Thota", linkedin: "https://linkedin.com/in/veda-thota" },
   ],
@@ -70,16 +68,17 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Esha Warrier", linkedin: "https://linkedin.com/in/eshawarrier" },
     { name: "Filicia Wu", linkedin: "https://linkedin.com/in/filicia-wu" },
     { name: "Nidhi Rajesh", linkedin: "https://linkedin.com/in/nidhi-rajesh-300645295" },
+    { name: "Tanay Parikh", linkedin: "https://www.linkedin.com/in/tanayjparikh/" },
     { name: "Treesha Chhabria", linkedin: "https://linkedin.com/in/treesha-chhabria-1b2642362", photo: "treesha-chhabria" },
     { name: "Varnika Seth", linkedin: "https://linkedin.com/in/varnikaseth" },
     { name: "Vihan Shah", linkedin: "https://linkedin.com/in/vihanshah" },
+
   ],
   Finance: [
     { name: "Andrew Kim" },
     { name: "Dari Gansukh", linkedin: "https://linkedin.com/in/darigansukh" },
     { name: "Giulio Rambelli", linkedin: "https://linkedin.com/in/giuliorambelli" },
     { name: "Humza Dalal", linkedin: "https://linkedin.com/in/humza-dalal-b439b5280" },
-    { name: "Pratibha Arun", linkedin: "https://linkedin.com/in/pratibha-arun" },
     { name: "Rishit Bhandari", linkedin: "https://linkedin.com/in/rishit-bhandari-41a83647" },
     { name: "Tanner Wan", linkedin: "https://linkedin.com/in/tannerwan" },
   ],
@@ -87,22 +86,16 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq" },
     { name: "Anirudh Rajesh", linkedin: "https://linkedin.com/in/anirudhrajesh23" },
     { name: "Dayus Gohel", linkedin: "https://linkedin.com/in/dayus-gohel" },
-    { name: "Mint Ruangritchai", linkedin: "https://linkedin.com/in/mintruangritchai" },
     { name: "Molly Marchese", linkedin: "https://linkedin.com/in/mollymarchese" },
-    { name: "Sumukhi Tunuguntla", linkedin: "https://linkedin.com/in/sumukhitunuguntla" },
+    { name: "Sabrina Zanetto", linkedin: "https://linkedin.com/in/sabrina-zanetto-565154345" },
+    { name: "Sumukhi Tunuguntla", linkedin: "https://www.linkedin.com/in/sumukhitunuguntla/" },
     { name: "Tanner Bradley", linkedin: "https://linkedin.com/in/tannerwilsonbradley" },
     { name: "Vivaan Laungani", linkedin: "https://linkedin.com/in/vivaanlaungani" },
-    { name: "Sabrina Zanetto", linkedin: "https://linkedin.com/in/sabrina-zanetto-565154345" },
+    
   ],
-  Operations: [
-    { name: "Anya Garg", linkedin: "https://linkedin.com/in/anya-garg-011a90290" },
-    { name: "Dylan Nelson", linkedin: "https://linkedin.com/in/dylan-nelson-3501471b2" },
-    { name: "Ridhi Raman", linkedin: "https://linkedin.com/in/ridhi-batchu-raman" },
-    { name: "Parnika Gupta" },
-  ],
+
   Technology: [
     { name: "Abhinav Chinnam", linkedin: "https://linkedin.com/in/abhinav-chinnam" },
-    { name: "Irina Vardapetyan", linkedin: "https://linkedin.com/in/irinavard" },
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06" },
     { name: "Maximilian Chao", linkedin: "https://linkedin.com/in/maximilian-chao-196a58246" },
     { name: "Niharika Sapre", linkedin: "https://linkedin.com/in/niharikasapre" },
@@ -112,7 +105,6 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Serina Wang", linkedin: "https://linkedin.com/in/serina-wang-" },
     { name: "Sharana Sabesan", linkedin: "https://linkedin.com/in/sharana-sabesan-4bb0211b3" },
     { name: "Sruti Mani", linkedin: "https://linkedin.com/in/srutimani" },
-    { name: "Tanay Parikh", linkedin: "https://linkedin.com/in/tanayjparikh" },
   ],
 };
 

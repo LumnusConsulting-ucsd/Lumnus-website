@@ -1,7 +1,6 @@
 "use client";
-import { FadeInOnScroll } from "./fade-scroll";
 
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import type { CarouselApi } from "./ui/carousel";
@@ -30,10 +29,22 @@ const alumni = [
 
 export function AlumniSpotlightSection() {
   const [api, setApi] = useState<CarouselApi>();
+  const autoplay = useRef(
+    Autoplay({
+      delay: 8000,
+      stopOnInteraction: false,
+    })
+  );
 
-  useEffect(() => {
-    if (!api) return;
-  }, [api]);
+  const handlePrev = () => {
+    autoplay.current.stop();
+    api?.scrollPrev();
+  };
+
+  const handleNext = () => {
+    autoplay.current.stop();
+    api?.scrollNext();
+  };
 
   return (
     <section
@@ -54,7 +65,7 @@ export function AlumniSpotlightSection() {
           <Carousel
             setApi={setApi}
             opts={{ align: "start", loop: true, watchDrag: false }}
-            plugins={[Autoplay({ delay: 8000 })]}
+            plugins={[autoplay.current]}
             className="w-full"
           >
             <CarouselContent>
@@ -109,7 +120,7 @@ export function AlumniSpotlightSection() {
             </CarouselContent>
 
             <button
-              onClick={() => api?.scrollPrev()}
+              onClick={handlePrev}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
               aria-label="Previous alumni"
             >
@@ -117,7 +128,7 @@ export function AlumniSpotlightSection() {
             </button>
 
             <button
-              onClick={() => api?.scrollNext()}
+              onClick={handleNext}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
               aria-label="Next alumni"
             >

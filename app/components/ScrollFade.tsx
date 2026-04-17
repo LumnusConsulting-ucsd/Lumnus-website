@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, ReactNode } from 'react';
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 interface ScrollFadeProps {
   children: ReactNode;
@@ -8,11 +8,32 @@ interface ScrollFadeProps {
   className?: string;
 }
 
-export function ScrollFade({ children, delay = 0, className = '' }: ScrollFadeProps) {
+export function ScrollFade({
+  children,
+  delay = 0,
+  className = "",
+}: ScrollFadeProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,7 +43,7 @@ export function ScrollFade({ children, delay = 0, className = '' }: ScrollFadePr
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -30,22 +51,16 @@ export function ScrollFade({ children, delay = 0, className = '' }: ScrollFadePr
       observer.observe(ref.current);
     }
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ${className} ${
-        isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
+      className={`${isMobile ? "" : "transition-all duration-1000"} ${className} ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: isMobile ? "0ms" : `${delay}ms` }}
     >
       {children}
     </div>

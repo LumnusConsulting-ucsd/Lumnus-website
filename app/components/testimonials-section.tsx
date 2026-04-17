@@ -1,15 +1,17 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+
+import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeInOnScroll } from "./fade-scroll";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from './ui/carousel';
-import type { CarouselApi } from './ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
+} from "./ui/carousel";
+import type { CarouselApi } from "./ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const describeLogo = '/describe-logo.png';
+const describeLogo = "/describe-logo.png";
 
 const testimonials: {
   id: number;
@@ -20,14 +22,16 @@ const testimonials: {
 }[] = [
   {
     id: 1,
-    quote: "I'm very happy with the work Lumnus has done and the initiative from the project team. I get instant responses and work done within the same day. Very high-quality work and great results.",
+    quote:
+      "I'm very happy with the work Lumnus has done and the initiative from the project team. I get instant responses and work done within the same day. Very high-quality work and great results.",
     name: "Kishan Pansuria",
     title: "Co-Founder of Describe",
     // logo: describeLogo,
   },
   {
     id: 2,
-    quote: "Working with Lumnus Consulting was a real pleasure! Their consultants are eager to learn and explore, and were always responsive to my requests and suggestions. We walked away with a better understanding of our customers, which is likely to have a real impact on how we deliver our precision biomonitoring services. We would be thrilled to work with Lumnus Consulting again.",
+    quote:
+      "Working with Lumnus Consulting was a real pleasure! Their consultants are eager to learn and explore, and were always responsive to my requests and suggestions. We walked away with a better understanding of our customers, which is likely to have a real impact on how we deliver our precision biomonitoring services. We would be thrilled to work with Lumnus Consulting again.",
     name: "Representative",
     title: "Wild Genomics",
   },
@@ -35,14 +39,30 @@ const testimonials: {
 
 export function TestimonialsSection() {
   const [api, setApi] = useState<CarouselApi>();
+  const autoplay = useRef(
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+    })
+  );
+
+  const handlePrev = () => {
+    autoplay.current.stop();
+    api?.scrollPrev();
+  };
+
+  const handleNext = () => {
+    autoplay.current.stop();
+    api?.scrollNext();
+  };
 
   return (
     <FadeInOnScroll delayMs={100}>
       <section className="py-20 px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-        <h2 className="text-center text-3xl md:text-4xl mb-12 text-gray-900">
-  Client Testimonials
-</h2>
+          <h2 className="text-center text-3xl md:text-4xl mb-12 text-gray-900">
+            Client Testimonials
+          </h2>
 
           <div className="relative">
             <Carousel
@@ -51,11 +71,7 @@ export function TestimonialsSection() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[
-                Autoplay({
-                  delay: 5000,
-                }),
-              ]}
+              plugins={[autoplay.current]}
               className="w-full"
             >
               <CarouselContent>
@@ -100,7 +116,7 @@ export function TestimonialsSection() {
               </CarouselContent>
 
               <button
-                onClick={() => api?.scrollPrev()}
+                onClick={handlePrev}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
                 aria-label="Previous testimonial"
               >
@@ -108,7 +124,7 @@ export function TestimonialsSection() {
               </button>
 
               <button
-                onClick={() => api?.scrollNext()}
+                onClick={handleNext}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
                 aria-label="Next testimonial"
               >
