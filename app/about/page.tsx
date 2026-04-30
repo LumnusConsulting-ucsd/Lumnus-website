@@ -48,7 +48,10 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06", title: "VP of Technology" },
     { name: "Aashima Keswani", linkedin: "https://linkedin.com/in/aashima-keswani", title: "Director of Alumni Relations" },
     { name: "Maximilian Chao", linkedin: "https://linkedin.com/in/maximilian-chao-196a58246" , title: "Junior Enterprise Ambassador"},
-    { name: "Vihan Shah", linkedin: "https://linkedin.com/in/vihanshah", title: "Director of Internal Operations"},
+    { name: "Vihan Shah", linkedin: "https://linkedin.com/in/vihanshah", title: "Director of Program Tracking"},
+    { name: "Giulio Rambelli", linkedin: "https://linkedin.com/in/giuliorambelli", title: "Director of Internal Operations"},
+    { name: "Treesha Chhabria", linkedin: "https://linkedin.com/in/treesha-chhabria-1b2642362", photo: "treesha-chhabria", title: "Director of Internal Operations"},
+
 
   ],
   Sales: [
@@ -56,6 +59,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Amelia Badamjav", linkedin: "https://linkedin.com/in/amelia-badamjav-a11617314" },
     { name: "Arushi Gupta", linkedin: "https://linkedin.com/in/argupta5" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229" },
+    { name: "Parnika Gupta", linkedin: "https://www.linkedin.com/in/parnika-gupta1/?skipRedirect=true" },
     { name: "Veda Thota", linkedin: "https://linkedin.com/in/veda-thota" },
   ],
   External: [
@@ -81,6 +85,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
   Finance: [
     { name: "Andrew Kim" },
     { name: "Dari Gansukh", linkedin: "https://linkedin.com/in/darigansukh" },
+    { name: "Dylan Nelson", linkedin: "https://www.linkedin.com/in/dylan-nelson-3501471b2/", photo: "dylan-nelson"},
     { name: "Giulio Rambelli", linkedin: "https://linkedin.com/in/giuliorambelli" },
     { name: "Humza Dalal", linkedin: "https://linkedin.com/in/humza-dalal-b439b5280" },
     { name: "Rishit Bhandari", linkedin: "https://linkedin.com/in/rishit-bhandari-41a83647" },
@@ -100,6 +105,7 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
 
   Technology: [
     { name: "Abhinav Chinnam", linkedin: "https://linkedin.com/in/abhinav-chinnam" },
+    { name: "Chloe Suwignjo", linkedin: "https://www.linkedin.com/in/chloesuwignjo/"},
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06" },
     { name: "Maximilian Chao", linkedin: "https://linkedin.com/in/maximilian-chao-196a58246" },
     { name: "Niharika Sapre", linkedin: "https://linkedin.com/in/niharikasapre" },
