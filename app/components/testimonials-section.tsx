@@ -58,9 +58,9 @@ export function TestimonialsSection() {
 
   return (
     <FadeInOnScroll delayMs={100}>
-      <section className="py-20 px-8 bg-gray-50">
+      <section className="py-20 px-8 bg-surface">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl mb-12 text-gray-900">
+          <h2 className="text-center text-3xl md:text-4xl mb-12 text-foreground">
             Client Testimonials
           </h2>
 
@@ -78,10 +78,10 @@ export function TestimonialsSection() {
                 {testimonials.map((testimonial) => (
                   <CarouselItem key={testimonial.id}>
                     <div className="px-4">
-                      <div className="bg-white p-12 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <div className="bg-surface p-12 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300">
                         <div className="mb-8">
                           <svg
-                            className="w-12 h-12 text-gray-300 mb-4"
+                            className="w-12 h-12 text-white/20 mb-4"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -89,15 +89,15 @@ export function TestimonialsSection() {
                           </svg>
                         </div>
 
-                        <p className="text-gray-700 text-lg mb-8 leading-relaxed italic">
+                        <p className="text-text-secondary text-lg mb-8 leading-relaxed italic">
                           {testimonial.quote}
                         </p>
 
                         <div>
-                          <p className="text-gray-900 mb-1">
+                          <p className="text-foreground mb-1">
                             {testimonial.name}
                           </p>
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-text-secondary text-sm">
                             {testimonial.title}
                           </p>
 
@@ -117,18 +117,18 @@ export function TestimonialsSection() {
 
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-surface rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" />
+                <ChevronLeft className="w-6 h-6 text-text-secondary group-hover:text-white transition-colors" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-surface rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" />
+                <ChevronRight className="w-6 h-6 text-text-secondary group-hover:text-white transition-colors" />
               </button>
             </Carousel>
           </div>

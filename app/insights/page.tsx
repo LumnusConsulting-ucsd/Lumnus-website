@@ -79,7 +79,7 @@ export default function Insights() {
       </section>
 
       <FadeInOnScroll>
-        <section className="bg-white pt-24 px-8 pb-8">
+        <section className="bg-surface pt-24 px-8 pb-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((insight) => {
@@ -88,7 +88,7 @@ export default function Insights() {
                 return (
                   <div
                     key={insight.id}
-                    className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow cursor-pointer group min-h-[260px]"
+                    className="bg-surface border border-border-subtle rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow cursor-pointer group min-h-[260px]"
                     onClick={(e) => {
                       if (isExpanded) {
                         toggleInsight(insight.id, e);
@@ -108,9 +108,9 @@ export default function Insights() {
 
                       {!isExpanded && !insight.logo && (
                         <div className="mt-2 mb-4 flex flex-col items-center justify-center w-full">
-                          <h3 className="text-gray-800 text-xl mb-3">{insight.name}</h3>
+                          <h3 className="text-foreground text-xl mb-3">{insight.name}</h3>
                           {insight.description && (
-                            <p className="text-gray-600 text-[15px] text-center line-clamp-4 mt-1">
+                            <p className="text-text-secondary text-[15px] text-center line-clamp-4 mt-1">
                               {insight.description}
                             </p>
                           )}
@@ -118,7 +118,7 @@ export default function Insights() {
                       )}
 
                       {isExpanded && (
-                        <p className="text-gray-600 text-sm mb-6 flex-grow text-center">
+                        <p className="text-text-secondary text-sm mb-6 flex-grow text-center">
                           {insight.description}
                         </p>
                       )}
@@ -164,12 +164,12 @@ export default function Insights() {
           onClick={closeModal}
         >
           <div
-            className="bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+            className="bg-surface rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeModal}
-              className="sticky top-4 float-right mr-4 text-gray-500 hover:text-gray-700 bg-white rounded-full p-2 shadow-md z-10"
+              className="sticky top-4 float-right mr-4 text-text-muted hover:text-text-secondary bg-surface rounded-full p-2 shadow-md z-10"
             >
               <X className="w-6 h-6" />
             </button>

@@ -41,7 +41,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-brand/80 backdrop-blur-md shadow-sm"
+          ? "py-3 bg-background/80 backdrop-blur-md shadow-sm border-b border-border-subtle"
           : "py-6 bg-transparent"
       }`}
     >
@@ -69,7 +69,7 @@ export default function Navbar() {
               href={href}
               className={`hover:opacity-80 transition-opacity relative
                 after:content-[''] after:absolute after:left-0 after:bottom-[-4px]
-                after:h-[2px] after:bg-white after:transition-all after:duration-300
+                after:h-[2px] after:bg-surface after:transition-all after:duration-300
                 hover:after:w-full
                 ${isActive(href) ? "after:w-full" : "after:w-0"}
               `}

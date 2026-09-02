@@ -87,12 +87,12 @@ export default function Contact() {
      
    
       <FadeInOnScroll delayMs={100}>
-  <section className="py-20 px-8 bg-white">
+  <section className="py-20 px-8 bg-surface">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
       
       {/* LEFT: STAY UPDATED */}
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-3xl md:text-4xl tracking-wider text-black mb-10">
+        <h2 className="text-3xl md:text-4xl tracking-wider text-foreground mb-10">
           Stay Updated With Lumnus
         </h2>
 
@@ -147,7 +147,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface border border-black/10 rounded-lg"
           />
         </div>
 
@@ -158,7 +158,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface border border-black/10 rounded-lg"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface border border-black/10 rounded-lg"
           />
         </div>
 
@@ -181,7 +181,7 @@ export default function Contact() {
             onChange={handleChange}
             required
             rows={6}
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface border border-black/10 rounded-lg"
           />
         </div>
 

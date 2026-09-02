@@ -15,16 +15,22 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-cover bg-center md:bg-[length:125%] md:bg-[position:left_70%] md:bg-fixed"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusConsulting-hero.png')",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative min-h-screen overflow-hidden flex items-center justify-center"
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/walking-laughing.mp4"
+        poster="/gallery/full-cohort-group.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="absolute inset-0 bg-background/40" />
+
       <div className="absolute inset-0 flex items-center justify-center">
         <HeroFadeText className="text-center text-white px-6 -translate-y-24 md:px-8 md:-translate-y-[4.5rem]">
-          <div className="w-48 md:w-64 h-0.5 bg-white mx-auto mb-5 md:mb-6" />
+          <div className="w-48 md:w-64 h-0.5 bg-white/60 mx-auto mb-5 md:mb-6" />
 
           <h1 className="text-4xl md:text-7xl tracking-wider mb-4 md:mb-6">
             LUMNUS CONSULTING

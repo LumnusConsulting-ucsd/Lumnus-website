@@ -4,7 +4,7 @@ import { cn } from "./utils";
 export function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("bg-white text-black flex flex-col gap-6 rounded-xl border", className)}
+      className={cn("bg-surface text-foreground flex flex-col gap-6 rounded-xl border", className)}
       {...props}
     />
   );
@@ -22,7 +22,7 @@ export function CardDescription({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <p className={cn("text-gray-600", className)} {...props} />;
+  return <p className={cn("text-text-secondary", className)} {...props} />;
 }
 
 export function CardContent({ className, ...props }: React.ComponentProps<"div">) {

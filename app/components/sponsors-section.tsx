@@ -2,44 +2,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeInOnScroll } from "./fade-scroll";
 
+const SPONSORS = [
+  { name: "Rady School of Management", href: "https://rady.ucsd.edu/", src: "/Rady.png" },
+  { name: "The Basement", href: "https://thebasement.ucsd.edu/", src: "/Basement.png" },
+];
+
 export function SponsorsSection() {
   return (
     <FadeInOnScroll delayMs={100}>
-    <section className="pt-12 pb-15 px-2 bg-white">
-      <div className="max-w-5xl mx-auto text-center">
-        
-        {/* MATCHED TITLE */}
-        <h2 className="text-gray-900 text-3xl md:text-4xl font-medium tracking-tight mb-12">
+      <section className="pt-12 pb-16 px-8 bg-surface">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-12">
             Thank You to Our Sponsors
           </h2>
 
-        <div className="grid grid-cols-2 gap-16 items-center max-w-4xl mx-auto">
-          
-          {/* SPONSOR 1 */}
-          <Link href="https://rady.ucsd.edu/" target="_blank">
-            <Image
-              src="/Rady.png"
-              alt="Sponsor 1"
-              width={320}
-              height={160}
-              className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
-            />
-          </Link>
-
-          {/* SPONSOR 2 */}
-          <Link href="https://thebasement.ucsd.edu/" target="_blank">
-            <Image
-              src="/Basement.png"
-              alt="Sponsor 2"
-              width={320}
-              height={160}
-              className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
-            />
-          </Link>
-
+          <div className="flex flex-wrap justify-center gap-6">
+            {SPONSORS.map((sponsor) => (
+              <Link
+                key={sponsor.name}
+                href={sponsor.href}
+                target="_blank"
+                className="h-20 w-44 rounded-xl border border-border-subtle bg-white/[0.02] flex items-center justify-center p-4 hover:border-brand/40 hover:bg-white/[0.05] transition-all"
+              >
+                <Image
+                  src={sponsor.src}
+                  alt={sponsor.name}
+                  width={320}
+                  height={160}
+                  className="max-h-full w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                />
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </FadeInOnScroll>
   );
 }

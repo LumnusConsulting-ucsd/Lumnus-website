@@ -183,7 +183,7 @@ function MemberCard({
     .slice(0, 2);
 
   const circleClass =
-    "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-gray-200 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
+    "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-white/10 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
 
   return (
     <div className="text-center group">
@@ -192,19 +192,19 @@ function MemberCard({
           <img
             src={photoSrc}
             alt={name}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
             onError={(e) => tryNextExtension(e)}
           />
         ) : (
-          <span className="text-gray-600 font-semibold text-xl sm:text-2xl md:text-3xl">
+          <span className="text-text-secondary font-semibold text-xl sm:text-2xl md:text-3xl">
             {initials || "?"}
           </span>
         )}
       </div>
-      <h4 className="mb-1 font-medium text-gray-800 truncate px-1" title={name}>
+      <h4 className="mb-1 font-medium text-foreground truncate px-1" title={name}>
         {name}
       </h4>
-      <p className="text-gray-500 text-sm mb-2">{title || committee}</p>
+      <p className="text-text-muted text-sm mb-2">{title || committee}</p>
       <a
         href={linkedin || "#"}
         target={linkedin ? "_blank" : undefined}
@@ -247,12 +247,12 @@ export default function About() {
 
       {/* Mission Statement Section */}
       <FadeInOnScroll>
-        <section className="relative py-16 px-8 bg-white z-10 w-full">
+        <section className="relative py-16 px-8 bg-surface z-10 w-full">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="text-3xl md:text-4xl mb-6 font-medium text-black">Mission Statement</h2>
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                <h2 className="text-3xl md:text-4xl mb-6 font-medium text-foreground">Mission Statement</h2>
+                <p className="text-text-secondary leading-relaxed text-lg mb-6">
                   To empower students with real-world business experience while
                   delivering high-quality professional services to our clients.
                 </p>
@@ -279,9 +279,9 @@ export default function About() {
 
       {/* About Content Section */}
       <FadeInOnScroll>
-        <section className="relative py-24 px-8 bg-gray-100 z-10">
+        <section className="relative py-24 px-8 bg-surface z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-600 leading-relaxed mb-8 text-lg font-normal">
+            <p className="text-text-secondary leading-relaxed mb-8 text-lg font-normal">
               Lumnus Consulting is a student run consulting company operating out
               of the University of California, San Diego with support from the
               Rady School of Management and its professors. Founded in 2016, our
@@ -289,7 +289,7 @@ export default function About() {
               of backgrounds and majors, our team offers quality and innovative
               solutions.
             </p>
-            <p className="text-gray-600 leading-relaxed text-lg font-normal">
+            <p className="text-text-secondary leading-relaxed text-lg font-normal">
               We are part of the global Junior Enterprise movement, which
               consists of 30,000 active members across two dozen countries.
               Junior Enterprise has partnered with a number of corporate
@@ -302,9 +302,9 @@ export default function About() {
 
       {/* Our Members Section — committee selector + member grid */}
       <FadeInOnScroll>
-        <section className="relative py-24 px-8 bg-white z-10">
+        <section className="relative py-24 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-black">
+            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
               Our Members
             </h2>
 
@@ -317,7 +317,7 @@ export default function About() {
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
                     activeCommittee === committee
                       ? "bg-brand text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                      : "bg-white/10 text-text-secondary hover:bg-white/15"
                   }`}
                 >
                   {committee}
@@ -344,9 +344,9 @@ export default function About() {
 
       {/* Behind the Scenes Section */}
       <FadeInOnScroll>
-        <section id="behind-the-scenes" className="relative py-20 px-8 bg-gray-100 z-10">
+        <section id="behind-the-scenes" className="relative py-20 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-black">
+            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
               Behind the Scenes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -396,9 +396,9 @@ export default function About() {
 
       {/* Where Alumni Work Section */}
       <FadeInOnScroll>
-        <section className="relative pb-20 px-8 bg-white z-10">
+        <section className="relative pb-20 px-8 bg-surface z-10">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium text-black">
+            <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium text-foreground">
               Where Our Consultants Have Been
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
