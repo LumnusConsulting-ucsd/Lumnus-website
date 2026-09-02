@@ -59,22 +59,27 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Amelia Badamjav", linkedin: "https://linkedin.com/in/amelia-badamjav-a11617314" },
     { name: "Arushi Gupta", linkedin: "https://linkedin.com/in/argupta5" },
     { name: "Eshwari Gundi", linkedin: "https://linkedin.com/in/eshwari-gundi-a61480229" },
+    { name: "Natasha Dorairaj", linkedin: "https://www.linkedin.com/in/natashadorairaj/" },
     { name: "Parnika Gupta", linkedin: "https://www.linkedin.com/in/parnika-gupta1/?skipRedirect=true" },
     { name: "Veda Thota", linkedin: "https://linkedin.com/in/veda-thota" },
   ],
   External: [
+    { name: "Aarav Mittal" },
     { name: "Abigail Losi", linkedin: "https://linkedin.com/in/abigail-losi-56b883346" },
     { name: "Abigail Shlimenzon", linkedin: "https://linkedin.com/in/abigail-shlimenzon-a9ab762b5" },
     { name: "Mina Garcia", linkedin: "https://linkedin.com/in/mina-garcia-07a762242" },
     { name: "Mirabelle Trunk", linkedin: "https://linkedin.com/in/mirabelle-trunk" },
+    { name: "Neakil David", linkedin: "https://www.linkedin.com/in/neakail-david-a09930288/" },
     { name: "Rahul Raman", linkedin: "https://linkedin.com/in/rahulraman23" },
     { name: "Varsha Reddy", linkedin: "https://linkedin.com/in/varshagreddy" },
   ],
   Marketing: [
+    { name: "Akash Gupta-Verma", linkedin: "https://www.linkedin.com/in/akash-gupta-verma-956b97199/"},
     { name: "Anwesha Mohanty", linkedin: "https://linkedin.com/in/anweshamohantyy" },
     { name: "Emily Naka", linkedin: "https://linkedin.com/in/emilynaka" },
     { name: "Esha Warrier", linkedin: "https://linkedin.com/in/eshawarrier" },
     { name: "Filicia Wu", linkedin: "https://linkedin.com/in/filicia-wu" },
+    { name: "Jacob Kang", linkedin: "https://www.linkedin.com/in/jacobkang2647/" },
     { name: "Nidhi Rajesh", linkedin: "https://linkedin.com/in/nidhi-rajesh-300645295" },
     { name: "Tanay Parikh", linkedin: "https://www.linkedin.com/in/tanayjparikh/" },
     { name: "Treesha Chhabria", linkedin: "https://linkedin.com/in/treesha-chhabria-1b2642362", photo: "treesha-chhabria" },
@@ -88,30 +93,40 @@ const membersByCommittee: Record<(typeof COMMITTEES)[number], Member[]> = {
     { name: "Dylan Nelson", linkedin: "https://www.linkedin.com/in/dylan-nelson-3501471b2/", photo: "dylan-nelson"},
     { name: "Giulio Rambelli", linkedin: "https://linkedin.com/in/giuliorambelli" },
     { name: "Humza Dalal", linkedin: "https://linkedin.com/in/humza-dalal-b439b5280" },
+    { name: "Jason Si", linkedin: "https://www.linkedin.com/in/jason-si-6bb3123a1/" },
     { name: "Rishit Bhandari", linkedin: "https://linkedin.com/in/rishit-bhandari-41a83647" },
+    { name: "Solomon Whitlam-Sandler", linkedin: "https://www.linkedin.com/in/solomon-whitlam-sandler-a1a076396/" },
     { name: "Tanner Wan", linkedin: "https://linkedin.com/in/tannerwan" },
   ],
   "Human Resources": [
     { name: "Angela Chen", linkedin: "https://linkedin.com/in/angelacjq" },
     { name: "Anirudh Rajesh", linkedin: "https://linkedin.com/in/anirudhrajesh23" },
     { name: "Dayus Gohel", linkedin: "https://linkedin.com/in/dayus-gohel" },
+    { name: "Garret Christie", linkedin: "https://www.linkedin.com/in/garret-christie-a68401209/" },
+    { name: "Jackson Martson" },
     { name: "Molly Marchese", linkedin: "https://linkedin.com/in/mollymarchese" },
     { name: "Sabrina Zanetto", linkedin: "https://linkedin.com/in/sabrina-zanetto-565154345" },
+    { name: "Shaaktiram Balakumar", linkedin: "https://www.linkedin.com/in/shaaktirambalakumar/" },
     { name: "Sumukhi Tunuguntla", linkedin: "https://www.linkedin.com/in/sumukhitunuguntla/" },
     { name: "Tanner Bradley", linkedin: "https://linkedin.com/in/tannerwilsonbradley" },
     { name: "Vivaan Laungani", linkedin: "https://linkedin.com/in/vivaanlaungani" },
-    
+
   ],
 
   Technology: [
     { name: "Abhinav Chinnam", linkedin: "https://linkedin.com/in/abhinav-chinnam" },
+    { name: "Aditya Mittal", linkedin: "https://www.linkedin.com/in/adityamittal1207/" },
+    { name: "Arjan Gunsi", linkedin: "https://www.linkedin.com/in/arjan-gunsi/" },
     { name: "Chloe Suwignjo", linkedin: "https://www.linkedin.com/in/chloesuwignjo/"},
     { name: "Ishaan Garg", linkedin: "https://linkedin.com/in/ishaangarg06" },
+    { name: "Ishaan Gowda", linkedin: "https://www.linkedin.com/in/ishaangowda/" },
+    { name: "Koshik Kumaravel", linkedin: "https://www.linkedin.com/in/koshik-kumaravel/" },
     { name: "Maximilian Chao", linkedin: "https://linkedin.com/in/maximilian-chao-196a58246" },
     { name: "Niharika Sapre", linkedin: "https://linkedin.com/in/niharikasapre" },
     { name: "Nikhil Akiti", linkedin: "https://linkedin.com/in/nikhil-akiti" },
     { name: "Nikita Jain", linkedin: "https://linkedin.com/in/nikita-jain123" },
     { name: "Parth Mehta", linkedin: "https://linkedin.com/in/parth-mehta-0873a2217" },
+    { name: "Sanmita Babu" },
     { name: "Serina Wang", linkedin: "https://linkedin.com/in/serina-wang-" },
     { name: "Sharana Sabesan", linkedin: "https://linkedin.com/in/sharana-sabesan-4bb0211b3" },
     { name: "Sruti Mani", linkedin: "https://linkedin.com/in/srutimani" },
@@ -168,16 +183,16 @@ function MemberCard({
     .slice(0, 2);
 
   const circleClass =
-    "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-gray-200 object-cover";
+    "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-gray-200 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
 
   return (
-    <div className="text-center">
+    <div className="text-center group">
       <div className={circleClass}>
         {!imgError ? (
           <img
             src={photoSrc}
             alt={name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             onError={(e) => tryNextExtension(e)}
           />
         ) : (
@@ -194,7 +209,7 @@ function MemberCard({
         href={linkedin || "#"}
         target={linkedin ? "_blank" : undefined}
         rel={linkedin ? "noopener noreferrer" : undefined}
-        className="inline-flex items-center justify-center text-blue-950 hover:text-blue-900 transition-colors"
+        className="inline-flex items-center justify-center text-brand hover:text-brand-light transition-colors"
         aria-label={`${name} LinkedIn`}
       >
         <Linkedin size={18} />
@@ -244,7 +259,7 @@ export default function About() {
                 <Button
   asChild
   size="lg"
-  className="!rounded-full px-8 py-3 text-sm md:text-base bg-blue-950 hover:bg-blue-900 font-medium"
+  className="!rounded-full px-8 py-3 text-sm md:text-base bg-brand hover:bg-brand-light font-medium"
 >
   <Link href="/recruitment">Join Us</Link>
 </Button>
@@ -301,7 +316,7 @@ export default function About() {
                   onClick={() => setActiveCommittee(committee)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
                     activeCommittee === committee
-                      ? "bg-blue-950 text-white"
+                      ? "bg-brand text-white"
                       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                   }`}
                 >
@@ -327,6 +342,58 @@ export default function About() {
         </section>
       </FadeInOnScroll>
 
+      {/* Behind the Scenes Section */}
+      <FadeInOnScroll>
+        <section id="behind-the-scenes" className="relative py-20 px-8 bg-gray-100 z-10">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-black">
+              Behind the Scenes
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <video
+                className="w-full rounded-xl shadow-lg object-cover aspect-video"
+                src="/videos/walking-laughing.mp4"
+                poster="/videos/walking-laughing-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+              <video
+                className="rounded-xl shadow-lg object-cover aspect-[9/16] mx-auto h-full max-h-[480px]"
+                src="/videos/staircase.mp4"
+                poster="/videos/staircase-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+            </div>
+
+            <img
+              src="/gallery/full-cohort-group.jpg"
+              alt="The full Lumnus intern cohort"
+              className="w-full rounded-xl shadow-lg mt-8"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-8">
+              <img
+                src="/gallery/main-intern-class.jpg"
+                alt="Intern class outside Wells Fargo Hall"
+                className="w-full h-auto rounded-xl shadow-lg mx-auto max-w-sm md:max-w-none"
+              />
+              <img
+                src="/gallery/palm-trio.jpg"
+                alt="Interns outside the Rady building"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </section>
+      </FadeInOnScroll>
+
       {/* Where Alumni Work Section */}
       <FadeInOnScroll>
         <section className="relative pb-20 px-8 bg-white z-10">
@@ -339,84 +406,84 @@ export default function About() {
                 <img
                   src={googleLogo}
                   alt="Google"
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={microsoftLogo}
                   alt="Microsoft"
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={adobeLogo}
                   alt="Adobe"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={capitalOneLogo}
                   alt="Capital One"
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={coinbaseLogo}
                   alt="Coinbase"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={bcgLogo}
                   alt="BCG"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={deloitteLogo}
                   alt="Deloitte"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={eyLogo}
                   alt="EY"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={jpMorganLogo}
                   alt="J.P. Morgan"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={paypalLogo}
                   alt="PayPal"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={serviceNowLogo}
                   alt="ServiceNow"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={boaLogo}
                   alt="Bank of America"
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
                 />
               </div>
             </div>

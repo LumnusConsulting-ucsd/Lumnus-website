@@ -21,7 +21,7 @@ export function PartnersSection() {
                 alt="Booz Allen Hamilton"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -32,7 +32,7 @@ export function PartnersSection() {
                 alt="EY"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -43,7 +43,7 @@ export function PartnersSection() {
                 alt="Bainbridge Consulting"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -54,7 +54,7 @@ export function PartnersSection() {
                 alt="Avasant"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -65,7 +65,7 @@ export function PartnersSection() {
                 alt="BioLabs San Diego"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -76,7 +76,7 @@ export function PartnersSection() {
                 alt="EvoNexus"
                 width={320}
                 height={160}
-                className="mx-auto object-contain hover:opacity-80 transition"
+                className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
               />
             </Link>
           </div>

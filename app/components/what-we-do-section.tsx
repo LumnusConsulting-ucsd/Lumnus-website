@@ -22,12 +22,14 @@ export function WhatWeDoSection() {
         <Link href="/services">
         <button
         className="
-            bg-blue-950 hover:bg-blue-900 text-white
+            bg-brand hover:bg-brand-light text-white
             text-sm md:text-lg
             px-10 py-4
             rounded-full
             font-medium
-            transition-colors
+            transition-all
+            hover:scale-[1.03]
+            hover:shadow-lg
         "
         >
         Our Services

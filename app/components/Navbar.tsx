@@ -9,11 +9,21 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     setMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (path: string) => pathname === path;
 
@@ -28,7 +38,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-6 md:px-8 py-6">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 transition-all duration-300 ${
+        scrolled
+          ? "py-3 bg-brand/80 backdrop-blur-md shadow-sm"
+          : "py-6 bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -40,7 +56,7 @@ export default function Navbar() {
             alt="Lumnus Consulting"
             width={220}
             height={48}
-            className="w-auto h-11 md:h-12"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-9 md:h-10" : "h-11 md:h-12"}`}
             priority
           />
         </Link>
@@ -74,8 +90,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden mt-4 rounded-2xl bg-black/80 backdrop-blur-md px-6 py-5">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          menuOpen ? "max-h-80 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
+        }`}
+      >
+        <div className="rounded-2xl bg-black/80 backdrop-blur-md px-6 py-5">
           <div className="flex flex-col gap-4 text-white text-sm font-medium tracking-wide">
             {navItems.map(([href, label]) => (
               <Link
@@ -91,7 +111,7 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

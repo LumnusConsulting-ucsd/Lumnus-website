@@ -122,7 +122,7 @@ export function AlumniSpotlightSection() {
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
               aria-label="Previous alumni"
             >
-              <ChevronLeft className="w-6 h-6 text-blue-900" />
+              <ChevronLeft className="w-6 h-6 text-brand-light" />
             </button>
 
             <button
@@ -130,7 +130,7 @@ export function AlumniSpotlightSection() {
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
               aria-label="Next alumni"
             >
-              <ChevronRight className="w-6 h-6 text-blue-900" />
+              <ChevronRight className="w-6 h-6 text-brand-light" />
             </button>
           </Carousel>
         </div>

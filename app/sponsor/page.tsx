@@ -92,7 +92,7 @@ export default function SponsorPage() {
           </h1>
           <button
             onClick={scrollToForm}
-            className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-colors inline-flex items-center gap-2"
+            className="bg-brand hover:bg-brand-light text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
           >
             Become a Sponsor
             <ArrowRight size={18} />
@@ -133,7 +133,7 @@ export default function SponsorPage() {
       {/* Sponsor Form */}
       <section id="sponsor-form" className="py-12 md:py-24 px-4 md:px-8 bg-gray-50">
         <form onSubmit={handleSubmit}>
-          <div className="max-w-4xl mx-auto bg-white border-t-4 border-blue-950 p-6 md:p-12 rounded-lg shadow-sm">
+          <div className="max-w-4xl mx-auto bg-white border-t-4 border-brand p-6 md:p-12 rounded-lg shadow-sm">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-black text-2xl md:text-4xl mb-3 md:mb-4">Become a Sponsor</h2>
               <p className="text-black text-sm md:text-lg">
@@ -148,7 +148,7 @@ export default function SponsorPage() {
                   onClick={() => setIsOngoing(false)}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     !isOngoing
-                      ? "bg-blue-950 text-white shadow-md"
+                      ? "bg-brand text-white shadow-md"
                       : "text-black"
                   }`}
                 >
@@ -159,7 +159,7 @@ export default function SponsorPage() {
                   onClick={() => setIsOngoing(true)}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     isOngoing
-                      ? "bg-blue-950 text-white shadow-md"
+                      ? "bg-brand text-white shadow-md"
                       : "text-black"
                   }`}
                 >
@@ -179,8 +179,8 @@ export default function SponsorPage() {
                   }}
                   className={`py-3 md:py-4 px-3 md:px-6 border-2 rounded-lg transition ${
                     selectedAmount === amount && !customAmount
-                      ? "border-blue-950 bg-blue-950 text-white"
-                      : "border-gray-300 bg-white text-black hover:border-blue-950"
+                      ? "border-brand bg-brand text-white"
+                      : "border-gray-300 bg-white text-black hover:border-brand"
                   }`}
                 >
                   <div className="font-medium text-sm md:text-base text-black">
@@ -255,7 +255,7 @@ export default function SponsorPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-950 hover:bg-blue-900 text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2"
+              className="w-full bg-brand hover:bg-brand-light text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2 transition-all hover:shadow-lg"
             >
               Continue to Payment
             </button>
@@ -280,9 +280,9 @@ function ImpactCard({
   text: string;
 }) {
   return (
-    <div className="border-t-4 border-blue-950 p-6 md:p-8 bg-gray-50">
+    <div className="border-t-4 border-brand p-6 md:p-8 bg-gray-50">
       <div className="flex items-start gap-4 mb-4">
-        <div className="bg-blue-950 p-3 md:p-4 shrink-0">{icon}</div>
+        <div className="bg-brand p-3 md:p-4 shrink-0">{icon}</div>
         <div>
           <h3 className="text-black text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
           <p className="text-black text-sm md:text-base">{text}</p>

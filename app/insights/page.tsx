@@ -129,7 +129,7 @@ export default function Insights() {
                             href={insight.pdfUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center text-blue-950 hover:text-blue-900 transition-colors group-hover:translate-x-1 transform transition-transform"
+                            className="flex items-center text-brand hover:text-brand-light transition-colors group-hover:translate-x-1 transform transition-transform"
                             >
             <span className="mr-2">Read Insight</span>
                     <ArrowRight className="w-4 h-4" />
@@ -142,7 +142,7 @@ export default function Insights() {
                           <a
                             href={insight.pdfUrl}
                             download
-                            className="flex items-center text-blue-950 hover:text-blue-900 transition-colors group-hover:translate-x-1 transform transition-transform"
+                            className="flex items-center text-brand hover:text-brand-light transition-colors group-hover:translate-x-1 transform transition-transform"
                           >
                             <span className="mr-2">Download PDF</span>
                             <Download className="w-4 h-4" />

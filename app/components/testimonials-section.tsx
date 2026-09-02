@@ -78,7 +78,7 @@ export function TestimonialsSection() {
                 {testimonials.map((testimonial) => (
                   <CarouselItem key={testimonial.id}>
                     <div className="px-4">
-                      <div className="bg-white p-12 rounded-3xl shadow-md">
+                      <div className="bg-white p-12 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300">
                         <div className="mb-8">
                           <svg
                             className="w-12 h-12 text-gray-300 mb-4"
@@ -117,18 +117,18 @@ export function TestimonialsSection() {
 
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-700" />
+                <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-brand hover:scale-110 transition-all z-10 group"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-6 h-6 text-gray-700" />
+                <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" />
               </button>
             </Carousel>
           </div>

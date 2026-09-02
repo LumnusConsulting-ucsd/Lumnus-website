@@ -32,7 +32,7 @@ export default function Recruitment() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSdvqo5TfS14-LYCSvGX5HmuVMUBd70zS2a95IoFNtysw8MnzA/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-950 hover:bg-blue-900 text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-colors"
+            className="bg-brand hover:bg-brand-light text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg"
           >
             Interest Form
           </a>
@@ -57,7 +57,7 @@ export default function Recruitment() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
                 >
-                  <div className="w-16 h-16 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+                  <div className="w-16 h-16 bg-brand hover:bg-brand-light rounded-full flex items-center justify-center transition-colors">
                     <Facebook className="text-white" size={32} />
                   </div>
                   <span className="text-gray-700">Facebook</span>
@@ -69,7 +69,7 @@ export default function Recruitment() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
                 >
-                  <div className="w-16 h-16 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+                  <div className="w-16 h-16 bg-brand hover:bg-brand-light rounded-full flex items-center justify-center transition-colors">
                     <Instagram className="text-white" size={32} />
                   </div>
                   <span className="text-gray-700">Instagram</span>
@@ -81,7 +81,7 @@ export default function Recruitment() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
                 >
-                  <div className="w-16 h-16 bg-blue-950 hover:bg-blue-900 rounded-full flex items-center justify-center transition-colors">
+                  <div className="w-16 h-16 bg-brand hover:bg-brand-light rounded-full flex items-center justify-center transition-colors">
                     <Linkedin className="text-white" size={32} />
                   </div>
                   <span className="text-gray-700">LinkedIn</span>

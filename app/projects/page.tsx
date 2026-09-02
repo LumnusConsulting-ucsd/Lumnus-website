@@ -96,7 +96,7 @@ export default function Projects() {
                 return (
                   <div
                     key={project.id}
-                    className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow cursor-pointer group"
+                    className="bg-white border border-gray-200 hover:border-brand/30 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                     onClick={(e) => {
                       if (isExpanded) {
                         toggleProject(project.id, e);
@@ -130,7 +130,7 @@ export default function Projects() {
                         <div className="flex justify-center w-full">
                           <button
                             onClick={(e) => toggleProject(project.id, e)}
-                            className="flex items-center text-blue-950 hover:text-blue-900 transition-colors group-hover:translate-x-1 transform transition-transform"
+                            className="flex items-center text-brand hover:text-brand-light transition-colors group-hover:translate-x-1 transform transition-transform"
                           >
                             <span className="mr-2">Learn More</span>
                             <ArrowRight className="w-4 h-4" />

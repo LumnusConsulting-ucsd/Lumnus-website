@@ -103,7 +103,7 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
               <Facebook className="text-white" size={28} />
             </div>
             <span className="text-sm">Facebook</span>
@@ -114,7 +114,7 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
               <Instagram className="text-white" size={28} />
             </div>
             <span className="text-sm">Instagram</span>
@@ -125,7 +125,7 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
               <Linkedin className="text-white" size={28} />
             </div>
             <span className="text-sm">LinkedIn</span>
@@ -133,7 +133,7 @@ export default function Contact() {
         </div>
 
         {/* EMAIL */}
-        <p className="text-blue-950 text-xl font-medium text-center">
+        <p className="text-brand text-xl font-medium text-center">
           contact@lumnusconsulting.net
         </p>
       </div>
@@ -188,7 +188,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={isSending || isSuccess}
-          className="w-full bg-blue-950 hover:bg-blue-900 text-white py-3 rounded-full transition-colors"
+          className="w-full bg-brand hover:bg-brand-light text-white py-3 rounded-full transition-all hover:shadow-lg"
         >
           {isSending
             ? "Sending..."

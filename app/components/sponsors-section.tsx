@@ -22,7 +22,7 @@ export function SponsorsSection() {
               alt="Sponsor 1"
               width={320}
               height={160}
-              className="mx-auto object-contain hover:opacity-80 transition"
+              className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
             />
           </Link>
 
@@ -33,7 +33,7 @@ export function SponsorsSection() {
               alt="Sponsor 2"
               width={320}
               height={160}
-              className="mx-auto object-contain hover:opacity-80 transition"
+              className="mx-auto object-contain grayscale hover:grayscale-0 hover:opacity-80 hover:scale-105 transition-all duration-300"
             />
           </Link>
 
