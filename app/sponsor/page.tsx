@@ -285,7 +285,7 @@ function ImpactCard({
   return (
     <div className="border-t-4 border-brand p-6 md:p-8 bg-surface">
       <div className="flex items-start gap-4 mb-4">
-        <div className="bg-brand p-3 md:p-4 shrink-0">{icon}</div>
+        <div className="bg-[#0A66C2] p-3 md:p-4 shrink-0">{icon}</div>
         <div>
           <h3 className="text-foreground text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
           <p className="text-foreground text-sm md:text-base">{text}</p>

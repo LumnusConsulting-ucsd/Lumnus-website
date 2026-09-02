@@ -1,14 +1,14 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import { Eye, BarChart3, Globe, ShoppingBag, Power, Phone, MessageSquare, Clock, ChevronDown } from 'lucide-react';
+import { Eye, BarChart3, Globe, ShoppingBag, Power, Phone, MessageSquare, Clock, RefreshCw, RotateCcw } from 'lucide-react';
 import { TestimonialsSection } from '../components/testimonials-section';
 
 export default function Services() {
-  const [expandedServices, setExpandedServices] = useState<Set<number>>(new Set());
+  const [flippedServices, setFlippedServices] = useState<Set<number>>(new Set());
 
   const toggleService = (index: number) => {
-    setExpandedServices(prev => {
+    setFlippedServices(prev => {
       const newSet = new Set(prev);
       if (newSet.has(index)) {
         newSet.delete(index);
@@ -42,6 +42,7 @@ export default function Services() {
     {
       icon: Eye,
       title: 'INDUSTRY RESEARCH',
+      summary: 'Market sizing, risk assessment, and consumer insights.',
       items: [
         'Risk Assessment',
         'Primary/Secondary Research',
@@ -53,6 +54,7 @@ export default function Services() {
     {
       icon: BarChart3,
       title: 'BUSINESS DEVELOPMENT',
+      summary: 'Pricing, revenue modeling, and go-to-market execution.',
       items: [
         'Pricing Strategy',
         'Revenue Modeling',
@@ -64,6 +66,7 @@ export default function Services() {
     {
       icon: Globe,
       title: 'BUSINESS STRATEGY',
+      summary: 'Business models, competitive intelligence, and growth planning.',
       items: [
         'Business Model Development',
         'Go-to-Market Strategy',
@@ -74,6 +77,7 @@ export default function Services() {
     {
       icon: ShoppingBag,
       title: 'SOCIAL MEDIA AND MARKETING',
+      summary: 'Brand development and marketing strategy.',
       items: [
         'Brand Development',
         'Marketing Strategy',
@@ -84,6 +88,7 @@ export default function Services() {
     {
       icon: Power,
       title: 'TECHNOLOGY',
+      summary: 'Data analytics, visualization, and website development.',
       items: [
         'Data and Business Analytics',
         'Data Visualization',
@@ -97,7 +102,7 @@ export default function Services() {
   return (
     <>
       {/* Hero Section */}
-      <section 
+      <section
         className="relative h-[40vh] flex items-center justify-center"
         style={{
           backgroundImage:
@@ -112,63 +117,16 @@ export default function Services() {
         </h1>
       </section>
 
-      {/* Services Grid Section */}
-      <section className="py-24 px-8 bg-surface">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              const isExpanded = expandedServices.has(index);
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center group bg-surface-soft border border-border-subtle border-t-2 border-t-brand rounded-xl p-8 hover:border-brand/40 hover:bg-white/[0.05] transition-all duration-300"
-                >
-                  <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-brand group-hover:scale-110">
-                    <Icon size={36} className="text-brand-light transition-colors duration-300 group-hover:text-white" strokeWidth={1.5} />
-                  </div>
-
-                  <button
-                    onClick={() => toggleService(index)}
-                    className="flex items-center gap-2 mb-4 tracking-wide text-foreground hover:text-brand-light transition-colors cursor-pointer"
-                  >
-                    <h3 className="text-foreground text-sm md:text-base">{service.title}</h3>
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-2">
-                      {service.items.map((item, itemIndex) => (
-                        <p key={itemIndex} className="text-text-secondary text-sm">
-                          {item}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Project Timeline Section */}
       <section className="py-16 px-8 bg-surface">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-foreground text-center text-3xl md:text-4xl mb-12 tracking-wider">
             PROJECT TIMELINE
           </h2>
-          
+
           <div className="relative">
             <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-brand" />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="relative flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white z-10 mb-4">
@@ -214,8 +172,59 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Services Flip Card Grid */}
+      <section className="py-24 px-8 bg-surface">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              const isFlipped = flippedServices.has(index);
+              return (
+                <div key={index} className="h-72 [perspective:1000px]">
+                  <div
+                    onClick={() => toggleService(index)}
+                    className={`relative w-full h-full cursor-pointer transition-transform duration-700 [transform-style:preserve-3d] ${
+                      isFlipped ? "[transform:rotateY(180deg)]" : ""
+                    }`}
+                  >
+                    {/* Front Face */}
+                    <div className="absolute inset-0 [backface-visibility:hidden] flex flex-col items-center justify-center text-center bg-surface-soft border border-border-subtle border-t-2 border-t-brand rounded-xl p-8 hover:border-brand/40 hover:bg-white/[0.05] transition-colors duration-300">
+                      <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6">
+                        <Icon size={36} className="text-brand-light" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-foreground text-sm md:text-base mb-3 tracking-wide">{service.title}</h3>
+                      <p className="text-text-secondary text-sm mb-4">{service.summary}</p>
+                      <span className="flex items-center gap-1.5 text-xs text-brand-light">
+                        <RefreshCw size={13} /> Click to flip
+                      </span>
+                    </div>
+
+                    {/* Back Face */}
+                    <div
+                      className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center text-center rounded-xl p-8 border border-border-subtle"
+                      style={{ backgroundColor: "#0f1c32" }}
+                    >
+                      <div className="flex flex-col gap-2 mb-5">
+                        {service.items.map((item, itemIndex) => (
+                          <p key={itemIndex} className="text-text-secondary text-sm">
+                            {item}
+                          </p>
+                        ))}
+                      </div>
+                      <span className="flex items-center gap-1.5 text-xs text-brand-light">
+                        <RotateCcw size={13} /> Flip back
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Work With Us Section */}
-      <section 
+      <section
         className="relative py-32 px-8"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Services-image2.JPG')`,
@@ -236,7 +245,7 @@ export default function Services() {
           <p className="text-center text-text-secondary leading-relaxed mb-16 max-w-3xl mx-auto text-lg">
             Lumnus Consulting has worked with clients across a variety of industries. With the support of our diverse consultants and international network, we are dedicated to finding you the perfect team and delivering meaningful results.
           </p>
-          
+
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 w-full">
               <div className="flex flex-col items-center text-center">
@@ -247,7 +256,7 @@ export default function Services() {
                   Contact us and we will open up a dialogue with your company within a week to formulate a tentative plan.
                 </p>
               </div>
-              
+
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 flex items-center justify-center mb-6">
                   <MessageSquare size={48} className="text-brand" strokeWidth={1.5} />
@@ -256,7 +265,7 @@ export default function Services() {
                   We will schedule a meeting to discuss our potential solution, as well as quotes.
                 </p>
               </div>
-              
+
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 flex items-center justify-center mb-6">
                   <Clock size={48} className="text-brand" strokeWidth={1.5} />
@@ -266,8 +275,8 @@ export default function Services() {
                 </p>
               </div>
             </div>
-            
-            <Link 
+
+            <Link
               href="/contact"
               className="bg-brand hover:bg-brand-light text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-block"
             >

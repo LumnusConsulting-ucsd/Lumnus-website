@@ -259,7 +259,7 @@ export default function About() {
                 <Button
   asChild
   size="lg"
-  className="!rounded-full px-8 py-3 text-sm md:text-base bg-brand hover:bg-brand-light font-medium"
+  className="!rounded-full px-8 py-3 text-sm md:text-base bg-[#0A66C2] hover:bg-[#004182] font-medium"
 >
   <Link href="/recruitment">Join Us</Link>
 </Button>
@@ -342,58 +342,6 @@ export default function About() {
         </section>
       </FadeInOnScroll>
 
-      {/* Behind the Scenes Section */}
-      <FadeInOnScroll>
-        <section id="behind-the-scenes" className="relative py-20 px-8 bg-surface z-10">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
-              Behind the Scenes
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              <video
-                className="w-full rounded-xl shadow-lg object-cover aspect-video"
-                src="/videos/walking-laughing.mp4"
-                poster="/videos/walking-laughing-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-              <video
-                className="rounded-xl shadow-lg object-cover aspect-[9/16] mx-auto h-full max-h-[480px]"
-                src="/videos/staircase.mp4"
-                poster="/videos/staircase-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-            </div>
-
-            <img
-              src="/gallery/full-cohort-group.jpg"
-              alt="The full Lumnus intern cohort"
-              className="w-full rounded-xl shadow-lg mt-8"
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-8">
-              <img
-                src="/gallery/main-intern-class.jpg"
-                alt="Intern class outside Wells Fargo Hall"
-                className="w-full h-auto rounded-xl shadow-lg mx-auto max-w-sm md:max-w-none"
-              />
-              <img
-                src="/gallery/palm-trio.jpg"
-                alt="Interns outside the Rady building"
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
-      </FadeInOnScroll>
-
       {/* Where Alumni Work Section */}
       <FadeInOnScroll>
         <section className="relative pb-20 px-8 bg-surface z-10">
@@ -406,86 +354,114 @@ export default function About() {
                 <img
                   src={googleLogo}
                   alt="Google"
-                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={microsoftLogo}
                   alt="Microsoft"
-                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={adobeLogo}
                   alt="Adobe"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={capitalOneLogo}
                   alt="Capital One"
-                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={coinbaseLogo}
                   alt="Coinbase"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={bcgLogo}
                   alt="BCG"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={deloitteLogo}
                   alt="Deloitte"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={eyLogo}
                   alt="EY"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={jpMorganLogo}
                   alt="J.P. Morgan"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={paypalLogo}
                   alt="PayPal"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={serviceNowLogo}
                   alt="ServiceNow"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
                   src={boaLogo}
                   alt="Bank of America"
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
                 />
               </div>
+            </div>
+          </div>
+        </section>
+      </FadeInOnScroll>
+
+      {/* Behind the Scenes Section */}
+      <FadeInOnScroll>
+        <section id="behind-the-scenes" className="relative py-20 px-8 bg-surface z-10">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
+              Behind the Scenes
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <img
+                src="/gallery/full-cohort-group.jpg"
+                alt="The full Lumnus intern cohort"
+                className="w-full h-full object-cover rounded-xl shadow-lg"
+              />
+              <img
+                src="/gallery/main-intern-class.jpg"
+                alt="Intern class outside Wells Fargo Hall"
+                className="w-full h-full object-cover rounded-xl shadow-lg"
+              />
+              <img
+                src="/gallery/palm-trio.jpg"
+                alt="Interns outside the Rady building"
+                className="w-full h-full object-cover rounded-xl shadow-lg"
+              />
             </div>
           </div>
         </section>

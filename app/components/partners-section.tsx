@@ -20,21 +20,22 @@ export function PartnersSection() {
             Our Partners
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-3">
             {PARTNERS.map((partner) => (
               <Link
                 key={partner.name}
                 href={partner.href}
                 target="_blank"
-                className="h-20 w-44 rounded-xl border border-border-subtle bg-white/[0.02] flex items-center justify-center p-4 hover:border-brand/40 hover:bg-white/[0.05] transition-all"
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-brand/40 hover:bg-white/[0.07] transition-all"
               >
                 <Image
                   src={partner.src}
                   alt={partner.name}
                   width={320}
                   height={160}
-                  className="max-h-full w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                  className="h-7 max-w-[100px] w-auto object-contain"
                 />
+                <span className="text-sm font-medium text-slate-200">{partner.name}</span>
               </Link>
             ))}
           </div>
