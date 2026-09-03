@@ -105,7 +105,7 @@ export default function Contact() {
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
             <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
-              <Facebook className="text-white" size={28} />
+              <Facebook className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">Facebook</span>
           </a>
@@ -116,7 +116,7 @@ export default function Contact() {
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
             <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
-              <Instagram className="text-white" size={28} />
+              <Instagram className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">Instagram</span>
           </a>
@@ -127,7 +127,7 @@ export default function Contact() {
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
             <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
-              <Linkedin className="text-white" size={28} />
+              <Linkedin className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">LinkedIn</span>
           </a>
@@ -202,7 +202,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={isSending || isSuccess}
-          className="w-full bg-brand hover:bg-brand-light text-white py-3 rounded-full transition-all hover:shadow-lg"
+          className="w-full bg-brand hover:bg-brand-light text-brand-foreground py-3 rounded-full transition-all hover:shadow-lg"
         >
           {isSending
             ? "Sending…"

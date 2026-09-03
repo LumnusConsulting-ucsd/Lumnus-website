@@ -325,7 +325,7 @@ export default function About() {
                 <Button
   asChild
   size="lg"
-  className="!rounded-full px-8 py-3 text-sm md:text-base bg-[#0A66C2] hover:bg-[#004182] font-medium"
+  className="!rounded-full px-8 py-3 text-sm md:text-base bg-brand hover:bg-brand-light text-brand-foreground font-medium"
 >
   <Link href="/recruitment">Join Us</Link>
 </Button>
@@ -380,7 +380,7 @@ export default function About() {
                   onClick={() => setActiveCommittee(committee)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
                     activeCommittee === committee
-                      ? "bg-brand text-white"
+                      ? "bg-brand text-brand-foreground"
                       : "bg-white/10 text-text-secondary hover:bg-white/15"
                   }`}
                 >

@@ -139,7 +139,7 @@ export default function Services() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="relative flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white z-10 mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-brand-foreground z-10 mb-4">
                   1
                 </div>
                 <h3 className="text-foreground mb-2">Discovery & Planning</h3>
@@ -149,7 +149,7 @@ export default function Services() {
               </div>
 
               <div className="relative flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white z-10 mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-brand-foreground z-10 mb-4">
                   2
                 </div>
                 <h3 className="text-foreground mb-2">Research & Analysis</h3>
@@ -159,7 +159,7 @@ export default function Services() {
               </div>
 
               <div className="relative flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white z-10 mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-brand-foreground z-10 mb-4">
                   3
                 </div>
                 <h3 className="text-foreground mb-2">Strategy Development</h3>
@@ -169,7 +169,7 @@ export default function Services() {
               </div>
 
               <div className="relative flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white z-10 mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-brand-foreground z-10 mb-4">
                   4
                 </div>
                 <h3 className="text-foreground mb-2">Implementation Support</h3>
@@ -276,7 +276,7 @@ export default function Services() {
 
             <Link
               href="/contact"
-              className="bg-brand hover:bg-brand-light text-white text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-block"
+              className="bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-block"
             >
               Contact Us
             </Link>

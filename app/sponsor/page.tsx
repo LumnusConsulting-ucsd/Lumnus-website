@@ -85,7 +85,7 @@ export default function SponsorPage() {
           </p>
           <button
             onClick={scrollToForm}
-            className="self-start bg-brand hover:bg-brand-light text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
+            className="self-start bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
           >
             Become a Sponsor
             <ArrowRight size={18} />
@@ -147,7 +147,7 @@ export default function SponsorPage() {
                   onClick={() => setIsOngoing(false)}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     !isOngoing
-                      ? "bg-brand text-white shadow-md"
+                      ? "bg-brand text-brand-foreground shadow-md"
                       : "text-foreground"
                   }`}
                 >
@@ -158,7 +158,7 @@ export default function SponsorPage() {
                   onClick={() => setIsOngoing(true)}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-3 rounded-lg transition text-sm sm:text-base ${
                     isOngoing
-                      ? "bg-brand text-white shadow-md"
+                      ? "bg-brand text-brand-foreground shadow-md"
                       : "text-foreground"
                   }`}
                 >
@@ -178,7 +178,7 @@ export default function SponsorPage() {
                   }}
                   className={`py-3 md:py-4 px-3 md:px-6 border-2 rounded-lg transition ${
                     selectedAmount === amount && !customAmount
-                      ? "border-brand bg-brand text-white"
+                      ? "border-brand bg-brand text-brand-foreground"
                       : "border-white/15 bg-surface text-foreground hover:border-brand"
                   }`}
                 >
@@ -272,7 +272,7 @@ export default function SponsorPage() {
 
             <button
               type="submit"
-              className="w-full bg-brand hover:bg-brand-light text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2 transition-all hover:shadow-lg"
+              className="w-full bg-brand hover:bg-brand-light text-brand-foreground py-4 rounded-full font-semibold flex items-center justify-center gap-2 transition-all hover:shadow-lg"
             >
               Continue to Payment
             </button>

@@ -46,7 +46,7 @@ export function HeroSection() {
         <Link href="/about">
           <button
             className="
-              bg-brand hover:bg-brand-light text-white
+              bg-brand hover:bg-brand-light text-brand-foreground
               text-sm md:text-lg
               px-8 md:px-10 py-3 md:py-4
               rounded-full

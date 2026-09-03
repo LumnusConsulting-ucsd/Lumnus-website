@@ -107,7 +107,7 @@ export default function Projects() {
                   onClick={() => setActiveCategory(category)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
                     activeCategory === category
-                      ? "bg-brand text-white"
+                      ? "bg-brand text-brand-foreground"
                       : "bg-surface-soft border border-border-subtle text-text-secondary hover:bg-white/[0.05]"
                   }`}
                 >

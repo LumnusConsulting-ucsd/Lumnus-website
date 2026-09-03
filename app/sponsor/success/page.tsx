@@ -18,7 +18,7 @@ export default function SponsorSuccessPage() {
         </p>
         <Link
           href="/"
-          className="inline-block bg-brand hover:bg-brand-light text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg"
+          className="inline-block bg-brand hover:bg-brand-light text-brand-foreground px-8 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg"
         >
           Back to Home
         </Link>
