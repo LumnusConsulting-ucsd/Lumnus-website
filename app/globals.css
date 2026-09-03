@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Exact logo navy (#0B1245) - do not approximate, this must match the mark */
-  --background: #0b1245;
+  --background: #070d18;
   --foreground: #f8fafc;
   /* Monochrome accent: interactive elements are light-on-navy, not a second blue */
   --brand: #f1f5f9;
   --brand-light: #ffffff;
   --brand-foreground: var(--background);
-  --surface: #0f195f;
+  --surface: #0f1a2e;
   --surface-soft: rgba(255, 255, 255, 0.04);
   --border-subtle: rgba(255, 255, 255, 0.08);
   --text-secondary: #94a3b8;
