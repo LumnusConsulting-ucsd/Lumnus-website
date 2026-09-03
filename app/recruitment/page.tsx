@@ -18,30 +18,29 @@ export default function Recruitment() {
       </section>
 
       {/* Interest Form Section */}
-      <section className="py-24 px-8 bg-surface">
-        <div
-          className="max-w-2xl mx-auto text-center bg-surface-soft border border-border-subtle rounded-2xl p-10 md:p-14"
-          style={{ boxShadow: "0 0 60px -20px rgba(37,99,235,0.35)" }}
-        >
-        <h2 className="text-foreground text-3xl md:text-4xl mb-6 tracking-wider">
-  Join Our Team
-</h2>
-          <p className="text-text-secondary mb-10 max-w-2xl mx-auto">
-            Recruitment will be starting Fall 2026. Fill out our interest form for <span className="text-foreground underline">Fall 2026 Recruitment</span> to learn more about opportunities and start your application.
-          </p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdvqo5TfS14-LYCSvGX5HmuVMUBd70zS2a95IoFNtysw8MnzA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg"
-          >
-            Interest Form
-          </a>
+      <section className="py-16 px-8 bg-surface">
+        <div className="max-w-2xl mx-auto rounded-[2rem] bg-white/[0.03] ring-1 ring-white/10 p-2 shadow-xl shadow-black/20">
+          <div className="text-center bg-surface-soft rounded-[calc(2rem-0.5rem)] p-10 md:p-14 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+            <h2 className="text-foreground text-3xl md:text-4xl mb-6 tracking-wider">
+              Join Our Team
+            </h2>
+            <p className="text-text-secondary mb-10 max-w-2xl mx-auto">
+              Recruitment will be starting Fall 2026. Fill out our interest form for <span className="text-foreground underline">Fall 2026 Recruitment</span> to learn more about opportunities and start your application.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdvqo5TfS14-LYCSvGX5HmuVMUBd70zS2a95IoFNtysw8MnzA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-lg px-10 py-4 rounded-full font-medium transition-all hover:scale-[1.03] active:scale-[0.98] hover:shadow-lg"
+            >
+              Interest Form
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Stay Updated Section */}
-      <section className="py-24 px-8 bg-surface">
+      <section className="py-16 px-8 bg-surface">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center">
             <div>

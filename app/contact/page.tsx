@@ -88,7 +88,7 @@ export default function Contact() {
         </h1>
       </section>
 
-      <section className="py-20 px-8 bg-surface">
+      <section className="py-16 px-8 bg-surface">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
       
       {/* LEFT: STAY UPDATED */}
@@ -143,7 +143,10 @@ export default function Contact() {
       </div>
 
       {/* RIGHT: FORM */}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6 rounded-[2rem] bg-white/[0.03] ring-1 ring-white/10 p-6 md:p-10 shadow-xl shadow-black/20"
+      >
         <div className="space-y-2">
           <Label htmlFor="contact-name" className="mb-2 block text-lg font-medium">Name</Label>
           <Input
@@ -153,7 +156,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="bg-surface border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
@@ -168,7 +171,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="bg-surface border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
@@ -181,7 +184,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="bg-surface border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
@@ -195,19 +198,19 @@ export default function Contact() {
             onChange={handleChange}
             required
             rows={6}
-            className="bg-surface border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
         <button
           type="submit"
           disabled={isSending || isSuccess}
-          className="w-full bg-brand hover:bg-brand-light text-brand-foreground py-3 rounded-full transition-all hover:shadow-lg"
+          className="w-full bg-brand hover:bg-brand-light text-brand-foreground py-3 rounded-full transition-all hover:shadow-lg active:scale-[0.98]"
         >
           {isSending
             ? "Sending…"
             : isSuccess
-            ? "Email Sent Successfully!"
+            ? "Message sent"
             : "Send Message"}
         </button>
       </form>

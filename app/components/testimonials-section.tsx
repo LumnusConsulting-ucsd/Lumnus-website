@@ -56,9 +56,9 @@ export function TestimonialsSection() {
   };
 
   return (
-      <section className="py-20 px-8 bg-surface">
+      <section className="pt-14 pb-8 px-8 bg-surface">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl mb-12 text-foreground">
+          <h2 className="text-center text-3xl md:text-4xl mb-6 text-foreground">
             Client Testimonials
           </h2>
 

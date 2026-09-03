@@ -183,7 +183,7 @@ export default function Services() {
       </section>
 
       {/* Services Flip Card Grid */}
-      <section className="py-24 px-8 bg-surface">
+      <section className="py-16 px-8 bg-surface">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
@@ -256,7 +256,7 @@ export default function Services() {
       </section>
 
       {/* Process Steps Section */}
-      <section className="pt-24 pb-12 px-8 bg-surface">
+      <section className="pt-14 pb-12 px-8 bg-surface">
         <div className="max-w-6xl mx-auto">
           <p className="text-center text-text-secondary leading-relaxed mb-16 max-w-3xl mx-auto text-lg">
             Lumnus Consulting has worked with clients across a variety of industries. With the support of our diverse consultants and international network, we are dedicated to finding you the perfect team and delivering meaningful results.
@@ -287,9 +287,9 @@ export default function Services() {
       <TestimonialsSection />
 
       {/* Past Clients Section */}
-      <section className="py-24 px-8 bg-surface">
+      <section className="pt-6 pb-16 px-8 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-foreground text-center text-3xl md:text-4xl mb-16">
+          <h2 className="text-foreground text-center text-3xl md:text-4xl mb-10">
             Past Clients
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

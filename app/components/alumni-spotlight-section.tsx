@@ -49,7 +49,7 @@ export function AlumniSpotlightSection() {
 
   return (
     <section
-      className="relative py-20 px-8"
+      className="relative py-16 px-8"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/IMG_7327.png')",

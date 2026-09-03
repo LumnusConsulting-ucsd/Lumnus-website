@@ -242,7 +242,7 @@ function MemberCard({
     .slice(0, 2);
 
   const circleClass =
-    "relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-white/10 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
+    "relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-[2rem] mx-auto mb-3 flex items-center justify-center overflow-hidden bg-white/10 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
 
   return (
     <div className="text-center group">
@@ -253,7 +253,7 @@ function MemberCard({
             alt={name}
             fill
             sizes="(min-width: 768px) 160px, (min-width: 640px) 144px, 128px"
-            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
+            className="object-cover transition-all duration-300 group-hover:scale-110"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -330,22 +330,24 @@ export default function About() {
   <Link href="/recruitment">Join Us</Link>
 </Button>
               </div>
-              <div className="relative w-[80%] h-[340px] mx-auto rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={missionImage}
-                  alt="Mission"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 80vw"
-                  className="object-cover"
-                  style={{ objectPosition: 'center 75%' }}
-                />
+              <div className="w-[80%] mx-auto rounded-[1.75rem] bg-white/[0.03] ring-1 ring-white/10 p-2 shadow-xl shadow-black/20">
+                <div className="relative w-full h-[320px] rounded-[calc(1.75rem-0.5rem)] overflow-hidden">
+                  <Image
+                    src={missionImage}
+                    alt="Mission"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 80vw"
+                    className="object-cover"
+                    style={{ objectPosition: 'center 75%' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
       {/* About Content Section */}
-        <section className="relative py-24 px-8 bg-surface z-10">
+        <section className="relative py-14 px-8 bg-surface z-10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-text-secondary leading-relaxed mb-8 text-lg font-normal">
               Lumnus Consulting is a student run consulting company operating out
@@ -366,7 +368,7 @@ export default function About() {
         </section>
 
       {/* Our Members Section — committee selector + member grid */}
-        <section className="relative py-24 px-8 bg-surface z-10">
+        <section className="relative py-14 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
               Our Members
@@ -513,41 +515,47 @@ export default function About() {
         </section>
 
       {/* Behind the Scenes Section */}
-        <section id="behind-the-scenes" className="relative py-20 px-8 bg-surface z-10">
+        <section id="behind-the-scenes" className="relative py-16 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
               Behind the Scenes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/gallery/full-cohort-group.jpg"
-                  alt="The full Lumnus intern cohort"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  loading="lazy"
-                  className="object-cover"
-                />
+              <div className="rounded-[1.75rem] bg-white/[0.03] ring-1 ring-white/10 p-2 shadow-xl shadow-black/20">
+                <div className="relative w-full h-64 md:h-80 rounded-[calc(1.75rem-0.5rem)] overflow-hidden">
+                  <Image
+                    src="/gallery/full-cohort-group.jpg"
+                    alt="The full Lumnus intern cohort"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                </div>
               </div>
-              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/gallery/main-intern-class.jpg"
-                  alt="Intern class outside Wells Fargo Hall"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  loading="lazy"
-                  className="object-cover"
-                />
+              <div className="rounded-[1.75rem] bg-white/[0.03] ring-1 ring-white/10 p-2 shadow-xl shadow-black/20">
+                <div className="relative w-full h-64 md:h-80 rounded-[calc(1.75rem-0.5rem)] overflow-hidden">
+                  <Image
+                    src="/gallery/main-intern-class.jpg"
+                    alt="Intern class outside Wells Fargo Hall"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                </div>
               </div>
-              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/gallery/palm-trio.jpg"
-                  alt="Interns outside the Rady building"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  loading="lazy"
-                  className="object-cover"
-                />
+              <div className="rounded-[1.75rem] bg-white/[0.03] ring-1 ring-white/10 p-2 shadow-xl shadow-black/20">
+                <div className="relative w-full h-64 md:h-80 rounded-[calc(1.75rem-0.5rem)] overflow-hidden">
+                  <Image
+                    src="/gallery/palm-trio.jpg"
+                    alt="Interns outside the Rady building"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

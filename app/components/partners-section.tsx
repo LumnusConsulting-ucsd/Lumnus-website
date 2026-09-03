@@ -12,9 +12,9 @@ const PARTNERS = [
 
 export function PartnersSection() {
   return (
-      <section className="relative py-24 px-8 bg-surface z-10">
+      <section className="relative pt-10 pb-6 px-8 bg-surface z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-12">
+          <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-8">
             Our Partners
           </h2>
 

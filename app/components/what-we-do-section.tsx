@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function WhatWeDoSection() {
   return (
-    <section id="services" className="relative py-24 px-8 bg-surface z-10">
+    <section id="services" className="relative py-16 px-8 bg-surface z-10">
       <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-foreground text-4xl md:text-5xl mb-8">
             What We Do
@@ -27,6 +27,7 @@ export function WhatWeDoSection() {
             font-medium
             transition-all
             hover:scale-[1.03]
+            active:scale-[0.98]
             hover:shadow-lg
         "
         >

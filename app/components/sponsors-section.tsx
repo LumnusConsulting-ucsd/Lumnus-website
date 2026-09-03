@@ -8,9 +8,9 @@ const SPONSORS = [
 
 export function SponsorsSection() {
   return (
-      <section className="pt-12 pb-16 px-8 bg-surface">
+      <section className="pt-6 pb-10 px-8 bg-surface">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-12">
+          <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-8">
             Thank You to Our Sponsors
           </h2>
 

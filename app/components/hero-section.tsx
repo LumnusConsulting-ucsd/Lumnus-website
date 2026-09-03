@@ -53,6 +53,7 @@ export function HeroSection() {
               font-medium
               transition-all
               hover:scale-[1.03]
+              active:scale-[0.98]
               hover:shadow-lg
               whitespace-nowrap
             "

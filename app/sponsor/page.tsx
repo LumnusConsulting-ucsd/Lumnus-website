@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { Users, TrendingUp, Briefcase, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { PhotoShowcaseSection } from "../components/photo-showcase-section";
 
@@ -73,56 +73,53 @@ export default function SponsorPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 bg-surface">
-        <div className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-16 py-16 md:py-0 min-h-[40vh] md:min-h-[60vh]">
-          <p className="text-brand-light text-sm tracking-[0.3em] mb-4">GET INVOLVED</p>
-          <h1 className="text-foreground text-4xl md:text-5xl tracking-tight mb-6 max-w-md">
-            Support Lumnus
+      <section
+        className="relative h-[50vh] flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="text-center text-white px-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl tracking-wider mb-6">
+            SUPPORT LUMNUS
           </h1>
-          <p className="text-text-secondary max-w-sm mb-8">
-            Your contribution funds real consulting experience for the next generation
-            of student leaders.
-          </p>
           <button
             onClick={scrollToForm}
-            className="self-start bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
+            className="bg-brand hover:bg-brand-light text-brand-foreground text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
           >
             Become a Sponsor
             <ArrowRight size={18} />
           </button>
         </div>
-        <div
-          className="order-1 md:order-2 min-h-[40vh] md:min-h-[60vh] bg-cover bg-center"
-          style={{ backgroundImage: "url('/IMG_2356.png')" }}
-          role="img"
-          aria-label="Lumnus Consulting members"
-        />
       </section>
 
       {/* Sponsor Impact */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-surface">
-        <div className="max-w-4xl mx-auto text-center mb-14 md:mb-20">
+      <section className="py-14 md:py-16 px-6 md:px-8 bg-surface">
+        <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16">
           <h2 className="text-foreground text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
-          <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Your contribution helps shape the future generations of Lumnus.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto divide-y divide-border-subtle">
-          <ImpactRow
-            index="01"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-7xl mx-auto">
+          <ImpactCard
+            icon={<Users className="text-foreground" size={32} />}
             title="Associate Development"
             text="Fund comprehensive workshops, specialized training programs, and professional development opportunities that equip our members with real-world consulting skills."
           />
-          <ImpactRow
-            index="02"
+          <ImpactCard
+            icon={<TrendingUp className="text-foreground" size={32} />}
             title="Client Projects"
             text="Support pro-bono consulting projects that help businesses achieve sustainable, long-term growth through thoughtful strategic guidance and data-informed decision-making."
           />
-          <ImpactRow
-            index="03"
+          <ImpactCard
+            icon={<Briefcase className="text-foreground" size={32} />}
             title="Club Operations"
-            text="Support club operations, project management, organizational resources, and outreach initiatives that help us continue developing future business leaders."
+            text="Support club operations, Project management, organizational resources, and outreach initiatives that help us continue developing future business leaders."
           />
         </div>
       </section>
@@ -130,7 +127,7 @@ export default function SponsorPage() {
       <PhotoShowcaseSection />
 
       {/* Sponsor Form */}
-      <section id="sponsor-form" className="py-12 md:py-24 px-4 md:px-8 bg-surface">
+      <section id="sponsor-form" className="py-12 md:py-16 px-4 md:px-8 bg-surface">
         <form onSubmit={handleSubmit}>
           <div className="max-w-4xl mx-auto bg-surface border-t-4 border-brand p-6 md:p-12 rounded-lg shadow-sm">
             <div className="text-center mb-8 md:mb-12">
@@ -287,25 +284,23 @@ export default function SponsorPage() {
   );
 }
 
-function ImpactRow({
-  index,
+function ImpactCard({
+  icon,
   title,
   text,
 }: {
-  index: string;
+  icon: React.ReactNode;
   title: string;
   text: string;
 }) {
   return (
-    <div className="grid grid-cols-[auto_1fr] md:grid-cols-[5rem_1fr] gap-6 md:gap-10 py-8 md:py-10">
-      <span className="text-brand-light/70 text-2xl md:text-3xl font-semibold tabular-nums">
-        {index}
-      </span>
-      <div>
-        <h3 className="text-foreground text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
-        <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
-          {text}
-        </p>
+    <div className="border-t-4 border-brand p-6 md:p-8 bg-surface">
+      <div className="flex items-start gap-4 mb-4">
+        <div className="bg-white/10 p-3 md:p-4 shrink-0">{icon}</div>
+        <div>
+          <h3 className="text-foreground text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
+          <p className="text-foreground text-sm md:text-base">{text}</p>
+        </div>
       </div>
     </div>
   );

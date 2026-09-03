@@ -68,9 +68,9 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="bg-[#0e1726]/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-brand/40"
+              className="bg-[#0e1726]/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] transition-all duration-300 hover:border-white/25"
             >
-              <div className="text-6xl md:text-7xl mb-4 font-semibold">
+              <div className="text-6xl md:text-7xl mb-4 font-semibold tabular-nums">
                 {stat.prefix}
                 {counters[index]}
                 {stat.suffix}
