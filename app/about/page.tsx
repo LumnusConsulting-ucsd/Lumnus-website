@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin } from "lucide-react";
 import { useState } from "react";
-import { FadeInOnScroll } from "../components/fade-scroll";
 import { Button } from "../components/ui/button";
 
 // Images: hero/mission in public/; logos in public/logos/ (all .jpg)
@@ -142,10 +142,80 @@ function nameToSlug(name: string): string {
     .replace(/[^a-z0-9-]/g, "");
 }
 
-/** Headshots go in public/members/ — filename: {slug}.jpg (e.g. sharana-sabesan.jpg) */
+/** Headshots go in public/members/ — filename: {slug}.{ext}, matched against the manifest below. */
 const MEMBERS_IMAGE_BASE = "/members";
 
-const PHOTO_EXTENSIONS = [".jpg", ".jpeg", ".JPG", ".png"];
+/** Actual filename extension for each headshot on disk — avoids guessing and 404 retries. */
+const PHOTO_MANIFEST: Record<string, string> = {
+  "aarav-mittal": "jpg",
+  "aashima-keswani": "png",
+  "abhinav-chinnam": "jpeg",
+  "abigail-losi": "jpeg",
+  "abigail-shlimenzon": "jpg",
+  "aditya-mittal": "jpg",
+  "akash-gupta-verma": "jpg",
+  "amelia-badamjav": "jpg",
+  "andrew-kim": "jpeg",
+  "angela-chen": "JPG",
+  "anirudh-rajesh": "jpg",
+  "anwesha-mohanty": "jpg",
+  "anya-garg": "jpg",
+  "arjan-gunsi": "jpg",
+  "arushi-gupta": "jpg",
+  "chloe-suwignjo": "png",
+  "dari-gansukh": "JPG",
+  "dayus-gohel": "jpg",
+  "dylan-nelson": "jpg",
+  "emily-naka": "jpeg",
+  "esha-warrier": "jpeg",
+  "eshwari-gundi": "jpeg",
+  "filicia-wu": "jpg",
+  "garret-christie": "jpg",
+  "giulio-rambelli": "JPG",
+  "humza-dalal": "jpg",
+  "irina-vardapetyan": "jpg",
+  "ishaan-garg": "jpg",
+  "ishaan-gowda": "jpg",
+  "jackson-martson": "jpg",
+  "jacob-kang": "jpg",
+  "jason-si": "jpg",
+  "koshik-kumaravel": "jpg",
+  "krish-agarwal": "jpg",
+  "maximilian-chao": "JPG",
+  "mina-garcia": "jpg",
+  "mint-ruangritchai": "JPG",
+  "mirabelle-trunk": "jpg",
+  "molly-marchese": "jpeg",
+  "natasha-dorairaj": "jpg",
+  "neakil-david": "jpg",
+  "nidhi-rajesh": "jpg",
+  "niharika-sapre": "JPG",
+  "nikhil-akiti": "png",
+  "nikita-jain": "JPG",
+  "parnika-gupta": "jpeg",
+  "parth-mehta": "JPG",
+  "pratibha-arun": "jpg",
+  "rahul-raman": "jpg",
+  "ridhi-raman": "jpg",
+  "rishit-bhandari": "JPG",
+  "sabrina-zanetto": "jpg",
+  "sanmita-babu": "jpg",
+  "serina-wang": "png",
+  "shaaktiram-balakumar": "jpg",
+  "sharana-sabesan": "jpg",
+  "solomon-whitlam-sandler": "jpg",
+  "sruti-mani": "jpeg",
+  "sumukhi-tunuguntla": "jpg",
+  "tanay-parikh": "jpg",
+  "tanner-bradley": "png",
+  "tanner-wan": "jpg",
+  "treesha-chhabria": "jpg",
+  "varnika-seth": "jpg",
+  "varsha-reddy": "jpg",
+  "veda-thota": "jpg",
+  "vihan-shah": "jpeg",
+  "vivaan-laungani": "jpg",
+};
 
 function MemberCard({
   name,
@@ -160,21 +230,10 @@ function MemberCard({
   title?: string;
   photo?: string;
 }) {
-  const [imgError, setImgError] = useState(false);
-  const [srcIndex, setSrcIndex] = useState(0);
   const slug = photo ?? nameToSlug(name);
-  const photoSrc = `${MEMBERS_IMAGE_BASE}/${slug}${PHOTO_EXTENSIONS[srcIndex]}`;
-  const tryNextExtension = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    // Only handle error for the src we're currently trying (avoids stale onError from a previous attempt)
-    const failedSrc = (e.currentTarget as HTMLImageElement).src;
-    if (!failedSrc.endsWith(slug + PHOTO_EXTENSIONS[srcIndex])) return;
-    if (srcIndex + 1 < PHOTO_EXTENSIONS.length) {
-      setSrcIndex((i) => i + 1);
-      setImgError(false);
-    } else {
-      setImgError(true);
-    }
-  };
+  const ext = PHOTO_MANIFEST[slug];
+  const [imgError, setImgError] = useState(!ext);
+  const photoSrc = ext ? `${MEMBERS_IMAGE_BASE}/${slug}.${ext}` : "";
   const initials = name
     .split(/\s+/)
     .map((w) => w[0])
@@ -183,17 +242,19 @@ function MemberCard({
     .slice(0, 2);
 
   const circleClass =
-    "w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-white/10 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
+    "relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-3 flex items-center justify-center overflow-hidden bg-white/10 object-cover ring-2 ring-transparent transition-all duration-300 group-hover:ring-brand/40 group-hover:shadow-lg group-hover:-translate-y-1";
 
   return (
     <div className="text-center group">
       <div className={circleClass}>
         {!imgError ? (
-          <img
+          <Image
             src={photoSrc}
             alt={name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
-            onError={(e) => tryNextExtension(e)}
+            fill
+            sizes="(min-width: 768px) 160px, (min-width: 640px) 144px, 128px"
+            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
+            onError={() => setImgError(true)}
           />
         ) : (
           <span className="text-text-secondary font-semibold text-xl sm:text-2xl md:text-3xl">
@@ -205,15 +266,21 @@ function MemberCard({
         {name}
       </h4>
       <p className="text-text-muted text-sm mb-2">{title || committee}</p>
-      <a
-        href={linkedin || "#"}
-        target={linkedin ? "_blank" : undefined}
-        rel={linkedin ? "noopener noreferrer" : undefined}
-        className="inline-flex items-center justify-center text-brand hover:text-brand-light transition-colors"
-        aria-label={`${name} LinkedIn`}
-      >
-        <Linkedin size={18} />
-      </a>
+      {linkedin ? (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center text-brand hover:text-brand-light transition-colors"
+          aria-label={`${name} LinkedIn`}
+        >
+          <Linkedin size={18} />
+        </a>
+      ) : (
+        <span className="inline-flex items-center justify-center text-text-muted/30" aria-hidden="true">
+          <Linkedin size={18} />
+        </span>
+      )}
     </div>
   );
 }
@@ -246,7 +313,6 @@ export default function About() {
       </section>
 
       {/* Mission Statement Section */}
-      <FadeInOnScroll>
         <section className="relative py-16 px-8 bg-surface z-10 w-full">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -264,21 +330,21 @@ export default function About() {
   <Link href="/recruitment">Join Us</Link>
 </Button>
               </div>
-              <div>
-                <img
+              <div className="relative w-[80%] h-[340px] mx-auto rounded-lg overflow-hidden shadow-lg">
+                <Image
                   src={missionImage}
                   alt="Mission"
-                  className="w-[80%] h-[340px] mx-auto rounded-lg shadow-lg object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 80vw"
+                  className="object-cover"
                   style={{ objectPosition: 'center 75%' }}
                 />
               </div>
             </div>
           </div>
         </section>
-      </FadeInOnScroll>
 
       {/* About Content Section */}
-      <FadeInOnScroll>
         <section className="relative py-24 px-8 bg-surface z-10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-text-secondary leading-relaxed mb-8 text-lg font-normal">
@@ -298,10 +364,8 @@ export default function About() {
             </p>
           </div>
         </section>
-      </FadeInOnScroll>
 
       {/* Our Members Section — committee selector + member grid */}
-      <FadeInOnScroll>
         <section className="relative py-24 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
@@ -340,10 +404,8 @@ export default function About() {
             </div>
           </div>
         </section>
-      </FadeInOnScroll>
 
       {/* Where Alumni Work Section */}
-      <FadeInOnScroll>
         <section className="relative pb-20 px-8 bg-surface z-10">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-10 font-medium text-foreground">
@@ -352,6 +414,7 @@ export default function About() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={googleLogo}
                   alt="Google"
                   className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -359,6 +422,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={microsoftLogo}
                   alt="Microsoft"
                   className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -366,6 +430,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={adobeLogo}
                   alt="Adobe"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -373,6 +438,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={capitalOneLogo}
                   alt="Capital One"
                   className="h-16 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -380,6 +446,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={coinbaseLogo}
                   alt="Coinbase"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -387,6 +454,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={bcgLogo}
                   alt="BCG"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -394,6 +462,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={deloitteLogo}
                   alt="Deloitte"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -401,6 +470,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={eyLogo}
                   alt="EY"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -408,6 +478,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={jpMorganLogo}
                   alt="J.P. Morgan"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -415,6 +486,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={paypalLogo}
                   alt="PayPal"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -422,6 +494,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={serviceNowLogo}
                   alt="ServiceNow"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -429,6 +502,7 @@ export default function About() {
               </div>
               <div className="flex items-center justify-center py-8">
                 <img
+                  loading="lazy"
                   src={boaLogo}
                   alt="Bank of America"
                   className="h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
@@ -437,35 +511,47 @@ export default function About() {
             </div>
           </div>
         </section>
-      </FadeInOnScroll>
 
       {/* Behind the Scenes Section */}
-      <FadeInOnScroll>
         <section id="behind-the-scenes" className="relative py-20 px-8 bg-surface z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center text-2xl md:text-3xl mb-12 font-medium text-foreground">
               Behind the Scenes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <img
-                src="/gallery/full-cohort-group.jpg"
-                alt="The full Lumnus intern cohort"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              />
-              <img
-                src="/gallery/main-intern-class.jpg"
-                alt="Intern class outside Wells Fargo Hall"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              />
-              <img
-                src="/gallery/palm-trio.jpg"
-                alt="Interns outside the Rady building"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              />
+              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/gallery/full-cohort-group.jpg"
+                  alt="The full Lumnus intern cohort"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/gallery/main-intern-class.jpg"
+                  alt="Intern class outside Wells Fargo Hall"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/gallery/palm-trio.jpg"
+                  alt="Interns outside the Rady building"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
-      </FadeInOnScroll>
     </div>
   );
 }

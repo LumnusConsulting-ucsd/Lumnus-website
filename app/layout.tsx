@@ -17,8 +17,12 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lumnus Consulting",
-  description: "Student-led consulting organization at UC San Diego",
+  title: {
+    default: "Lumnus Consulting",
+    template: "%s",
+  },
+  description:
+    "Lumnus Consulting is a student-run consulting organization at UC San Diego, delivering real-world strategy, research, and technology projects for clients.",
 };
 
 export default function RootLayout({
@@ -30,9 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${heading.variable} ${body.variable} antialiased`}>
         <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
         <Toaster richColors />
       </body>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import type { CarouselApi } from "./ui/carousel";
@@ -76,10 +77,13 @@ export function AlumniSpotlightSection() {
                       <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="relative h-[360px] md:h-[440px] overflow-hidden rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
                           {person.photo ? (
-                            <img
+                            <Image
                               src={person.photo}
                               alt={person.name}
-                              className="block w-full h-full object-cover"
+                              fill
+                              sizes="(min-width: 768px) 50vw, 100vw"
+                              loading="lazy"
+                              className="object-cover"
                               style={{
                                 objectPosition:
                                   person.name === "Cariappa Kodira"
@@ -107,7 +111,7 @@ export function AlumniSpotlightSection() {
                           </p>
 
                           <p className="text-text-secondary leading-relaxed italic">
-                            "{person.quote}"
+                            “{person.quote}”
                           </p>
                         </div>
                       </div>

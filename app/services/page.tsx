@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import { Eye, BarChart3, Globe, ShoppingBag, Power, Phone, MessageSquare, Clock, RefreshCw, RotateCcw } from 'lucide-react';
+import { RefreshCw, RotateCcw } from 'lucide-react';
 import { TestimonialsSection } from '../components/testimonials-section';
 
 export default function Services() {
@@ -40,8 +40,7 @@ export default function Services() {
 
   const services = [
     {
-      icon: Eye,
-      title: 'INDUSTRY RESEARCH',
+      title: 'Industry Research',
       summary: 'Market sizing, risk assessment, and consumer insights.',
       items: [
         'Risk Assessment',
@@ -52,8 +51,7 @@ export default function Services() {
       ]
     },
     {
-      icon: BarChart3,
-      title: 'BUSINESS DEVELOPMENT',
+      title: 'Business Development',
       summary: 'Pricing, revenue modeling, and go-to-market execution.',
       items: [
         'Pricing Strategy',
@@ -64,8 +62,7 @@ export default function Services() {
       ]
     },
     {
-      icon: Globe,
-      title: 'BUSINESS STRATEGY',
+      title: 'Business Strategy',
       summary: 'Business models, competitive intelligence, and growth planning.',
       items: [
         'Business Model Development',
@@ -75,8 +72,7 @@ export default function Services() {
       ]
     },
     {
-      icon: ShoppingBag,
-      title: 'SOCIAL MEDIA AND MARKETING',
+      title: 'Social Media & Marketing',
       summary: 'Brand development and marketing strategy.',
       items: [
         'Brand Development',
@@ -86,8 +82,7 @@ export default function Services() {
       ]
     },
     {
-      icon: Power,
-      title: 'TECHNOLOGY',
+      title: 'Technology',
       summary: 'Data analytics, visualization, and website development.',
       items: [
         'Data and Business Analytics',
@@ -99,22 +94,37 @@ export default function Services() {
     }
   ];
 
+  const process = [
+    {
+      text: 'Contact us and we will open up a dialogue with your company within a week to formulate a tentative plan.',
+    },
+    {
+      text: 'We will schedule a meeting to discuss our potential solution, as well as quotes.',
+    },
+    {
+      text: 'We begin work, keeping you updated with weekly progress reports until our project is complete.',
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
       <section
-        className="relative h-[40vh] flex items-center justify-center"
+        className="relative h-[55vh] flex items-end"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
+            "linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)), url('/Services-hero.JPEG')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center 67%",
         }}
       >
-        <h1 className="text-white text-4xl md:text-5xl tracking-wider">
-          OUR SERVICES
-        </h1>
+        <div className="max-w-6xl mx-auto w-full px-8 pb-14">
+          <p className="text-brand-light text-sm tracking-[0.3em] mb-4">WHAT WE DO</p>
+          <h1 className="text-white text-4xl md:text-6xl tracking-tight max-w-2xl">
+            Our Services
+          </h1>
+        </div>
       </section>
 
       {/* Project Timeline Section */}
@@ -177,23 +187,29 @@ export default function Services() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
-              const Icon = service.icon;
               const isFlipped = flippedServices.has(index);
               return (
                 <div key={index} className="h-72 [perspective:1000px]">
-                  <div
+                  <button
+                    type="button"
                     onClick={() => toggleService(index)}
-                    className={`relative w-full h-full cursor-pointer transition-transform duration-700 [transform-style:preserve-3d] ${
+                    aria-pressed={isFlipped}
+                    aria-label={`${service.title}: ${isFlipped ? "showing details, click to flip back" : "click to see details"}`}
+                    className={`relative block w-full h-full text-left cursor-pointer transition-transform duration-700 [transform-style:preserve-3d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light/60 rounded-xl ${
                       isFlipped ? "[transform:rotateY(180deg)]" : ""
                     }`}
                   >
                     {/* Front Face */}
-                    <div className="absolute inset-0 [backface-visibility:hidden] flex flex-col items-center justify-center text-center bg-surface-soft border border-border-subtle border-t-2 border-t-brand rounded-xl p-8 hover:border-brand/40 hover:bg-white/[0.05] transition-colors duration-300">
-                      <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6">
-                        <Icon size={36} className="text-brand-light" strokeWidth={1.5} />
+                    <div className="absolute inset-0 [backface-visibility:hidden] flex flex-col justify-between bg-surface-soft border border-border-subtle rounded-xl p-8 hover:border-brand/30 hover:bg-white/[0.05] transition-colors duration-300">
+                      <div>
+                        <span className="text-brand-light/60 text-sm font-semibold tracking-widest tabular-nums">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="text-foreground text-lg md:text-xl mt-3 mb-3 tracking-tight">
+                          {service.title}
+                        </h3>
+                        <p className="text-text-secondary text-sm">{service.summary}</p>
                       </div>
-                      <h3 className="text-foreground text-sm md:text-base mb-3 tracking-wide">{service.title}</h3>
-                      <p className="text-text-secondary text-sm mb-4">{service.summary}</p>
                       <span className="flex items-center gap-1.5 text-xs text-brand-light">
                         <RefreshCw size={13} /> Click to flip
                       </span>
@@ -201,10 +217,10 @@ export default function Services() {
 
                     {/* Back Face */}
                     <div
-                      className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center text-center rounded-xl p-8 border border-border-subtle"
+                      className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col justify-between rounded-xl p-8 border border-border-subtle"
                       style={{ backgroundColor: "#0f1c32" }}
                     >
-                      <div className="flex flex-col gap-2 mb-5">
+                      <div className="flex flex-col gap-2">
                         {service.items.map((item, itemIndex) => (
                           <p key={itemIndex} className="text-text-secondary text-sm">
                             {item}
@@ -215,7 +231,7 @@ export default function Services() {
                         <RotateCcw size={13} /> Flip back
                       </span>
                     </div>
-                  </div>
+                  </button>
                 </div>
               );
             })}
@@ -248,32 +264,14 @@ export default function Services() {
 
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 w-full">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 flex items-center justify-center mb-6">
-                  <Phone size={48} className="text-brand" strokeWidth={1.5} />
+              {process.map((step, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+                  <span className="text-brand-light/70 text-3xl font-semibold tabular-nums mb-4">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-text-secondary leading-relaxed max-w-xs">{step.text}</p>
                 </div>
-                <p className="text-text-secondary leading-relaxed">
-                  Contact us and we will open up a dialogue with your company within a week to formulate a tentative plan.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 flex items-center justify-center mb-6">
-                  <MessageSquare size={48} className="text-brand" strokeWidth={1.5} />
-                </div>
-                <p className="text-text-secondary leading-relaxed">
-                  We will schedule a meeting to discuss our potential solution, as well as quotes.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 flex items-center justify-center mb-6">
-                  <Clock size={48} className="text-brand" strokeWidth={1.5} />
-                </div>
-                <p className="text-text-secondary leading-relaxed">
-                  We begin work, keeping you updated with weekly progress reports until our project is complete.
-                </p>
-              </div>
+              ))}
             </div>
 
             <Link

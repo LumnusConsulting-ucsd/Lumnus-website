@@ -1,5 +1,4 @@
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import { ScrollFade } from '../components/ScrollFade';
 
 export default function Recruitment() {
   return (
@@ -19,7 +18,6 @@ export default function Recruitment() {
       </section>
 
       {/* Interest Form Section */}
-      <ScrollFade>
       <section className="py-24 px-8 bg-surface">
         <div
           className="max-w-2xl mx-auto text-center bg-surface-soft border border-border-subtle rounded-2xl p-10 md:p-14"
@@ -41,10 +39,8 @@ export default function Recruitment() {
           </a>
         </div>
       </section>
-      </ScrollFade>
 
       {/* Stay Updated Section */}
-      <ScrollFade>
       <section className="py-24 px-8 bg-surface">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center">
@@ -94,7 +90,6 @@ export default function Recruitment() {
           </div>
         </div>
       </section>
-      </ScrollFade>
     </>
   );
 }

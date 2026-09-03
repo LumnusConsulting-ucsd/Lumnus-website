@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FadeInOnScroll } from "./fade-scroll";
 import {
   Carousel,
   CarouselContent,
@@ -57,7 +56,6 @@ export function TestimonialsSection() {
   };
 
   return (
-    <FadeInOnScroll delayMs={100}>
       <section className="py-20 px-8 bg-surface">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-center text-3xl md:text-4xl mb-12 text-foreground">
@@ -105,6 +103,7 @@ export function TestimonialsSection() {
                             <img
                               src={testimonial.logo}
                               alt={`${testimonial.name} Logo`}
+                              loading="lazy"
                               className="w-10 h-10 mt-2"
                             />
                           )}
@@ -134,6 +133,5 @@ export function TestimonialsSection() {
           </div>
         </div>
       </section>
-    </FadeInOnScroll>
   );
 }

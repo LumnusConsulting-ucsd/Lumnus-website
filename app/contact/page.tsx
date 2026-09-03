@@ -1,8 +1,8 @@
 "use client";
 
-import { FadeInOnScroll } from "../components/fade-scroll";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
 import { Label } from "@/app/components/ui/label";
@@ -40,7 +40,8 @@ export default function Contact() {
       }
 
 
-      setIsSuccess(true); 
+      setIsSuccess(true);
+      toast.success("Message sent — we'll get back to you soon.");
 
       setFormData({
         name: "",
@@ -50,6 +51,11 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     } finally {
       setIsSending(false);
     }
@@ -82,12 +88,7 @@ export default function Contact() {
         </h1>
       </section>
 
-     
-    
-     
-   
-      <FadeInOnScroll delayMs={100}>
-  <section className="py-20 px-8 bg-surface">
+      <section className="py-20 px-8 bg-surface">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
       
       {/* LEFT: STAY UPDATED */}
@@ -133,17 +134,22 @@ export default function Contact() {
         </div>
 
         {/* EMAIL */}
-        <p className="text-brand text-xl font-medium text-center">
+        <a
+          href="mailto:contact@lumnusconsulting.net"
+          className="text-brand hover:text-brand-light text-xl font-medium text-center transition-colors"
+        >
           contact@lumnusconsulting.net
-        </p>
+        </a>
       </div>
 
       {/* RIGHT: FORM */}
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Name</Label>
+          <Label htmlFor="contact-name" className="mb-2 block text-lg font-medium">Name</Label>
           <Input
+            id="contact-name"
             name="name"
+            autoComplete="name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -152,9 +158,13 @@ export default function Contact() {
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Email</Label>
+          <Label htmlFor="contact-email" className="mb-2 block text-lg font-medium">Email</Label>
           <Input
+            id="contact-email"
             name="email"
+            type="email"
+            autoComplete="email"
+            spellCheck={false}
             value={formData.email}
             onChange={handleChange}
             required
@@ -163,9 +173,11 @@ export default function Contact() {
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Subject</Label>
+          <Label htmlFor="contact-subject" className="mb-2 block text-lg font-medium">Subject</Label>
           <Input
+            id="contact-subject"
             name="subject"
+            autoComplete="off"
             value={formData.subject}
             onChange={handleChange}
             required
@@ -174,9 +186,11 @@ export default function Contact() {
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Message</Label>
+          <Label htmlFor="contact-message" className="mb-2 block text-lg font-medium">Message</Label>
           <Textarea
+            id="contact-message"
             name="message"
+            autoComplete="off"
             value={formData.message}
             onChange={handleChange}
             required
@@ -191,7 +205,7 @@ export default function Contact() {
           className="w-full bg-brand hover:bg-brand-light text-white py-3 rounded-full transition-all hover:shadow-lg"
         >
           {isSending
-            ? "Sending..."
+            ? "Sending…"
             : isSuccess
             ? "Email Sent Successfully!"
             : "Send Message"}
@@ -199,8 +213,6 @@ export default function Contact() {
       </form>
     </div>
   </section>
-</FadeInOnScroll>
-               
     </>
   );
 }

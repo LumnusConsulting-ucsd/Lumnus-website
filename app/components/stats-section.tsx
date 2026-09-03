@@ -1,5 +1,4 @@
 "use client";
-import { FadeInOnScroll } from "./fade-scroll";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -54,7 +53,6 @@ export function StatsSection() {
   }, [hasAnimated]);
 
   return (
-    <FadeInOnScroll delayMs={100}>
     <section
       ref={sectionRef}
       className="relative py-32 px-8"
@@ -85,6 +83,5 @@ export function StatsSection() {
         </div>
       </div>
     </section>
-    </FadeInOnScroll>
   );
 }

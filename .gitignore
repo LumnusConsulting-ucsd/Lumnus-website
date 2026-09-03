@@ -13,6 +13,7 @@ yarn.lock
 
 # testing
 /coverage
+.playwright-cli/
 
 # next.js
 /.next/

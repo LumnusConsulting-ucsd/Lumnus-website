@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight } from 'lucide-react';
-import { ScrollFade } from '../components/ScrollFade';
 import { useState } from 'react';
 import { PhotoCollage } from '../components/PhotoCollage';
 
@@ -86,7 +85,7 @@ export default function Projects() {
     : pastProjects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Past Projects Hero */}
       <section className="relative h-[40vh] px-8 overflow-hidden flex items-center justify-center">
         <PhotoCollage />
@@ -99,7 +98,6 @@ export default function Projects() {
       </section>
 
       {/* Projects Grid */}
-      <ScrollFade>
         <section className="bg-surface py-16 px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
@@ -125,12 +123,7 @@ export default function Projects() {
                 return (
                   <div
                     key={project.id}
-                    className="bg-surface border border-border-subtle hover:border-brand/30 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
-                    onClick={(e) => {
-                      if (isExpanded) {
-                        toggleProject(project.id, e);
-                      }
-                    }}
+                    className="bg-surface border border-border-subtle hover:border-brand/30 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
                   >
                     <div className="flex flex-col h-full items-center">
                       {!isExpanded && project.logo && (
@@ -138,6 +131,7 @@ export default function Projects() {
                           <img
                             src={project.logo}
                             alt={project.name}
+                            loading="lazy"
                             className="max-w-[70%] max-h-[70%] object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
@@ -155,17 +149,17 @@ export default function Projects() {
                         </p>
                       )}
 
-                      {!isExpanded && (
-                        <div className="flex justify-center w-full">
-                          <button
-                            onClick={(e) => toggleProject(project.id, e)}
-                            className="flex items-center text-brand hover:text-brand-light transition-colors group-hover:translate-x-1 transform transition-transform"
-                          >
-                            <span className="mr-2">Learn More</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </button>
-                        </div>
-                      )}
+                      <div className="flex justify-center w-full">
+                        <button
+                          type="button"
+                          onClick={(e) => toggleProject(project.id, e)}
+                          aria-expanded={isExpanded}
+                          className="flex items-center text-brand hover:text-brand-light transition-colors group-hover:translate-x-1 transform transition-transform"
+                        >
+                          <span className="mr-2">{isExpanded ? "Show Less" : "Learn More"}</span>
+                          <ArrowRight className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -173,7 +167,6 @@ export default function Projects() {
             </div>
           </div>
         </section>
-      </ScrollFade>
     </div>
   );
 }

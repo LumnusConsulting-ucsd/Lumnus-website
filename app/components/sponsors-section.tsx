@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FadeInOnScroll } from "./fade-scroll";
 
 const SPONSORS = [
   { name: "Rady School of Management", href: "https://rady.ucsd.edu/", src: "/Rady.png" },
@@ -9,7 +8,6 @@ const SPONSORS = [
 
 export function SponsorsSection() {
   return (
-    <FadeInOnScroll delayMs={100}>
       <section className="pt-12 pb-16 px-8 bg-surface">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-12">
@@ -37,6 +35,5 @@ export function SponsorsSection() {
           </div>
         </div>
       </section>
-    </FadeInOnScroll>
   );
 }

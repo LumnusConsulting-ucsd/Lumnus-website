@@ -1,13 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Users,
-  TrendingUp,
-  Briefcase,
-  ArrowRight,
-} from "lucide-react";
-import { FadeInOnScroll } from "../components/fade-scroll";
+import { ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import { PhotoShowcaseSection } from "../components/photo-showcase-section";
 
 export default function SponsorPage() {
@@ -31,7 +26,7 @@ export default function SponsorPage() {
     e.preventDefault();
 
     if (!contactName || !email) {
-      alert("Please complete required fields.");
+      toast.error("Please complete required fields.");
       return;
     }
 
@@ -43,7 +38,7 @@ export default function SponsorPage() {
         : null;
 
     if (!amount) {
-      alert("Please select or enter an amount.");
+      toast.error("Please select or enter an amount.");
       return;
     }
 
@@ -70,66 +65,67 @@ export default function SponsorPage() {
       }
 
       window.location.href = data.url;
-    } catch (err: any) {
-      alert(err.message);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Checkout failed. Please try again.");
     }
   };
 
   return (
     <>
       {/* Hero Section */}
-      <section
-        className="relative h-[50vh] flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="text-center text-white px-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl tracking-wider mb-6">
-            SUPPORT LUMNUS
+      <section className="grid grid-cols-1 md:grid-cols-2 bg-surface">
+        <div className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-16 py-16 md:py-0 min-h-[40vh] md:min-h-[60vh]">
+          <p className="text-brand-light text-sm tracking-[0.3em] mb-4">GET INVOLVED</p>
+          <h1 className="text-foreground text-4xl md:text-5xl tracking-tight mb-6 max-w-md">
+            Support Lumnus
           </h1>
+          <p className="text-text-secondary max-w-sm mb-8">
+            Your contribution funds real consulting experience for the next generation
+            of student leaders.
+          </p>
           <button
             onClick={scrollToForm}
-            className="bg-brand hover:bg-brand-light text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
+            className="self-start bg-brand hover:bg-brand-light text-white text-sm md:text-base px-6 py-3 rounded-full font-medium transition-all hover:scale-[1.03] hover:shadow-lg inline-flex items-center gap-2"
           >
             Become a Sponsor
             <ArrowRight size={18} />
           </button>
         </div>
+        <div
+          className="order-1 md:order-2 min-h-[40vh] md:min-h-[60vh] bg-cover bg-center"
+          style={{ backgroundImage: "url('/IMG_2356.png')" }}
+          role="img"
+          aria-label="Lumnus Consulting members"
+        />
       </section>
 
       {/* Sponsor Impact */}
-      <FadeInOnScroll>
-        <section className="py-16 md:py-24 px-6 md:px-8 bg-surface">
-          <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16">
-            <h2 className="text-foreground text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
-            <p className="text-foreground text-lg md:text-xl max-w-3xl mx-auto">
-              Your contribution helps shape the future generations of Lumnus.
-            </p>
-          </div>
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-surface">
+        <div className="max-w-4xl mx-auto text-center mb-14 md:mb-20">
+          <h2 className="text-foreground text-3xl md:text-5xl mb-4 md:mb-6">Your Impact</h2>
+          <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
+            Your contribution helps shape the future generations of Lumnus.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-7xl mx-auto">
-            <ImpactCard
-              icon={<Users className="text-white" size={32} />}
-              title="Associate Development"
-              text="Fund comprehensive workshops, specialized training programs, and professional development opportunities that equip our members with real-world consulting skills."
-            />
-            <ImpactCard
-              icon={<TrendingUp className="text-white" size={32} />}
-              title="Client Projects"
-              text="Support pro-bono consulting projects that help businesses achieve sustainable, long-term growth through thoughtful strategic guidance and data-informed decision-making."
-            />
-            <ImpactCard
-              icon={<Briefcase className="text-white" size={32} />}
-              title="Club Operations"
-              text="Support club operations, Project management, organizational resources, and outreach initiatives that help us continue developing future business leaders."
-            />
-          </div>
-        </section>
-      </FadeInOnScroll>
+        <div className="max-w-4xl mx-auto divide-y divide-border-subtle">
+          <ImpactRow
+            index="01"
+            title="Associate Development"
+            text="Fund comprehensive workshops, specialized training programs, and professional development opportunities that equip our members with real-world consulting skills."
+          />
+          <ImpactRow
+            index="02"
+            title="Client Projects"
+            text="Support pro-bono consulting projects that help businesses achieve sustainable, long-term growth through thoughtful strategic guidance and data-informed decision-making."
+          />
+          <ImpactRow
+            index="03"
+            title="Club Operations"
+            text="Support club operations, project management, organizational resources, and outreach initiatives that help us continue developing future business leaders."
+          />
+        </div>
+      </section>
 
       <PhotoShowcaseSection />
 
@@ -195,16 +191,20 @@ export default function SponsorPage() {
             </div>
 
             <div className="mb-6">
-              <label className="block mb-1.5 text-foreground text-sm md:text-base">Or Enter Custom Amount</label>
+              <label htmlFor="sponsor-custom-amount" className="block mb-1.5 text-foreground text-sm md:text-base">Or Enter Custom Amount</label>
               <input
-                placeholder="$"
+                id="sponsor-custom-amount"
+                name="customAmount"
+                placeholder="$…"
                 type="number"
+                inputMode="decimal"
+                autoComplete="off"
                 value={customAmount}
                 onChange={(e) => {
                   setCustomAmount(e.target.value);
                   setSelectedAmount(null);
                 }}
-                className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:border-brand/50"
+                className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-brand-light/40 focus:border-brand/50"
               />
             </div>
 
@@ -212,46 +212,60 @@ export default function SponsorPage() {
 
             <div className="space-y-4 mb-8">
               <div>
-                <label className="block mb-1.5 text-foreground text-sm md:text-base">Organization</label>
+                <label htmlFor="sponsor-org" className="block mb-1.5 text-foreground text-sm md:text-base">Organization</label>
                 <input
+                  id="sponsor-org"
+                  name="organization"
                   type="text"
+                  autoComplete="organization"
                   value={orgName}
                   onChange={(e) => setOrgName(e.target.value)}
-                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:border-brand/50"
+                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-brand-light/40 focus:border-brand/50"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-foreground text-sm md:text-base">
+                <label htmlFor="sponsor-name" className="block mb-1.5 text-foreground text-sm md:text-base">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="sponsor-name"
+                  name="name"
                   type="text"
+                  autoComplete="name"
+                  required
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:border-brand/50"
+                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-brand-light/40 focus:border-brand/50"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-foreground text-sm md:text-base">
+                <label htmlFor="sponsor-email" className="block mb-1.5 text-foreground text-sm md:text-base">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="sponsor-email"
+                  name="email"
                   type="email"
+                  autoComplete="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:border-brand/50"
+                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg text-foreground placeholder-text-muted text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-brand-light/40 focus:border-brand/50"
                 />
               </div>
 
               <div>
-                <label className="block mb-1.5 text-foreground text-sm md:text-base">Message (Optional)</label>
+                <label htmlFor="sponsor-message" className="block mb-1.5 text-foreground text-sm md:text-base">Message (Optional)</label>
                 <textarea
+                  id="sponsor-message"
+                  name="message"
+                  autoComplete="off"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={4}
-                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg resize-none text-sm md:text-base focus:outline-none focus:border-brand/50"
+                  className="w-full px-4 py-3 border border-border-subtle bg-white/5 rounded-lg resize-none text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-brand-light/40 focus:border-brand/50"
                 />
               </div>
             </div>
@@ -273,23 +287,25 @@ export default function SponsorPage() {
   );
 }
 
-function ImpactCard({
-  icon,
+function ImpactRow({
+  index,
   title,
   text,
 }: {
-  icon: React.ReactNode;
+  index: string;
   title: string;
   text: string;
 }) {
   return (
-    <div className="border-t-4 border-brand p-6 md:p-8 bg-surface">
-      <div className="flex items-start gap-4 mb-4">
-        <div className="bg-[#0A66C2] p-3 md:p-4 shrink-0">{icon}</div>
-        <div>
-          <h3 className="text-foreground text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
-          <p className="text-foreground text-sm md:text-base">{text}</p>
-        </div>
+    <div className="grid grid-cols-[auto_1fr] md:grid-cols-[5rem_1fr] gap-6 md:gap-10 py-8 md:py-10">
+      <span className="text-brand-light/70 text-2xl md:text-3xl font-semibold tabular-nums">
+        {index}
+      </span>
+      <div>
+        <h3 className="text-foreground text-xl md:text-2xl mb-2 md:mb-3">{title}</h3>
+        <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
+          {text}
+        </p>
       </div>
     </div>
   );

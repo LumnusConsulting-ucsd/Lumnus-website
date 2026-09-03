@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FadeInOnScroll } from "./fade-scroll";
 
 const PARTNERS = [
   { name: "Booz Allen Hamilton", href: "https://www.boozallen.com/", src: "/Booz.png" },
@@ -13,7 +12,6 @@ const PARTNERS = [
 
 export function PartnersSection() {
   return (
-    <FadeInOnScroll delayMs={100}>
       <section className="relative py-24 px-8 bg-surface z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-foreground text-3xl md:text-4xl font-medium tracking-tight mb-12">
@@ -41,6 +39,5 @@ export function PartnersSection() {
           </div>
         </div>
       </section>
-    </FadeInOnScroll>
   );
 }

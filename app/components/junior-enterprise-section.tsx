@@ -1,10 +1,7 @@
 "use client";
 
-import { FadeInOnScroll } from "./fade-scroll";
-
 export function JuniorEnterpriseSection() {
   return (
-    <FadeInOnScroll delayMs={100}>
       <section
         className="relative py-12 px-8 z-10"
         style={{
@@ -33,6 +30,5 @@ export function JuniorEnterpriseSection() {
           </p>
         </a>
       </section>
-    </FadeInOnScroll>
   );
 }

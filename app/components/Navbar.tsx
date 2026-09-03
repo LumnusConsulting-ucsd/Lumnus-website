@@ -49,14 +49,16 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 -ml-2 -mt-0 hover:opacity-80 transition-opacity"
+          className={`relative -ml-2 -mt-0 hover:opacity-80 transition-opacity w-[110px] md:w-[124px] transition-all duration-300 ${
+            scrolled ? "h-9 md:h-10" : "h-11 md:h-12"
+          }`}
         >
           <Image
             src="/LumnusConsulting-logo.png"
             alt="Lumnus Consulting"
-            width={220}
-            height={48}
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-9 md:h-10" : "h-11 md:h-12"}`}
+            fill
+            sizes="124px"
+            className="object-contain object-left"
             priority
           />
         </Link>
