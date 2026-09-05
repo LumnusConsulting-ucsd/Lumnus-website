@@ -75,7 +75,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen">
       {/* Past Projects Hero */}
-      <section className="relative h-[40vh] px-8 overflow-hidden flex items-center justify-center">
+      <section className="relative flex h-[40svh] min-h-88 items-center justify-center overflow-hidden px-8">
         <PhotoCollage />
         <div className="absolute inset-0 bg-black opacity-30" />
         <div className="max-w-7xl mx-auto text-center relative z-10">

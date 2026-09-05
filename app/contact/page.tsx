@@ -69,7 +69,7 @@ export default function Contact() {
   return (
     <>
       <section
-        className="relative h-[40vh] flex items-center justify-center object-contain"
+        className="relative flex h-[40svh] min-h-88 items-center justify-center object-contain"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
           backgroundSize: "100%",

@@ -78,7 +78,7 @@ export default function SponsorPage() {
     <>
       {/* Hero Section */}
       <section
-        className="relative h-[50vh] flex items-center justify-center"
+        className="relative flex h-[50svh] min-h-96 items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/IMG_2356.png')",

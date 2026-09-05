@@ -64,7 +64,7 @@ export default function Insights() {
   return (
     <div className="min-h-screen">
       <section
-  className="relative h-[40vh] px-8 overflow-hidden flex items-center justify-center bg-cover"
+  className="relative flex h-[40svh] min-h-88 items-center justify-center overflow-hidden bg-cover px-8"
   style={{ 
     backgroundImage: `url(${heroImage})`,
     backgroundPosition: 'center 34%'

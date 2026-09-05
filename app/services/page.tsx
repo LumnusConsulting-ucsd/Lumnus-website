@@ -98,7 +98,7 @@ export default function Services() {
     <>
       {/* Hero Section */}
       <section 
-        className="relative h-[40vh] flex items-center justify-center"
+        className="relative flex h-[40svh] min-h-88 items-center justify-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/Services-hero.JPEG')",
