@@ -110,7 +110,7 @@ export default function Services() {
     <>
       {/* Hero Section */}
       <section
-        className="relative h-[55vh] flex items-end"
+        className="relative h-[55svh] min-h-88 flex items-end"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)), url('/Services-hero.JPEG')",

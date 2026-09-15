@@ -39,3 +39,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}

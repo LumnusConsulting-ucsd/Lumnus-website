@@ -53,16 +53,16 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
         <div
-          className={`w-max max-w-[calc(100%-1rem)] flex items-center gap-1 md:gap-2 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          className={`w-max max-w-[calc(100%-1rem)] flex items-center gap-1 lg:gap-2 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
             scrolled
-              ? "bg-background/85 shadow-lg shadow-black/20 px-3 py-2 md:px-4 md:py-2.5"
-              : "bg-background/60 shadow-md shadow-black/10 px-3 py-2 md:px-5 md:py-3"
+              ? "bg-background/85 shadow-lg shadow-black/20 px-3 py-2 lg:px-4 lg:py-2.5"
+              : "bg-background/60 shadow-md shadow-black/10 px-3 py-2 lg:px-5 lg:py-3"
           }`}
         >
           {/* Logo */}
           <Link
             href="/"
-            className="relative shrink-0 hover:opacity-80 transition-opacity w-[92px] h-8 md:w-[104px] md:h-9 mr-1 md:mr-2"
+            className="relative shrink-0 hover:opacity-80 transition-opacity w-[92px] h-8 lg:w-[104px] lg:h-9 mr-1 lg:mr-2"
           >
             <Image
               src="/LumnusConsulting-logo.png"
@@ -75,7 +75,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-0.5 text-sm font-medium">
+          <div className="hidden lg:flex items-center gap-0.5 text-sm font-medium">
             {navItems.map(([href, label]) => (
               <Link
                 key={href}
@@ -94,7 +94,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden relative w-8 h-8 flex items-center justify-center text-foreground shrink-0"
+            className="lg:hidden relative w-8 h-8 flex items-center justify-center text-foreground shrink-0"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!menuOpen}

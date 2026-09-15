@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden flex items-center justify-center"
+      className="relative min-h-[100svh] overflow-hidden flex items-center justify-center"
     >
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -28,39 +28,25 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-background/40" />
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <HeroFadeText className="text-center text-white px-6 -translate-y-24 md:px-8 md:-translate-y-[4.5rem]">
-          <div className="w-48 md:w-64 h-0.5 bg-white/60 mx-auto mb-5 md:mb-6" />
+      <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 pb-24 pt-28 sm:px-8 sm:pb-28">
+        <HeroFadeText className="mx-auto w-full max-w-6xl text-center text-white sm:-translate-y-4 lg:-translate-y-6">
+          <div className="mx-auto mb-5 h-0.5 w-40 bg-white/60 sm:mb-6 sm:w-56 md:w-64" />
 
-          <h1 className="text-4xl md:text-7xl tracking-wider mb-4 md:mb-6">
+          <h1 className="mb-4 text-[clamp(2.35rem,6vw,5rem)] leading-[1.05] tracking-[0.08em] sm:mb-6">
             LUMNUS CONSULTING
           </h1>
 
-          <p className="text-sm md:text-xl lg:text-2xl tracking-wide font-medium">
+          <p className="text-[clamp(0.85rem,2vw,1.5rem)] font-medium tracking-wide">
             STUDENT-RUN, PROFESSIONALLY DRIVEN
           </p>
-        </HeroFadeText>
-      </div>
 
-      <div className="absolute left-1/2 bottom-32 -translate-x-1/2 md:bottom-[18.75rem]">
-        <Link href="/about">
-          <button
-            className="
-              bg-brand hover:bg-brand-light text-brand-foreground
-              text-sm md:text-lg
-              px-8 md:px-10 py-3 md:py-4
-              rounded-full
-              font-medium
-              transition-all
-              hover:scale-[1.03]
-              active:scale-[0.98]
-              hover:shadow-lg
-              whitespace-nowrap
-            "
+          <Link
+            href="/about"
+            className="mt-8 inline-flex whitespace-nowrap rounded-full bg-brand px-8 py-3 text-sm font-medium text-brand-foreground transition-all hover:scale-[1.03] active:scale-[0.98] hover:bg-brand-light hover:shadow-lg sm:mt-10 md:px-10 md:py-4 md:text-lg"
           >
             Learn More
-          </button>
-        </Link>
+          </Link>
+        </HeroFadeText>
       </div>
 
       <button
