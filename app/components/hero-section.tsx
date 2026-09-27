@@ -15,16 +15,22 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] overflow-hidden bg-cover bg-center md:bg-[length:125%] md:bg-[position:left_70%] lg:bg-fixed"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/LumnusConsulting-hero.png')",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative min-h-[100svh] overflow-hidden flex items-center justify-center"
     >
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/walking-laughing.mp4"
+        poster="/gallery/full-cohort-group.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="absolute inset-0 bg-background/40" />
+
       <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 pb-24 pt-28 sm:px-8 sm:pb-28">
         <HeroFadeText className="mx-auto w-full max-w-6xl text-center text-white sm:-translate-y-4 lg:-translate-y-6">
-          <div className="mx-auto mb-5 h-0.5 w-40 bg-white sm:mb-6 sm:w-56 md:w-64" />
+          <div className="mx-auto mb-5 h-0.5 w-40 bg-white/60 sm:mb-6 sm:w-56 md:w-64" />
 
           <h1 className="mb-4 text-[clamp(2.35rem,6vw,5rem)] leading-[1.05] tracking-[0.08em] sm:mb-6">
             LUMNUS CONSULTING
@@ -36,7 +42,7 @@ export function HeroSection() {
 
           <Link
             href="/about"
-            className="mt-8 inline-flex whitespace-nowrap rounded-full bg-blue-950 px-8 py-3 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-blue-900 hover:shadow-lg sm:mt-10 md:px-10 md:py-4 md:text-lg"
+            className="mt-8 inline-flex whitespace-nowrap rounded-full bg-brand px-8 py-3 text-sm font-medium text-brand-foreground transition-all hover:scale-[1.03] active:scale-[0.98] hover:bg-brand-light hover:shadow-lg sm:mt-10 md:px-10 md:py-4 md:text-lg"
           >
             Learn More
           </Link>

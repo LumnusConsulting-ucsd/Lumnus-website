@@ -1,43 +1,34 @@
 "use client";
 
-import { FadeInOnScroll } from "./fade-scroll";
-
 export function JuniorEnterpriseSection() {
   return (
-    <FadeInOnScroll delayMs={100}>
-      <section className="relative py-24 px-8 bg-gray-100 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-gray-900 text-4xl md:text-5xl mb-8">
-            The Junior Enterprise Movement
-          </h2>
-
-          <p className="text-gray-600 leading-relaxed text-lg mb-6">
-            Lumnus Consulting is proud affiliate of the global Junior Enterprise
-            movement, which consists of 30,000 active members across two dozen
-            countries.
+      <section
+        className="relative py-12 px-8 z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(37,99,235,0.08), transparent 70%)",
+        }}
+      >
+        <a
+          href="https://www.juniorenterprises.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left hover:opacity-90 transition-opacity"
+        >
+          <img
+            src="/JEUSApic.png"
+            alt="Junior Enterprise United States of America"
+            className="h-10 w-auto shrink-0 rounded-md bg-white p-1.5"
+          />
+          <p className="text-text-secondary text-sm md:text-base">
+            Lumnus Consulting is a proud affiliate of the{" "}
+            <span className="text-foreground font-medium">
+              Junior Enterprise Global Movement
+            </span>{" "}
+            — 30,000 active members across two dozen countries, partnered with
+            companies like Microsoft, McKinsey, and Kraft Heinz.
           </p>
-
-          <p className="text-gray-600 leading-relaxed text-lg mb-12">
-            Junior Enterprise partners with companies such as Microsoft, McKinsey,
-            and KraftHeinz. Our open network allows us to draw from the skill and
-            knowledge of students across the globe.
-          </p>
-
-          <div className="flex justify-center">
-            <a
-              href="https://www.juniorenterprises.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/JEUSApic.png"
-                alt="Junior Enterprise United States of America"
-                className="max-w-md w-full h-auto cursor-pointer"
-              />
-            </a>
-          </div>
-        </div>
+        </a>
       </section>
-    </FadeInOnScroll>
   );
 }

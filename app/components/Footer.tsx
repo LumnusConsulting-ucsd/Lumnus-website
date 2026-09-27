@@ -16,16 +16,15 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         {/* Left Side - Logo */}
-        <div className="flex items-center -ml-2">
+        <Link href="/" className="flex items-center -ml-2 hover:opacity-80 transition-opacity">
           <Image
             src="/LumnusConsulting-logo.png"
             alt="Lumnus Consulting"
             width={200}
             height={44}
             className="w-auto h-9 md:h-10"
-            priority
           />
-        </div>
+        </Link>
 
         {/* Right Side - Links and Social */}
         <div className="flex flex-col md:flex-row items-start md:items-start gap-12 -mt-3">
@@ -108,6 +107,12 @@ export default function Footer() {
 </div>
 
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/10">
+        <p className="text-white/50 text-xs md:text-sm">
+          © {new Date().getFullYear()} Lumnus Consulting. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -1,8 +1,8 @@
 "use client";
 
-import { FadeInOnScroll } from "../components/fade-scroll";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
 import { Label } from "@/app/components/ui/label";
@@ -40,7 +40,8 @@ export default function Contact() {
       }
 
 
-      setIsSuccess(true); 
+      setIsSuccess(true);
+      toast.success("Message sent — we'll get back to you soon.");
 
       setFormData({
         name: "",
@@ -50,6 +51,11 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     } finally {
       setIsSending(false);
     }
@@ -82,17 +88,12 @@ export default function Contact() {
         </h1>
       </section>
 
-     
-    
-     
-   
-      <FadeInOnScroll delayMs={100}>
-  <section className="py-20 px-8 bg-white">
+      <section className="py-16 px-8 bg-surface">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
       
       {/* LEFT: STAY UPDATED */}
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-3xl md:text-4xl tracking-wider text-black mb-10">
+        <h2 className="text-3xl md:text-4xl tracking-wider text-foreground mb-10">
           Stay Updated With Lumnus
         </h2>
 
@@ -103,8 +104,8 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
-              <Facebook className="text-white" size={28} />
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
+              <Facebook className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">Facebook</span>
           </a>
@@ -114,8 +115,8 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
-              <Instagram className="text-white" size={28} />
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
+              <Instagram className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">Instagram</span>
           </a>
@@ -125,82 +126,96 @@ export default function Contact() {
             target="_blank"
             className="flex flex-col items-center gap-3 hover:opacity-70 transition-opacity"
           >
-            <div className="w-16 h-16 bg-blue-950 rounded-full flex items-center justify-center">
-              <Linkedin className="text-white" size={28} />
+            <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center">
+              <Linkedin className="text-brand-foreground" size={28} />
             </div>
             <span className="text-sm">LinkedIn</span>
           </a>
         </div>
 
         {/* EMAIL */}
-        <p className="text-blue-950 text-xl font-medium text-center">
+        <a
+          href="mailto:contact@lumnusconsulting.net"
+          className="text-brand hover:text-brand-light text-xl font-medium text-center transition-colors"
+        >
           contact@lumnusconsulting.net
-        </p>
+        </a>
       </div>
 
       {/* RIGHT: FORM */}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6 rounded-[2rem] bg-white/[0.03] ring-1 ring-white/10 p-6 md:p-10 shadow-xl shadow-black/20"
+      >
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Name</Label>
+          <Label htmlFor="contact-name" className="mb-2 block text-lg font-medium">Name</Label>
           <Input
+            id="contact-name"
             name="name"
+            autoComplete="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Email</Label>
+          <Label htmlFor="contact-email" className="mb-2 block text-lg font-medium">Email</Label>
           <Input
+            id="contact-email"
             name="email"
+            type="email"
+            autoComplete="email"
+            spellCheck={false}
             value={formData.email}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Subject</Label>
+          <Label htmlFor="contact-subject" className="mb-2 block text-lg font-medium">Subject</Label>
           <Input
+            id="contact-subject"
             name="subject"
+            autoComplete="off"
             value={formData.subject}
             onChange={handleChange}
             required
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
         <div className="space-y-2">
-          <Label className="mb-2 block text-lg font-medium">Message</Label>
+          <Label htmlFor="contact-message" className="mb-2 block text-lg font-medium">Message</Label>
           <Textarea
+            id="contact-message"
             name="message"
+            autoComplete="off"
             value={formData.message}
             onChange={handleChange}
             required
             rows={6}
-            className="bg-gray-100 border border-black/10 rounded-lg"
+            className="bg-surface rounded-lg"
           />
         </div>
 
         <button
           type="submit"
           disabled={isSending || isSuccess}
-          className="w-full bg-blue-950 hover:bg-blue-900 text-white py-3 rounded-full transition-colors"
+          className="w-full bg-brand hover:bg-brand-light text-brand-foreground py-3 rounded-full transition-all hover:shadow-lg active:scale-[0.98]"
         >
           {isSending
-            ? "Sending..."
+            ? "Sending…"
             : isSuccess
-            ? "Email Sent Successfully!"
+            ? "Message sent"
             : "Send Message"}
         </button>
       </form>
     </div>
   </section>
-</FadeInOnScroll>
-               
     </>
   );
 }

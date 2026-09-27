@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import type { CarouselApi } from "./ui/carousel";
@@ -48,7 +49,7 @@ export function AlumniSpotlightSection() {
 
   return (
     <section
-      className="relative py-20 px-8"
+      className="relative py-16 px-8"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/IMG_7327.png')",
@@ -72,14 +73,17 @@ export function AlumniSpotlightSection() {
               {alumni.map((person) => (
                 <CarouselItem key={person.id}>
                   <div className="px-4">
-                    <div className="bg-white rounded-3xl shadow-md overflow-hidden">
+                    <div className="bg-surface rounded-3xl shadow-md overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="relative h-[360px] md:h-[440px] overflow-hidden rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
                           {person.photo ? (
-                            <img
+                            <Image
                               src={person.photo}
                               alt={person.name}
-                              className="block w-full h-full object-cover"
+                              fill
+                              sizes="(min-width: 768px) 50vw, 100vw"
+                              loading="lazy"
+                              className="object-cover"
                               style={{
                                 objectPosition:
                                   person.name === "Cariappa Kodira"
@@ -88,26 +92,26 @@ export function AlumniSpotlightSection() {
                               }}
                             />
                           ) : (
-                            <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
-                              <User className="w-24 h-24 text-gray-400" />
+                            <div className="w-full h-full bg-white/10 flex items-center justify-center rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
+                              <User className="w-24 h-24 text-text-muted" />
                             </div>
                           )}
                         </div>
 
-                        <div className="p-6 md:pl-4 md:pr-6 flex flex-col justify-center text-gray-900">
+                        <div className="p-6 md:pl-4 md:pr-6 flex flex-col justify-center text-foreground">
                           <h3 className="text-xl md:text-2xl font-semibold">
                             {person.name}
                           </h3>
 
-                          <p className="text-gray-600 mb-6 text-lg">
+                          <p className="text-text-secondary mb-6 text-lg">
                             {person.title} at{" "}
                             <span className="font-semibold">
                               {person.company}
                             </span>
                           </p>
 
-                          <p className="text-gray-700 leading-relaxed italic">
-                            "{person.quote}"
+                          <p className="text-text-secondary leading-relaxed italic">
+                            “{person.quote}”
                           </p>
                         </div>
                       </div>
@@ -119,18 +123,18 @@ export function AlumniSpotlightSection() {
 
             <button
               onClick={handlePrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-surface rounded-full p-3 shadow-lg hover:bg-surface transition-colors z-10"
               aria-label="Previous alumni"
             >
-              <ChevronLeft className="w-6 h-6 text-blue-900" />
+              <ChevronLeft className="w-6 h-6 text-brand-light" />
             </button>
 
             <button
               onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-surface rounded-full p-3 shadow-lg hover:bg-surface transition-colors z-10"
               aria-label="Next alumni"
             >
-              <ChevronRight className="w-6 h-6 text-blue-900" />
+              <ChevronRight className="w-6 h-6 text-brand-light" />
             </button>
           </Carousel>
         </div>

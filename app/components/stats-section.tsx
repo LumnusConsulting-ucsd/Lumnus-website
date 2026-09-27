@@ -1,13 +1,12 @@
 "use client";
-import { FadeInOnScroll } from "./fade-scroll";
 
 import { useEffect, useRef, useState } from "react";
 
 export function StatsSection() {
   const stats = [
-    { number: 44, label: "ACTIVE MEMBERS", prefix: "", suffix: "" },
-    { number: 15, label: "MAJORS", prefix: "", suffix: "" },
-    { number: 15, label: "DOLLARS IN PROFITS", prefix: "$", suffix: "K" },
+    { number: 56, label: "ACTIVE MEMBERS", prefix: "", suffix: "+" },
+    { number: 17, label: "ACADEMIC MAJORS", prefix: "", suffix: "" },
+    { number: 15, label: "CLIENT VALUE DELIVERED", prefix: "$", suffix: "K+" },
   ];
 
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -54,7 +53,6 @@ export function StatsSection() {
   }, [hasAnimated]);
 
   return (
-    <FadeInOnScroll delayMs={100}>
     <section
       ref={sectionRef}
       className="relative py-32 px-8"
@@ -66,15 +64,18 @@ export function StatsSection() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
           {stats.map((stat, index) => (
-            <div key={stat.label}>
-              <div className="text-6xl md:text-7xl mb-4">
+            <div
+              key={stat.label}
+              className="bg-[#0e1726]/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] transition-all duration-300 hover:border-white/25"
+            >
+              <div className="text-6xl md:text-7xl mb-4 font-semibold tabular-nums">
                 {stat.prefix}
                 {counters[index]}
                 {stat.suffix}
               </div>
-              <div className="text-sm tracking-widest opacity-90">
+              <div className="text-sm tracking-widest text-white/70">
                 {stat.label}
               </div>
             </div>
@@ -82,6 +83,5 @@ export function StatsSection() {
         </div>
       </div>
     </section>
-    </FadeInOnScroll>
   );
 }
