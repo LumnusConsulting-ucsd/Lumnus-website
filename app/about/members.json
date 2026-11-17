@@ -1,0 +1,637 @@
+{
+  "departments": [
+    "Executive Board",
+    "Sales",
+    "External",
+    "Marketing",
+    "Finance",
+    "Human Resources",
+    "Technology"
+  ],
+  "members": [
+    {
+      "name": "Irina Vardapetyan",
+      "title": "Co-President",
+      "departments": [
+        "Executive Board"
+      ],
+      "photo": "/team/irina-vardapetyan.webp",
+      "linkedin": "https://linkedin.com/in/irinavard",
+      "headshotSource": "raw/headshots/D5B57087-E45C-4E4C-BCC1-D161D5B9E138_4_5005_c.jpeg"
+    },
+    {
+      "name": "Mint Ruangritchai",
+      "title": "Co-President",
+      "departments": [
+        "Executive Board"
+      ],
+      "photo": "/team/mint-ruangritchai.webp",
+      "linkedin": "https://linkedin.com/in/mintruangritchai",
+      "headshotSource": "raw/headshots/B35980BB-1C66-4A32-8E88-701927AE5697.JPG"
+    },
+    {
+      "name": "Pratibha Arun",
+      "title": "VP of Operations",
+      "departments": [
+        "Executive Board"
+      ],
+      "photo": "/team/pratibha-arun.webp",
+      "linkedin": "https://linkedin.com/in/pratibha-arun",
+      "headshotSource": "raw/headshots/665F5295-B0C8-4160-AFB0-5572C62A8FEB_4_5005_c.jpeg"
+    },
+    {
+      "name": "Eshwari Gundi",
+      "title": "VP of Sales",
+      "departments": [
+        "Executive Board",
+        "Sales"
+      ],
+      "photo": "/team/eshwari-gundi.webp",
+      "linkedin": "https://linkedin.com/in/eshwari-gundi-a61480229",
+      "headshotSource": "raw/headshots/D55874D6-A8EE-42AC-8B96-870645F6015E_4_5005_c.jpeg"
+    },
+    {
+      "name": "Varsha Reddy",
+      "title": "VP of External",
+      "departments": [
+        "Executive Board",
+        "External"
+      ],
+      "photo": "/team/varsha-reddy.webp",
+      "linkedin": "https://linkedin.com/in/varshagreddy"
+    },
+    {
+      "name": "Emily Naka",
+      "title": "VP of Marketing",
+      "departments": [
+        "Executive Board",
+        "Marketing"
+      ],
+      "photo": "/team/emily-naka.webp",
+      "linkedin": "https://linkedin.com/in/emilynaka"
+    },
+    {
+      "name": "Andrew Kim",
+      "title": "VP of Finance",
+      "departments": [
+        "Executive Board",
+        "Finance"
+      ],
+      "photo": "/team/andrew-kim.webp",
+      "linkedin": "https://www.linkedin.com/in/andrewgykim/",
+      "headshotSource": "raw/headshots/D2ADEF86-27A0-484E-973F-83CFF6E5ECDC.JPG"
+    },
+    {
+      "name": "Angela Chen",
+      "title": "VP of HR",
+      "departments": [
+        "Executive Board",
+        "Human Resources"
+      ],
+      "photo": "/team/angela-chen.webp",
+      "linkedin": "https://linkedin.com/in/angelacjq",
+      "headshotSource": "raw/headshots/5D8ECD4A-092A-4BDF-9339-F1A3B861E00B.JPG"
+    },
+    {
+      "name": "Ishaan Garg",
+      "title": "VP of Technology",
+      "departments": [
+        "Executive Board",
+        "Technology"
+      ],
+      "photo": "/team/ishaan-garg.webp",
+      "linkedin": "https://linkedin.com/in/ishaangarg06"
+    },
+    {
+      "name": "Aashima Keswani",
+      "title": "Director of Alumni Relations",
+      "departments": [
+        "Executive Board",
+        "Sales"
+      ],
+      "photo": "/team/aashima-keswani.webp",
+      "linkedin": "https://linkedin.com/in/aashima-keswani"
+    },
+    {
+      "name": "Maximilian Chao",
+      "title": "Junior Enterprise Ambassador",
+      "departments": [
+        "Executive Board",
+        "Technology"
+      ],
+      "photo": "/team/maximilian-chao.webp",
+      "linkedin": "https://linkedin.com/in/maximilian-chao-196a58246"
+    },
+    {
+      "name": "Vihan Shah",
+      "title": "Director of Program Tracking",
+      "departments": [
+        "Executive Board",
+        "Marketing"
+      ],
+      "photo": "/team/vihan-shah.webp",
+      "linkedin": "https://linkedin.com/in/vihanshah"
+    },
+    {
+      "name": "Giulio Rambelli",
+      "title": "Director of Internal Operations",
+      "departments": [
+        "Executive Board",
+        "Finance"
+      ],
+      "photo": "/team/giulio-rambelli.webp",
+      "linkedin": "https://linkedin.com/in/giuliorambelli"
+    },
+    {
+      "name": "Treesha Chhabria",
+      "title": "Director of Internal Operations",
+      "departments": [
+        "Executive Board",
+        "Marketing"
+      ],
+      "photo": "/team/treesha-chhabria.webp",
+      "linkedin": "https://linkedin.com/in/treesha-chhabria-1b2642362",
+      "headshotSource": "raw/headshots/593217B5-3841-4320-A481-51EB815E263D.JPG"
+    },
+    {
+      "name": "Amelia Badamjav",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/amelia-badamjav.webp",
+      "linkedin": "https://linkedin.com/in/amelia-badamjav-a11617314"
+    },
+    {
+      "name": "Arushi Gupta",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/arushi-gupta.webp",
+      "linkedin": "https://linkedin.com/in/argupta5"
+    },
+    {
+      "name": "Natasha Dorairaj",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/natasha-dorairaj.webp",
+      "linkedin": "https://www.linkedin.com/in/natashadorairaj/",
+      "headshotSource": "raw/headshots/45780D8D-72D5-462F-AF6E-C9C62B85A3C5_4_5005_c.jpeg"
+    },
+    {
+      "name": "Parnika Gupta",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/parnika-gupta.webp",
+      "linkedin": "https://www.linkedin.com/in/parnika-gupta1/?skipRedirect=true"
+    },
+    {
+      "name": "Veda Thota",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/veda-thota.webp",
+      "linkedin": "https://linkedin.com/in/veda-thota",
+      "headshotSource": "raw/headshots/6FE22A9C-CC10-477B-ACC0-B9633F922867.JPG"
+    },
+    {
+      "name": "Aarav Mittal",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/aarav-mittal.webp",
+      "linkedin": "",
+      "headshotSource": "raw/headshots/65B8F8F4-0CD6-4591-A712-309653A45695.JPG"
+    },
+    {
+      "name": "Abigail Losi",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/abigail-losi.webp",
+      "linkedin": "https://linkedin.com/in/abigail-losi-56b883346",
+      "headshotSource": "raw/headshots/F2D0B687-61A7-4403-87B0-774867AB952A.JPG"
+    },
+    {
+      "name": "Abigail Shlimenzon",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/abigail-shlimenzon.webp",
+      "linkedin": "https://linkedin.com/in/abigail-shlimenzon-a9ab762b5"
+    },
+    {
+      "name": "Mina Garcia",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/mina-garcia.webp",
+      "linkedin": "https://linkedin.com/in/mina-garcia-07a762242"
+    },
+    {
+      "name": "Mirabelle Trunk",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/mirabelle-trunk.webp",
+      "linkedin": "https://linkedin.com/in/mirabelle-trunk"
+    },
+    {
+      "name": "Neakail David",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/neakail-david.webp",
+      "linkedin": "https://www.linkedin.com/in/neakail-david-a09930288/",
+      "headshotSource": "raw/headshots/F3D10691-8DB3-4F2E-96E8-5A6124465F3E.JPG"
+    },
+    {
+      "name": "Rahul Raman",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/rahul-raman.webp",
+      "linkedin": "https://linkedin.com/in/rahulraman23"
+    },
+    {
+      "name": "Akash Gupta-Verma",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/akash-gupta-verma.webp",
+      "linkedin": "https://www.linkedin.com/in/akash-gupta-verma-956b97199/"
+    },
+    {
+      "name": "Anwesha Mohanty",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/anwesha-mohanty.webp",
+      "linkedin": "https://linkedin.com/in/anweshamohantyy",
+      "headshotSource": "raw/headshots/94345C66-4C5E-4B27-BF7F-9A07F17CA912.JPG"
+    },
+    {
+      "name": "Esha Warrier",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/esha-warrier.webp",
+      "linkedin": "https://linkedin.com/in/eshawarrier"
+    },
+    {
+      "name": "Filicia Wu",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/filicia-wu.webp",
+      "linkedin": "https://linkedin.com/in/filicia-wu"
+    },
+    {
+      "name": "Jacob Kang",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/jacob-kang.webp",
+      "linkedin": "https://www.linkedin.com/in/jacobkang2647/",
+      "headshotSource": "raw/headshots/EC69722A-D380-4DFC-A26B-826B58F718EE_4_5005_c.jpeg"
+    },
+    {
+      "name": "Nidhi Rajesh",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/nidhi-rajesh.webp",
+      "linkedin": "https://linkedin.com/in/nidhi-rajesh-300645295"
+    },
+    {
+      "name": "Tanay Parikh",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/tanay-parikh.webp",
+      "linkedin": "https://www.linkedin.com/in/tanayjparikh/",
+      "headshotSource": "raw/headshots/18E192C1-6447-4952-9E09-ED2326A7080B.JPG"
+    },
+    {
+      "name": "Varnika Seth",
+      "title": "",
+      "departments": [
+        "Marketing"
+      ],
+      "photo": "/team/varnika-seth.webp",
+      "linkedin": "https://linkedin.com/in/varnikaseth"
+    },
+    {
+      "name": "Dari Gansukh",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/dari-gansukh.webp",
+      "linkedin": "https://linkedin.com/in/darigansukh"
+    },
+    {
+      "name": "Dylan Nelson",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/dylan-nelson.webp",
+      "linkedin": "https://www.linkedin.com/in/dylan-nelson-3501471b2/"
+    },
+    {
+      "name": "Humza Dalal",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/humza-dalal.webp",
+      "linkedin": "https://linkedin.com/in/humza-dalal-b439b5280"
+    },
+    {
+      "name": "Jason Si",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/jason-si.webp",
+      "linkedin": "https://www.linkedin.com/in/jason-si-6bb3123a1/",
+      "headshotSource": "raw/headshots/B094A48C-2F94-42C9-B600-3F728F71682F.JPG"
+    },
+    {
+      "name": "Rishit Bhandari",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/rishit-bhandari.webp",
+      "linkedin": "https://linkedin.com/in/rishit-bhandari-41a83647"
+    },
+    {
+      "name": "Solomon Whitlam Sandler",
+      "title": "",
+      "departments": [
+        "External"
+      ],
+      "photo": "/team/solomon-whitlam-sandler.webp",
+      "linkedin": "https://www.linkedin.com/in/solomon-whitlam-sandler-a1a076396/",
+      "headshotSource": "raw/headshots/A81A69FC-8F04-45B4-8BEE-78DC20C2244A.JPG"
+    },
+    {
+      "name": "Tanner Wan",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/tanner-wan.webp",
+      "linkedin": "https://linkedin.com/in/tannerwan",
+      "headshotSource": "raw/headshots/EEFB09CA-8646-4948-A6E8-201A97D78C7A_4_5005_c.jpeg"
+    },
+    {
+      "name": "Anirudh Rajesh",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/anirudh-rajesh.webp",
+      "linkedin": "https://linkedin.com/in/anirudhrajesh23"
+    },
+    {
+      "name": "Dayus Gohel",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/dayus-gohel.webp",
+      "linkedin": "https://linkedin.com/in/dayus-gohel",
+      "headshotSource": "raw/headshots/7D2BD895-61B4-49DC-94FB-212A3390C3F4.JPG"
+    },
+    {
+      "name": "Garret Christie",
+      "title": "",
+      "departments": [
+        "Finance"
+      ],
+      "photo": "/team/garret-christie.webp",
+      "linkedin": "https://www.linkedin.com/in/garret-christie-a68401209/"
+    },
+    {
+      "name": "Jackson Martson",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/jackson-martson.webp",
+      "linkedin": "",
+      "headshotSource": "raw/headshots/54A184E5-E8A8-450D-9C6A-A3C8FAA2734F.JPG"
+    },
+    {
+      "name": "Molly Marchese",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/molly-marchese.webp",
+      "linkedin": "https://linkedin.com/in/mollymarchese"
+    },
+    {
+      "name": "Sabrina Zanetto",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/sabrina-zanetto.webp",
+      "linkedin": "https://linkedin.com/in/sabrina-zanetto-565154345",
+      "headshotSource": "raw/headshots/337E27CD-611D-4E36-B0FD-5722D6A0F567.JPG"
+    },
+    {
+      "name": "Shaaktiram Balakumar",
+      "title": "",
+      "departments": [
+        "Sales"
+      ],
+      "photo": "/team/shaaktiram-balakumar.webp",
+      "linkedin": "https://www.linkedin.com/in/shaaktirambalakumar/",
+      "headshotSource": "raw/headshots/1238DDA5-F758-48E1-8C6A-8C4FE750967F.JPG"
+    },
+    {
+      "name": "Sumukhi Tunuguntla",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/sumukhi-tunuguntla.webp",
+      "linkedin": "https://www.linkedin.com/in/sumukhitunuguntla/"
+    },
+    {
+      "name": "Tanner Bradley",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/tanner-bradley.webp",
+      "linkedin": "https://linkedin.com/in/tannerwilsonbradley",
+      "headshotSource": "raw/headshots/6CA29BEB-3B86-46A6-BBCA-D687921100D3.JPG"
+    },
+    {
+      "name": "Vivaan Laungani",
+      "title": "",
+      "departments": [
+        "Human Resources"
+      ],
+      "photo": "/team/vivaan-laungani.webp",
+      "linkedin": "https://linkedin.com/in/vivaanlaungani"
+    },
+    {
+      "name": "Abhinav Chinnam",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/abhinav-chinnam.webp",
+      "linkedin": "https://linkedin.com/in/abhinav-chinnam"
+    },
+    {
+      "name": "Aditya Mittal",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/aditya-mittal.webp",
+      "linkedin": "https://www.linkedin.com/in/adityamittal1207/",
+      "headshotSource": "raw/headshots/913E17B4-0669-43FE-853B-357E4EB4408B.JPG"
+    },
+    {
+      "name": "Arjan Gunsi",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/arjan-gunsi.webp",
+      "linkedin": "https://www.linkedin.com/in/arjan-gunsi/"
+    },
+    {
+      "name": "Chloe Suwignjo",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/chloe-suwignjo.webp",
+      "linkedin": "https://www.linkedin.com/in/chloesuwignjo/",
+      "headshotSource": "raw/headshots/C7BB57C6-E2C7-4998-B320-89DFF3F1C52F.JPG"
+    },
+    {
+      "name": "Ishaan Gowda",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/ishaan-gowda.webp",
+      "linkedin": "https://www.linkedin.com/in/ishaangowda/"
+    },
+    {
+      "name": "Koshik Kumaravel",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/koshik-kumaravel.webp",
+      "linkedin": "https://www.linkedin.com/in/koshik-kumaravel/",
+      "headshotSource": "raw/headshots/51BD2BAE-C66D-474C-9537-D5F45504898E.JPG"
+    },
+    {
+      "name": "Niharika Sapre",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/niharika-sapre.webp",
+      "linkedin": "https://linkedin.com/in/niharikasapre"
+    },
+    {
+      "name": "Nikhil Akiti",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/nikhil-akiti.webp",
+      "linkedin": "https://linkedin.com/in/nikhil-akiti"
+    },
+    {
+      "name": "Nikita Jain",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/nikita-jain.webp",
+      "linkedin": "https://linkedin.com/in/nikita-jain123"
+    },
+    {
+      "name": "Parth Mehta",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/parth-mehta.webp",
+      "linkedin": "https://linkedin.com/in/parth-mehta-0873a2217"
+    },
+    {
+      "name": "Sanmita Babu",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/sanmita-babu.webp",
+      "linkedin": "https://www.linkedin.com/in/sanmita-babu/",
+      "headshotSource": "raw/headshots/B87B8202-0E44-48F0-87F9-6A6E8CF6AFF9_4_5005_c.jpeg"
+    },
+    {
+      "name": "Serina Wang",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/serina-wang.webp",
+      "linkedin": "https://linkedin.com/in/serina-wang-"
+    },
+    {
+      "name": "Sharana Sabesan",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/sharana-sabesan.webp",
+      "linkedin": "https://linkedin.com/in/sharana-sabesan-4bb0211b3",
+      "headshotSource": "raw/headshots/0BDCA1F5-EA15-4F2A-AC13-68C427361B58.JPG"
+    },
+    {
+      "name": "Sruti Mani",
+      "title": "",
+      "departments": [
+        "Technology"
+      ],
+      "photo": "/team/sruti-mani.webp",
+      "linkedin": "https://linkedin.com/in/srutimani"
+    }
+  ]
+}

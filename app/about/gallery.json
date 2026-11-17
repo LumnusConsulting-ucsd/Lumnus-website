@@ -1,0 +1,65 @@
+{
+  "hero": null,
+  "gallery": [
+    {
+      "src": "/gallery/full-cohort-group.jpg",
+      "alt": "The full Lumnus intern cohort",
+      "width": 2000,
+      "height": 1333
+    },
+    {
+      "src": "/gallery/main-intern-class.jpg",
+      "alt": "Intern class outside Wells Fargo Hall",
+      "width": 2000,
+      "height": 1333
+    },
+    {
+      "src": "/gallery/palm-trio.jpg",
+      "alt": "Interns outside the Rady building",
+      "width": 1333,
+      "height": 2000
+    },
+    {
+      "src": "/gallery/media-day-01.webp",
+      "alt": "Five consultants posed together in a Rady hallway",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-02.webp",
+      "alt": "Consultants looking up from a spiral staircase",
+      "width": 1067,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-03.webp",
+      "alt": "Consultants walking across a wooden bridge in the atrium",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-04.webp",
+      "alt": "Consultants walking down a glass corridor",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-05.webp",
+      "alt": "Two consultants smiling by a perforated window screen",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-06.webp",
+      "alt": "Two consultants crossing a skybridge with a canyon view",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/gallery/media-day-07.webp",
+      "alt": "The cohort gathered around the atrium planter, seen from above",
+      "width": 480,
+      "height": 299
+    }
+  ]
+}

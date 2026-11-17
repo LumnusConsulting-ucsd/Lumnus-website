@@ -45,3 +45,81 @@ body {
   max-width: 100%;
   overflow-x: clip;
 }
+
+/* ------------------------------------------------------------------
+   Section tones — reusable on any page.
+   Put `tone-light` or `tone-navy` on a section, then use the t-* colours
+   (bg-t-bg, text-t-fg, text-t-muted, bg-t-soft, border-t-line, …).
+   Navy is the site's existing --surface (#0f1a2e).
+   ------------------------------------------------------------------ */
+.tone-light {
+  --t-bg: #f7f8fa;
+  --t-fg: #0f1a2e;
+  --t-muted: #4b5870;
+  --t-soft: #e6eefa;
+  --t-card: #ffffff;
+  --t-line: rgba(15, 26, 46, 0.1);
+}
+.tone-navy {
+  --t-bg: #0f1a2e;
+  --t-fg: #ffffff;
+  --t-muted: #b8c4d6;
+  --t-soft: rgba(255, 255, 255, 0.08);
+  --t-card: rgba(255, 255, 255, 0.04);
+  --t-line: rgba(255, 255, 255, 0.12);
+}
+.tone-light,
+.tone-navy {
+  background-color: var(--t-bg);
+  color: var(--t-fg);
+}
+
+@theme inline {
+  --color-navy: #0f1a2e;
+  --color-t-bg: var(--t-bg);
+  --color-t-fg: var(--t-fg);
+  --color-t-muted: var(--t-muted);
+  --color-t-soft: var(--t-soft);
+  --color-t-card: var(--t-card);
+  --color-t-line: var(--t-line);
+}
+
+/* Subtle fade-in tied to scroll position. Content is always visible:
+   browsers without scroll-driven animations (or with reduced motion) just show it,
+   and anything already on screen is at full opacity. */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+/* Slow logo marquee: the track holds the list twice and slides by half. */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; }
+  .marquee-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
+  .marquee-track > [aria-hidden="true"] { display: none; }
+}

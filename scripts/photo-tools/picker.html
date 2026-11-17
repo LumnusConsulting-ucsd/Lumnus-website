@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Media Day Picker</title>
+<style>
+  :root { --navy:#0f1a2e; --bg:#f7f8fa; --card:#fff; --line:#e3e7ee; --muted:#5b6678; --soft:#e8f0fb; --star:#b7791f; --warn:#b4231a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.4 system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--navy); }
+  header { position:sticky; top:0; z-index:5; background:var(--navy); color:#fff; padding:12px 20px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; }
+  header h1 { font-size:16px; margin:0; }
+  .stats { color:#c9d3e3; }
+  .filters button, .export { border:1px solid #ffffff40; background:transparent; color:#fff; padding:6px 12px; border-radius:999px; cursor:pointer; font:inherit; }
+  .filters button.on { background:#fff; color:var(--navy); }
+  .export { margin-left:auto; background:#fff; color:var(--navy); font-weight:600; }
+  .export:disabled { opacity:.5; cursor:not-allowed; }
+  .help { padding:12px 20px 0; color:var(--muted); margin:0; }
+  main { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; padding:20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .card.gallery { border-color:#d9b46a; box-shadow:0 0 0 2px #f3e3bf; }
+  .card.hero { border-color:var(--navy); box-shadow:0 0 0 3px var(--navy); }
+  .main { aspect-ratio:3/2; width:100%; object-fit:cover; display:block; cursor:zoom-in; background:#dde3ec; }
+  .strip { display:flex; gap:4px; padding:6px; overflow-x:auto; border-bottom:1px solid var(--line); }
+  .strip img { width:48px; height:34px; object-fit:cover; border-radius:4px; border:2px solid transparent; cursor:pointer; flex:0 0 auto; }
+  .strip img.on { border-color:var(--navy); }
+  .row { display:flex; gap:6px; padding:8px; align-items:center; }
+  .row button { flex:1; padding:7px; border:1px solid var(--line); border-radius:8px; background:#fff; cursor:pointer; font:inherit; color:var(--navy); }
+  .row .star.on { background:#fdf3dc; border-color:#d9b46a; color:var(--star); font-weight:600; }
+  .row .hero.on { background:var(--navy); color:#fff; border-color:var(--navy); font-weight:600; }
+  .row small { color:var(--muted); white-space:nowrap; }
+  #lightbox, #confirm { position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center; z-index:10; }
+  #lightbox { cursor:zoom-out; }
+  #lightbox img { max-width:94vw; max-height:94vh; border-radius:8px; }
+  #confirm .box { background:#fff; border-radius:14px; padding:20px 24px; width:min(640px, 92vw); max-height:85vh; overflow:auto; }
+  #confirm h3 { margin:0 0 8px; }
+  #confirm h4 { margin:14px 0 6px; font-size:13px; }
+  .thumbs { display:flex; flex-wrap:wrap; gap:6px; }
+  .thumbs img { width:84px; height:56px; object-fit:cover; border-radius:6px; }
+  #confirm .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:20px; }
+  #confirm .actions button { padding:8px 16px; border-radius:999px; border:1px solid var(--line); background:#fff; font:inherit; cursor:pointer; }
+  #confirm .actions .go { background:var(--navy); color:#fff; border-color:var(--navy); font-weight:600; }
+  #toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:var(--navy); color:#fff; padding:10px 16px; border-radius:10px; display:none; z-index:11; max-width:90vw; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Media Day Picker</h1>
+  <span class="stats" id="stats"></span>
+  <div class="filters" id="filters"></div>
+  <button class="export" id="export">Review &amp; save…</button>
+</header>
+<p class="help">★ adds a photo to the Behind the Scenes gallery. “Hero” sets the one group photo at the top of the About page (picking a new hero replaces the old one). Small thumbnails are burst shots of the same moment: click one to use it instead. Click a photo to see it full size. Progress saves automatically.</p>
+<main id="grid"></main>
+<div id="lightbox"><img alt="" /></div>
+<div id="confirm"><div class="box" id="confirmBox"></div></div>
+<div id="toast"></div>
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+let stacks = [], state = {}, filter = "all";
+const h = (tag, attrs = {}, ...kids) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) el.setAttribute(k, v === true ? "" : v);
+  }
+  el.append(...kids.flat().filter((k) => k != null));
+  return el;
+};
+function toast(msg, ms = 5000) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(toast.t); toast.t = setTimeout(() => (t.style.display = "none"), ms); }
+let saveTimer;
+function save() { clearTimeout(saveTimer); saveTimer = setTimeout(() => fetch("/state", { method: "POST", body: JSON.stringify(state) }), 300); }
+
+const cs = (id) => state.cards[id] ?? {};
+const set = (id, patch) => { state.cards[id] = { ...cs(id), ...patch }; save(); render(); };
+const chosen = (s) => s.shots.find((x) => x.file === cs(s.id).shot) ?? s.shots[0];
+
+function render() {
+  const starred = stacks.filter((s) => cs(s.id).star);
+  const hero = stacks.find((s) => s.id === state.hero);
+  $("#stats").textContent = `${stacks.length} moments · ${starred.length} in gallery · hero: ${hero ? "chosen" : "not chosen"}`;
+  $("#export").disabled = !hero;
+  $("#export").title = hero ? "" : "Pick a hero photo first";
+  $("#filters").replaceChildren(...[["all", "All"], ["picked", "Picked"]].map(([k, label]) =>
+    h("button", { class: filter === k ? "on" : "", onclick: () => { filter = k; render(); } }, label)));
+
+  const visible = stacks.filter((s) => filter === "all" || cs(s.id).star || s.id === state.hero);
+  $("#grid").replaceChildren(...visible.map((s) => {
+    const c = cs(s.id), shot = chosen(s), isHero = state.hero === s.id;
+    return h("div", { class: "card" + (c.star ? " gallery" : "") + (isHero ? " hero" : "") },
+      h("img", { class: "main", src: `/thumbs/${encodeURIComponent(shot.thumb)}`, loading: "lazy", alt: "",
+        onclick: () => { const lb = $("#lightbox"); $("img", lb).src = `/full/${encodeURIComponent(shot.file)}`; lb.style.display = "flex"; } }),
+      s.shots.length > 1 ? h("div", { class: "strip" }, ...s.shots.map((x) =>
+        h("img", { class: x === shot ? "on" : "", src: `/thumbs/${encodeURIComponent(x.thumb)}`, loading: "lazy", alt: "", onclick: () => set(s.id, { shot: x.file }) }))) : null,
+      h("div", { class: "row" },
+        h("button", { class: "star" + (c.star ? " on" : ""), onclick: () => set(s.id, { star: !c.star }) }, c.star ? "★ In gallery" : "☆ Gallery"),
+        h("button", { class: "hero" + (isHero ? " on" : ""), onclick: () => { state.hero = isHero ? null : s.id; save(); render(); } }, isHero ? "✓ Hero" : "Hero"),
+        h("small", { style: Math.max(shot.w, shot.h) < 1600 ? "color:var(--warn)" : "" }, `${shot.w}×${shot.h}` + (Math.max(shot.w, shot.h) < 1600 ? " · too small for hero" : ""))));
+  }));
+  if (!visible.length) $("#grid").append(h("p", {}, "Nothing picked yet."));
+}
+
+function selection() {
+  const hero = stacks.find((s) => s.id === state.hero);
+  return {
+    hero: hero ? chosen(hero).file : null,
+    gallery: stacks.filter((s) => cs(s.id).star && s.id !== state.hero).map((s) => chosen(s).file),
+  };
+}
+$("#export").onclick = () => {
+  const sel = selection();
+  const thumb = (f) => h("img", { src: `/thumbs/${encodeURIComponent(f.replace(/\.\w+$/, ".webp"))}`, alt: "" });
+  $("#confirmBox").replaceChildren(
+    h("h3", {}, "Save this selection?"),
+    h("p", { style: "color:var(--muted);margin:0" }, "This only saves your picks. Nothing on the website changes until the photos are resized and you approve the page."),
+    h("h4", {}, "Hero"), h("div", { class: "thumbs" }, thumb(sel.hero)),
+    h("h4", {}, `Gallery (${sel.gallery.length})`), sel.gallery.length ? h("div", { class: "thumbs" }, ...sel.gallery.map(thumb)) : h("p", {}, "None starred"),
+    h("div", { class: "actions" },
+      h("button", { onclick: () => ($("#confirm").style.display = "none") }, "Back"),
+      h("button", { class: "go", onclick: async () => {
+        const r = await (await fetch("/export", { method: "POST", body: JSON.stringify(sel) })).json();
+        $("#confirm").style.display = "none";
+        toast(r.ok ? `Saved ${r.written} photo(s) to ${r.file}. You can close this tab.` : "Save failed: " + r.errors.join("; "), 8000);
+      } }, "Save selection")));
+  $("#confirm").style.display = "flex";
+};
+$("#lightbox").onclick = () => ($("#lightbox").style.display = "none");
+$("#confirm").onclick = (e) => { if (e.target.id === "confirm") e.target.style.display = "none"; };
+(async () => {
+  [stacks, state] = await Promise.all([
+    fetch("/index.json").then((r) => r.json()).then((d) => d.stacks),
+    fetch("/state").then((r) => r.json()),
+  ]);
+  state.cards ??= {}; state.hero ??= null;
+  render();
+})();
+</script>
+</body>
+</html>

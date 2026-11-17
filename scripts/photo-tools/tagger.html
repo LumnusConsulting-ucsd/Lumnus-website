@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Headshot Tagger</title>
+<style>
+  :root { --navy:#0f1a2e; --bg:#f7f8fa; --card:#fff; --line:#e3e7ee; --muted:#5b6678; --soft:#e8f0fb; --ok:#1d7a46; --warn:#b4231a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.4 system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--navy); }
+  header { position:sticky; top:0; z-index:5; background:var(--navy); color:#fff; padding:12px 20px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; }
+  header h1 { font-size:16px; margin:0; }
+  .stats { color:#c9d3e3; }
+  .filters button, .export { border:1px solid #ffffff40; background:transparent; color:#fff; padding:6px 12px; border-radius:999px; cursor:pointer; font:inherit; }
+  .filters button.on { background:#fff; color:var(--navy); }
+  .export { margin-left:auto; background:#fff; color:var(--navy); font-weight:600; }
+  .export:disabled { opacity:.5; cursor:not-allowed; }
+  .panel { padding:12px 20px; background:#fff; border-bottom:1px solid var(--line); }
+  .panel h2 { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 8px; }
+  .people { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { display:inline-flex; align-items:center; border-radius:999px; border:1px solid var(--line); background:var(--bg); overflow:hidden; }
+  .chip > button { border:none; background:transparent; font:inherit; color:var(--navy); padding:4px 10px; cursor:pointer; }
+  .chip .grad { border-left:1px solid var(--line); color:var(--muted); padding:4px 8px; font-size:12px; }
+  .chip .grad:hover { color:var(--warn); }
+  .chip.done { background:var(--soft); border-color:#b9cdea; }
+  .chip.done .name::before { content:"✓ "; color:var(--ok); font-weight:700; }
+  .chip.dup { border-color:var(--warn); }
+  .chip.dup .name { color:var(--warn); }
+  .chip.gone { background:#fbecea; border-color:#eab8b2; }
+  .chip.gone .name { text-decoration:line-through; color:var(--warn); }
+  .chip.gone .grad { color:var(--warn); font-weight:600; }
+  .chip .board { font-size:11px; color:var(--muted); margin-left:4px; }
+  main { display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:16px; padding:20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .card.assigned { border-color:#7fa3d6; box-shadow:0 0 0 2px #cfe0f6; }
+  .card.conflict { border-color:var(--warn); box-shadow:0 0 0 2px #f3c9c5; }
+  .main { aspect-ratio:3/4; width:100%; object-fit:cover; display:block; cursor:zoom-in; background:#dde3ec; }
+  .strip { display:flex; gap:4px; padding:6px; overflow-x:auto; border-bottom:1px solid var(--line); }
+  .shot { position:relative; flex:0 0 auto; }
+  .shot img { width:40px; height:52px; object-fit:cover; border-radius:4px; border:2px solid transparent; cursor:pointer; display:block; }
+  .shot.on img { border-color:var(--navy); }
+  .shot .split { position:absolute; left:-4px; top:50%; transform:translateY(-50%); width:14px; height:14px; border-radius:50%; border:none; background:var(--warn); color:#fff; font-size:10px; line-height:14px; padding:0; cursor:pointer; display:none; }
+  .shot:hover .split { display:block; }
+  .meta { padding:8px; display:flex; flex-direction:column; gap:6px; }
+  .meta small { color:var(--muted); }
+  select { width:100%; padding:6px; border-radius:8px; border:1px solid var(--line); font:inherit; color:var(--navy); background:#fff; }
+  #lightbox, #confirm { position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center; z-index:10; }
+  #lightbox { cursor:zoom-out; }
+  #lightbox img { max-width:92vw; max-height:92vh; border-radius:8px; }
+  #confirm .box { background:#fff; border-radius:14px; padding:20px 24px; width:min(560px, 92vw); max-height:85vh; overflow:auto; }
+  #confirm h3 { margin:0 0 4px; }
+  #confirm h4 { margin:16px 0 6px; font-size:13px; }
+  #confirm ul { margin:0; padding-left:18px; }
+  #confirm .warn { color:var(--warn); }
+  #confirm .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:20px; }
+  #confirm .actions button { padding:8px 16px; border-radius:999px; border:1px solid var(--line); background:#fff; font:inherit; cursor:pointer; }
+  #confirm .actions .go { background:var(--navy); color:#fff; border-color:var(--navy); font-weight:600; }
+  #toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:var(--navy); color:#fff; padding:10px 16px; border-radius:10px; display:none; z-index:11; max-width:90vw; }
+  .help { padding:10px 20px 0; color:var(--muted); margin:0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Headshot Tagger</h1>
+  <span class="stats" id="stats"></span>
+  <div class="filters" id="filters"></div>
+  <button class="export" id="export">Review &amp; export…</button>
+</header>
+<div class="panel">
+  <h2>Everyone on the site: click a name to jump to their photo · “graduated” removes them from the website on export</h2>
+  <div class="people" id="people"></div>
+</div>
+<p class="help">Every photo is skipped unless you pick a name. One card per sitting: small thumbnails are other shots from the same sitting, so click one to use it instead (✂ splits a card if it mixes two people). Progress saves automatically. Anyone you don't tag keeps their current headshot.</p>
+<main id="grid"></main>
+<div id="lightbox"><img alt="" /></div>
+<div id="confirm"><div class="box" id="confirmBox"></div></div>
+<div id="toast"></div>
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+let stacks = [], people = [], state = {}, filter = "all";
+
+const h = (tag, attrs = {}, ...kids) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) el.setAttribute(k, v === true ? "" : v);
+  }
+  el.append(...kids.flat().filter((k) => k != null));
+  return el;
+};
+function toast(msg, ms = 4000) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(toast.t); toast.t = setTimeout(() => (t.style.display = "none"), ms); }
+let saveTimer;
+function save() { clearTimeout(saveTimer); saveTimer = setTimeout(() => fetch("/state", { method: "POST", body: JSON.stringify(state) }), 300); }
+
+// Cards = stacks, cut at any user-made split points.
+function cards() {
+  const out = [];
+  for (const s of stacks) {
+    const cuts = [0, ...(state.splits[s.id] ?? []).sort((a, b) => a - b), s.shots.length];
+    for (let i = 0; i < cuts.length - 1; i++) {
+      const shots = s.shots.slice(cuts[i], cuts[i + 1]);
+      if (shots.length) out.push({ id: `${s.id}:${cuts[i]}`, stack: s.id, offset: cuts[i], shots });
+    }
+  }
+  return out;
+}
+const cardState = (id) => state.cards[id] ?? { name: "", shot: null };
+const setCard = (id, patch) => { state.cards[id] = { ...cardState(id), ...patch }; if (!state.cards[id].name && !state.cards[id].shot) delete state.cards[id]; save(); render(); };
+const chosenShot = (c) => c.shots.find((s) => s.file === cardState(c.id).shot) ?? c.shots[0];
+const isGone = (name) => state.graduated.includes(name);
+function tagsByName() {
+  const used = {};
+  for (const c of cards()) { const n = cardState(c.id).name; if (n) (used[n] ??= []).push(c.id); }
+  return used;
+}
+
+function render() {
+  const all = cards(), used = tagsByName();
+  const conflicts = Object.entries(used).filter(([n, ids]) => ids.length > 1 && !isGone(n)).length;
+  const tagged = Object.keys(used).filter((n) => !isGone(n)).length;
+  $("#stats").textContent = `${all.length} cards · ${tagged}/${people.length - state.graduated.length} people tagged · ${state.graduated.length} marked graduated` + (conflicts ? ` · ${conflicts} name(s) on 2+ photos` : "");
+  $("#export").disabled = conflicts > 0 || (tagged === 0 && state.graduated.length === 0);
+  $("#export").title = conflicts ? "Each person can only be tagged on one photo" : "";
+
+  $("#filters").replaceChildren(...[["all", "All photos"], ["tagged", "Tagged"], ["untagged", "Untagged"]].map(([k, label]) =>
+    h("button", { class: filter === k ? "on" : "", onclick: () => { filter = k; render(); } }, label)));
+
+  $("#people").replaceChildren(...people.map((p) => {
+    const gone = isGone(p.name);
+    return h("span", { class: "chip" + (used[p.name] && !gone ? " done" : "") + (used[p.name]?.length > 1 && !gone ? " dup" : "") + (gone ? " gone" : ""), title: p.depts.join(", ") },
+      h("button", { class: "name", onclick: () => { const id = used[p.name]?.[0]; if (!id) return toast(`${p.name} isn't tagged on a photo yet`); filter = "all"; render(); document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" }); } },
+        p.name, p.board ? h("span", { class: "board" }, "board") : null),
+      p.board ? null : h("button", { class: "grad", title: gone ? "Keep on website" : "Remove from website (graduated)",
+        onclick: () => { state.graduated = gone ? state.graduated.filter((n) => n !== p.name) : [...state.graduated, p.name]; save(); render(); } },
+        gone ? "undo" : "graduated"));
+  }));
+
+  const visible = all.filter((c) => filter === "all" || (filter === "tagged") === !!cardState(c.id).name);
+  const groups = [["Executive Board", people.filter((p) => p.board)], ["Members", people.filter((p) => !p.board)]];
+
+  $("#grid").replaceChildren(...visible.map((c) => {
+    const cs = cardState(c.id), chosen = chosenShot(c);
+    const conflict = cs.name && used[cs.name]?.length > 1;
+    const select = h("select", { onchange: (e) => setCard(c.id, { name: e.target.value, shot: chosen.file }) },
+      h("option", { value: "" }, "Skip"),
+      ...groups.map(([label, list]) => h("optgroup", { label },
+        ...list.filter((p) => !isGone(p.name) || cs.name === p.name).map((p) =>
+          h("option", { value: p.name, selected: cs.name === p.name }, p.name + (used[p.name] && cs.name !== p.name ? "  (already tagged)" : ""))))));
+    return h("div", { class: "card" + (cs.name ? " assigned" : "") + (conflict ? " conflict" : ""), id: c.id },
+      h("img", { class: "main", src: `/thumbs/${encodeURIComponent(chosen.thumb)}`, loading: "lazy", alt: "",
+        onclick: () => { const lb = $("#lightbox"); $("img", lb).src = `/full/${encodeURIComponent(chosen.file)}`; lb.style.display = "flex"; } }),
+      c.shots.length > 1 ? h("div", { class: "strip" }, ...c.shots.map((s, i) =>
+        h("div", { class: "shot" + (s === chosen ? " on" : "") },
+          h("img", { src: `/thumbs/${encodeURIComponent(s.thumb)}`, loading: "lazy", alt: "", onclick: () => setCard(c.id, { shot: s.file }) }),
+          i > 0 ? h("button", { class: "split", title: "Split card here", onclick: () => { (state.splits[c.stack] ??= []).push(c.offset + i); save(); render(); } }, "✂") : null))) : null,
+      h("div", { class: "meta" }, select,
+        h("small", {}, (c.shots.length > 1 ? `${c.shots.length} shots · ` : "") + `${chosen.w}×${chosen.h}`,
+          chosen.w < 800 ? h("b", { style: "color:var(--warn)" }, " · low-res, prefer a full-size shot if there is one") : null),
+        conflict ? h("small", { style: "color:var(--warn)" }, `${cs.name} is tagged on another photo too`) : null));
+  }));
+  if (!visible.length) $("#grid").append(h("p", {}, "No photos in this view."));
+}
+
+function assignments() {
+  return cards().filter((c) => cardState(c.id).name && !isGone(cardState(c.id).name))
+    .map((c) => ({ name: cardState(c.id).name, file: chosenShot(c).file }));
+}
+
+// Show exactly what will change before anything is written.
+$("#export").onclick = () => {
+  const a = assignments().sort((x, y) => x.name.localeCompare(y.name));
+  const byName = Object.fromEntries(people.map((p) => [p.name, p]));
+  const box = $("#confirmBox");
+  box.replaceChildren(
+    h("h3", {}, "Review changes to members.json"),
+    h("p", { style: "color:var(--muted);margin:0" }, "A backup of members.json is saved first. Headshots aren't shown on the site until you approve the processed grid."),
+    h("h4", {}, `New headshot source for ${a.length} ${a.length === 1 ? "person" : "people"}`),
+    a.length ? h("ul", {}, ...a.map((x) => h("li", {}, x.name + (byName[x.name]?.board ? " (board, photo only)" : "")))) : h("p", {}, "None"),
+    h("h4", { class: "warn" }, `Remove from the website: ${state.graduated.length}`),
+    state.graduated.length ? h("ul", { class: "warn" }, ...state.graduated.slice().sort().map((n) => h("li", {}, `${n} (${byName[n]?.depts.join(", ")})`))) : h("p", {}, "Nobody"),
+    h("div", { class: "actions" },
+      h("button", { onclick: () => ($("#confirm").style.display = "none") }, "Back"),
+      h("button", { class: "go", onclick: doExport }, "Write to members.json")));
+  $("#confirm").style.display = "flex";
+};
+async function doExport() {
+  const r = await (await fetch("/export", { method: "POST", body: JSON.stringify({ assignments: assignments(), remove: state.graduated }) })).json();
+  $("#confirm").style.display = "none";
+  if (!r.ok) return toast("Export failed: " + r.errors.join("; "), 8000);
+  toast(`Saved: ${r.tagged} headshot(s), ${r.removed} removed. Backup at ${r.backup}`, 8000);
+  people = await fetch("/names").then((x) => x.json());
+  state.graduated = state.graduated.filter((n) => people.some((p) => p.name === n));
+  save(); render();
+}
+$("#lightbox").onclick = () => ($("#lightbox").style.display = "none");
+$("#confirm").onclick = (e) => { if (e.target.id === "confirm") e.target.style.display = "none"; };
+
+(async () => {
+  [stacks, people, state] = await Promise.all([
+    fetch("/index.json").then((r) => r.json()).then((d) => d.stacks),
+    fetch("/names").then((r) => r.json()),
+    fetch("/state").then((r) => r.json()),
+  ]);
+  state.splits ??= {}; state.cards ??= {}; state.graduated ??= [];
+  for (const c of Object.values(state.cards)) if (c.name === "__skip") c.name = "";
+  render();
+})();
+</script>
+</body>
+</html>
