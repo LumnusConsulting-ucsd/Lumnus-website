@@ -13,7 +13,7 @@ export default function Recruitment() {
         }}
       >
         <h1 className="text-white text-4xl md:text-5xl tracking-wider text-center px-4">
-          FALL 2026 RECRUITMENT
+          SPRING 2027 RECRUITMENT
         </h1>
       </section>
 
@@ -25,7 +25,7 @@ export default function Recruitment() {
               Join Our Team
             </h2>
             <p className="text-text-secondary mb-10 max-w-2xl mx-auto">
-              Recruitment will be starting Fall 2026. Fill out our interest form for <span className="text-foreground underline">Fall 2026 Recruitment</span> to learn more about opportunities and start your application.
+              Recruitment will be starting Spring 2027. Fill out our interest form for <span className="text-foreground underline">Spring 2027 Recruitment</span> to learn more about opportunities and start your application.
             </p>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdvqo5TfS14-LYCSvGX5HmuVMUBd70zS2a95IoFNtysw8MnzA/viewform"
